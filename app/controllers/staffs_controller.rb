@@ -13,6 +13,7 @@ class StaffsController < ApplicationController
   def create
     @staff = Staff.new(staff_params)    # Not the final implementation!
     if @staff.save
+      log_in @staff
       flash[:success] = "Sign up successful!"
       redirect_to @staff
     else
