@@ -40,6 +40,7 @@ GEM
     autoprefixer-rails (6.2.3)
       execjs
       json
+    bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5.1)
@@ -80,6 +81,8 @@ GEM
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -153,12 +156,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.5.1)
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  puma (= 2.11.1)
   rails (= 4.2.2)
   rails_12factor (= 0.0.2)
   sass-rails (~> 5.0)

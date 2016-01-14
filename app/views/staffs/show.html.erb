@@ -1,0 +1,7 @@
+<h1>This is the staff profile page</h1>
+
+<% provide(:title, @staff.name) %>
+<h1>
+  <%= gravatar_for @staff %>
+  <%= @staff.name %>
+</h1>
