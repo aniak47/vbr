@@ -1,0 +1,12 @@
+<li id="blogpost-<%= blogpost.id %>">
+  <%= link_to gravatar_for(blogpost.staff, size: 50), blogpost.staff %>
+  <span class="user"><%= link_to blogpost.staff.name, blogpost.staff %></span>
+  <span class="content"><%= blogpost.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+    <% if current_staff?(blogpost.staff) %>
+      <%= link_to "delete", blogpost, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>

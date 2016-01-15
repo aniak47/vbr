@@ -2,11 +2,10 @@ class StaffsController < ApplicationController
   before_action :logged_in_staff, only: [:edit, :update]
   before_action :correct_staff,   only: [:edit, :update]
   
-  def new
-  end
-  
+
   def show
     @staff = Staff.find(params[:id])
+    @blogposts = @staff.blogposts.paginate(page: params[:page])
   end
   def index
     @staffs = Staff.paginate(page: params[:page])
@@ -44,14 +43,7 @@ class StaffsController < ApplicationController
     end
     # Before filters
 
-    # Confirms a logged-in user.
-    def logged_in_staff
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
+    
     # Confirms the correct user.
     def correct_staff
       @staff = Staff.find(params[:id])

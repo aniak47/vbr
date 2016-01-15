@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115004418) do
+ActiveRecord::Schema.define(version: 20160115011842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogposts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "blogposts", ["staff_id", "created_at"], name: "index_blogposts_on_staff_id_and_created_at", using: :btree
+  add_index "blogposts", ["staff_id"], name: "index_blogposts_on_staff_id", using: :btree
 
   create_table "staffs", force: :cascade do |t|
     t.string   "name"
@@ -27,4 +37,5 @@ ActiveRecord::Schema.define(version: 20160115004418) do
 
   add_index "staffs", ["email"], name: "index_staffs_on_email", unique: true, using: :btree
 
+  add_foreign_key "blogposts", "staffs"
 end

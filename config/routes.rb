@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
-  get 'addstaff'  => 'staffs#new'
   
+  get 'addstaff'  => 'staffs#new'
   resources :staffs
+  
+  resources :blogposts,          only: [:create, :destroy]
 end
