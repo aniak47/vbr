@@ -4,7 +4,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "Help",   help_path %></li>
-            <li><%= link_to "DJs", '#' %></li>
+            <li><%= link_to "DJs", staffs_path %></li>
             
             <% if logged_in? %>
               <li class="dropdown">
@@ -13,7 +13,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_staff %></li>
-                  <li><%= link_to "Settings", '#' %></li>
+                  <li><%= link_to "Settings", edit_staff_path(current_staff) %></li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Log out", logout_path, method: "delete" %>

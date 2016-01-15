@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     staff = Staff.find_by(email: params[:session][:email].downcase)
     if staff && staff.authenticate(params[:session][:password])
       log_in staff
-      redirect_to staff
+      redirect_back_or staff
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
