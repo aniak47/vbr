@@ -17,6 +17,10 @@ class BlogpostsController < ApplicationController
     flash[:success] = "Blog post deleted"
     redirect_to request.referrer || root_url
   end
+  
+  def index
+    @blogposts = Blogpost.paginate(page: params[:page])
+  end
 
   private
 
