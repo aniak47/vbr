@@ -5,10 +5,15 @@
 
 body {
   padding-top: 60px;
+  background-color: #1a000d;
 }
 
 section {
   overflow: auto;
+}
+
+.navbar{
+  height: 100px;
 }
 
 textarea {
@@ -22,7 +27,40 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
-
+.wide {
+  width:100%;
+  height:500px;
+  background-size:cover;
+  background-image: url(/assets/cds.jpg);
+  margin-top: -20px;
+  position: fixed;
+}
+.admin-bar{
+  position: fixed;
+  top: 100px;
+}
+.page-content{
+  background-color: $gray-lighter;
+  min-height:500px;
+  margin: auto;
+  position: relative;
+  top: 300px;
+  padding: 10px;
+  border-top: solid 20px #602020;
+  margin: auto;
+  width: 1000px;
+  overflow: auto;
+  margin-bottom: 50px;
+}
+.page-content > div{
+    margin: 5px;
+    
+}
+.footer{
+  margin-top: 50px;
+  clear: both;
+  border-top: 1px solid #602020;
+}
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -88,4 +126,96 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+
+/* carosol */
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+.carousel, .carousel-inner, .carousel-inner .item {
+  height: 410px;
+  width: 700px;
+}
+.carousel{
+  float: right;
+}
+
+
+.item:nth-child(1) {
+  background: silver;
+}
+.item:nth-child(2) {
+  background: red;
+}
+.item:nth-child(3) {
+  background: orange;
+}
+
+
+
+.aframe{
+  border: solid black 1px;
+  border-top: solid 5px #602020;
+}
+
+#on-air{
+  width: 250px;
+  height: 150px;
+  float: left;
+}
+#ad-square {
+  float: left;
+  width: 250px;
+  height: 250px;
+  border: solid black 2px;
+}
+#adi-leaderboard {
+  float: right;
+  width: 728px;
+  height: 90px;
+  border: solid black 2px;
+}
+#promote{
+  width: 970px;
+  clear: both;
+  height: 100px;
+  border: solid black 2px;
+}
+#podcasts {
+  float: left;
+  width: 305px;
+  height: 400px;
+}
+  #blogs {
+  float: left;
+  width: 305px;
+  height: 400px;
+  }
+#ad-lgrec {
+  float: right;
+  width: 336px;
+  height: 280px;
+  border: solid black 2px;
 }

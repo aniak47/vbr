@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @blogpost = current_staff.blogposts.build if logged_in?
   end
 
   def help
@@ -18,5 +17,16 @@ class StaticPagesController < ApplicationController
   def history
   end
   
+  def lineup
+  end
+  
+  def donate
+  end
+  
+  def advertise
+  end
+  
+  def social
+  end
   
 end

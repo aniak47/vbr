@@ -1,0 +1,35 @@
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+
+<div class="col-md-12">
+    <%= will_paginate %>
+        <% @events.each do |event| %>
+            <li>
+              <h2><%= link_to event.name, event %></h2>
+              <p><%= event.date.strftime('%a %d %b %Y') %></p>
+              <p><%= event.time.strftime('%r') %></p>
+              <p><%= event.location %></p>
+            </li>
+          <% end %>
+    <%= will_paginate %>
+
+</div>
+
+
+<div class="col-md-12">
+<div class="container">
+    <%= link_to "<", date: @date.prev_month %> 
+    <h2 id="month"><%= @date.strftime("%B, %Y") %></h2>
+    <%= link_to ">", date: @date.next_month %> 
+    <%= calender @date do |date| %>
+        <%= date.day %>
+        <% if @events_by_date[date] %>
+            <ul>
+                <% @events_by_date[date].each do |event| %>
+                    <li> <%= link_to event.name, event %> </li>
+                <% end %>
+            </ul>
+        <% end %>
+    <% end %>
+</div>
+</div>

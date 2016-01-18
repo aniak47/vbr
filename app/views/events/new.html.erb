@@ -1,0 +1,30 @@
+<h1>Events#new</h1>
+<p>Find me in app/views/events/new.html.erb</p>
+
+<section class="blogpost_form">
+      
+  <%= form_for(@event) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :blurb %>
+      <%= f.text_field :blurb, class: 'form-control' %>
+
+      <%= f.label :catergory %>
+      <%= f.text_field :catergory, class: 'form-control' %>
+      
+      <%= f.label :location %>
+      <%= f.text_field :location, class: 'form-control' %>
+      
+      <%= f.label :date %>
+      <%= f.date_field :date, class: 'form-control' %>
+      
+      <%= f.label :time %>
+      <%= f.time_field :time, class: 'form-control' %>
+
+      <%= f.submit "Create new show", class: "btn btn-primary" %>
+    <% end %>
+  
+  </section>

@@ -1,0 +1,10 @@
+<footer class="footer">   
+  <nav>
+            
+            <% if logged_in? %>
+
+            <% else %>
+              <h4><%= link_to "Admin Log in", login_path %></h4>
+            <% end %>
+  </nav>
+</footer>

@@ -1,32 +1,39 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div id="on-air" class="aframe">
+    <p>on air now</p>
+</div>
 
-<% if logged_in? %>
-  <section class="blogpost_form">
-      
-  <%= form_for(@blogpost, html: { multipart: true }) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-      <%= f.text_area :content, placeholder: "Compose new micropost..." %>
-    </div>
-    <%= f.submit "Post", class: "btn btn-primary" %>
-    <span class="picture">
-      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-    </span>
-  <% end %>
+<div id="carousel" class="carousel slide carousel-fade">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
   
-  </section>
-<% end %> 
+  <div class="carousel-inner">
+    <div class="active item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
+  <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+</div>
+
+<div id="ad-square">
+    <p>ad 1</p>
+</div>
+<div id="promote" >
+    <p> WVBR DJs Events </p>
+</div>
+<div id="podcasts" class="aframe">
+    <p> podcasts </p>
+</div>
+<div id="blogs" class="aframe">
+    <p> blogs </p>
+</div>
+<div id="ad-lgrec">
+    <p>ad 2 </p>
+</div>
 
 
 
-
-
-<script type="text/javascript">
-  $('#blogpost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
-</script>

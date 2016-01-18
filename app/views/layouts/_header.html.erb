@@ -1,6 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+        
         <nav>
+          <img src="/assets/logo.jpg" width="230px" height="100px" />
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path %></li>
             
@@ -10,8 +12,8 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Schedule", schedule_path %></li>
-                  <li><%= link_to "Specialty Shows", allshows_path %></li>
-                  <li><%= link_to "Weekday Lineup", '#' %></li>
+                  <li><%= link_to "Specialty Shows", specialty_shows_path %></li>
+                  <li><%= link_to "Weekday Lineup", lineup_path %></li>
                   <li><%= link_to "Song History", songhistory_path %></li>
                 </ul>
               </li>
@@ -22,9 +24,10 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "About", about_path %></li>
-                  <li><%= link_to "Station News", '#' %></li>
-                  <li><%= link_to "R&R Patroll", '#' %></li>
-                  <li><%= link_to "Events", '#' %></li>
+                  <li><%= link_to "Station News", station_news_path %></li>
+                  <li><%= link_to "R&R Patroll", promo_path %></li>
+                  <li><%= link_to "Events", events_path %></li>
+                  
                 </ul>
               </li>
             
@@ -44,10 +47,11 @@
                   LOCAL <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "News", '#' %></li>
+                  <li><%= link_to "News", news_path %></li>
                   <li><%= link_to "Concert Log", '#' %></li>
                   <li><%= link_to "Weather", '#' %></li>
                   <li><%= link_to "Local Music", '#' %></li>
+                  <li><%= link_to "Sports", sports_path %></li>
                 </ul>
               </li>
               
@@ -57,32 +61,21 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Contact Info", contact_path %></li>
-                  <li><%= link_to "Advertise", '#' %></li>
-                  <li><%= link_to "Donate", '#' %></li>
-                  <li><%= link_to "Social Media", '#' %></li>
+                  <li><%= link_to "Advertise", advertise_path %></li>
+                  <li><%= link_to "Donate", donate_path %></li>
+                  <li><%= link_to "Social Media", social_path %></li>
                 </ul>
               </li>
               
-              
-            <% if logged_in? %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Account <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Profile", current_staff %></li>
-                  <li><%= link_to "HQ", hq_path %></li>
-                  <li class="divider"></li>
-                  <li>
-                    <%= link_to "Log out", logout_path, method: "delete" %>
-                  </li>
-                </ul>
-              </li>
-            <% else %>
-              <li><%= link_to "Log in", login_path %></li>
-            <% end %>
+
             
           </ul>
         </nav>
       </div>
     </header>
+    
+    <div class="wide">
+    	<div class="col-xs-5 line"><hr></div>
+      <div class="col-xs-2 logo">Logo</div>
+      <div class="col-xs-5 line"><hr></div>
+    </div>

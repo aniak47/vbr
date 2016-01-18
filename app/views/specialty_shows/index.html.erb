@@ -1,1 +1,11 @@
 <h1> This will show all the specialty shows </h1>
+
+<ul>
+  <% @specialty_shows.each do |show| %>
+    <li>
+      <h2><%= link_to show.name, show %></h2>
+      <p><%= show.day %></p>
+      
+    </li>
+  <% end %>
+</ul>
