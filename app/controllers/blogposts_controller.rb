@@ -10,9 +10,9 @@ class BlogpostsController < ApplicationController
     @blogpost = current_staff.blogposts.build(blogpost_params)
     if @blogpost.save
       flash[:success] = "Blog post created!"
-      redirect_to 'blogposts/index'
+      redirect_to @blogpost
     else
-      render 'blogposts/new'
+      render 'new'
     end
   end
   
