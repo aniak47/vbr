@@ -40,7 +40,7 @@ class StaffsController < ApplicationController
   def destroy
     Staff.find(params[:id]).destroy
     flash[:success] = "User deleted"
-    redirect_to users_url
+    redirect_to staffs_url
   end
   
   private
@@ -48,9 +48,9 @@ class StaffsController < ApplicationController
       params.require(:staff).permit(:name, :email, :password, :password_confirmation, :active, :hometown, :fav_music,
                                             :duties, :intrests, :avatar_url)
     end
+    
     # Before filters
 
-    
     # Confirms the correct user.
     def correct_staff
       @staff = Staff.find(params[:id])

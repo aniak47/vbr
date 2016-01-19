@@ -1,1 +1,31 @@
-<h1>Promo Stuff goes here </h1>
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h1> Rock and Roll Patrol</h1>
+            </div>
+        </div>
+        <h2>Upcoming Events</h2>
+        <% @promos.each do |event| %>
+            <div>
+              <h3><%= link_to event.name, event %></h3>
+              <p><%= event.date.strftime('%a %d %b %Y') %></p>
+              <p><%= event.time.strftime('%r') %></p>
+              <p><%= event.location %></p>
+            </div>
+          <% end %>
+        
+    </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+  </div>
+
+
+
+
+
+
+<div class="col-md-12">
+        
+
+</div>

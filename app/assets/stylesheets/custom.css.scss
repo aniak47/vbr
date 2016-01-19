@@ -219,3 +219,34 @@ input {
   height: 280px;
   border: solid black 2px;
 }
+
+
+
+
+/* calender */
+.calendar{
+  width:100%;
+  td th{
+    font-size: 10px;
+  }
+  td {
+    height: 80px;
+  }
+  th{
+    width: 14.285%;
+    text-align:center;
+  }
+  .notmonth{
+    color: #CCC;
+    text-align: top;
+    
+  }
+  .today{
+    background-color: #D7F2FF;
+  }
+  ul{
+    list-style-type: none;
+    margin: -20px 0 0 -20px;
+    font-size: 12px;
+  }
+}

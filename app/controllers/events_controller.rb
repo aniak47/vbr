@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
+  before_action :logged_in_staff, only: [:create, :new, :edit, :update, :destroy]
+  
   def index
     @events = Event.paginate(page: params[:page])
-    @events_by_date = Event.all.group_by(&:date)
+    @events_by_date = Event.unscoped.all.group_by(&:date)
     @date = params[:date]? Date.parse(params[:date]) : Date.today
   end
 
@@ -18,11 +20,32 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to events_url
     else
-      render new
+      render 'new'
     end
   end
   
+  def edit
+    @event = Event.find(params[:id])
+  end
+  
+  def update
+    @event = Event.find(params[:id])
+    if @event.update_attributes(event_params)
+      flash[:success] = "Event updated"
+      redirect_to @event
+    else
+      render 'edit'
+    end
+  end
+  
+  def delete
+    Event.find(params[:id]).destroy
+    flash[:success] = "Event deleted"
+    redirect_to events_url
+  end
+  
   def promo
+    @promos = Event.where(catergory: 'Promo')
   end
   
   private
