@@ -11,6 +11,19 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+      
+      <%= f.label :avatar_url, "Profile image url" %>
+      <%= f.text_field :avatar_url, class: 'form-control' %>
+      
+      <%= f.label :hometown %>
+      <%= f.text_field :hometown, class: 'form-control' %>
+      
+      <%= f.label :intrests %>
+      <%= f.text_field :intrests, class: 'form-control' %>
+      <%= f.label :duties, "What do you do at the station?" %>
+      <%= f.text_field :duties, class: 'form-control' %>
+      <%= f.label :fav_music, "Favorite mucis genres and artists" %>
+      <%= f.text_field :fav_music, class: 'form-control' %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
@@ -21,9 +34,5 @@
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @staff %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
-    </div>
   </div>
 </div>

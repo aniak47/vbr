@@ -1,26 +1,44 @@
-<h1>This is the staff profile page</h1>
-
 <% provide(:title, @staff.name) %>
-<div class="row">
-  
-  <aside class="col-md-4">
-    <section class="user_info">
 
-      <h1>
-        <%= gravatar_for @staff %>
-        <%= @staff.name %>
-      </h1>
-    </section>
-  </aside>
-  
-<div class="col-md-8">
-  
-    <% if @staff.blogposts.any? %>
-      <h3>Blogposts (<%= @staff.blogposts.count %>)</h3>
-      <ol class="blogposts">
-      <%= render @blogposts %>
-      </ol>
-      <%= will_paginate @blogposts %>
-    <% end %>
-    
-</div>
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h1><%= @staff.name %></h1>
+                <% if @staff.duties.present? %>
+                <h4> <%= @staff.duties %> </h4>
+                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+               <%= gravatar_for( @staff, size: 250) %>
+              <% if @staff.blogposts.any? %>
+                <h3>Blogposts (<%= @staff.blogposts.count %>)</h3>
+                <ol class="blogposts">
+                  <%= render @blogposts %>
+                </ol>
+                <%= will_paginate @blogposts %>
+              <% end %>
+            </div>
+            <div class="col-sm-6">
+              <h2>About Me</h2>
+                <% if @staff.hometown.present? %>
+                <h4>Hometown: <%= @staff.hometown %></h4>
+                <% end %>
+                <% if @staff.intrests.present? %>
+                <h4>Intrests:</h4>
+                <h5><%= @staff.intrests %></h5>
+                <% end %>
+                <% if @staff.fav_music.present? %>
+                <h4>Favorite Music:</h4>
+                <h5><%= @staff.fav_music %></h5>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+    </div>
+  </div>

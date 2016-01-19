@@ -1,6 +1,7 @@
 class StaffsController < ApplicationController
-  before_action :logged_in_staff, only: [:edit, :update]
+  before_action :logged_in_staff, only: [:create, :new, :edit, :update, :destroy]
   before_action :correct_staff,   only: [:edit, :update]
+  before_action :admin_staff, only: [:create, :new, :destroy]
   
 
   def show
@@ -36,10 +37,16 @@ class StaffsController < ApplicationController
     end
   end
   
+  def destroy
+    Staff.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
+  
   private
     def staff_params
-      params.require(:staff).permit(:name, :email, :password,
-                                   :password_confirmation)
+      params.require(:staff).permit(:name, :email, :password, :password_confirmation, :active, :hometown, :fav_music,
+                                            :duties, :intrests, :avatar_url)
     end
     # Before filters
 
@@ -48,5 +55,9 @@ class StaffsController < ApplicationController
     def correct_staff
       @staff = Staff.find(params[:id])
       redirect_to(root_url) unless current_staff?(@staff)
+    end
+    # Confirms an admin user.
+    def admin_staff
+      redirect_to(root_url) unless current_staff.admin?
     end
 end

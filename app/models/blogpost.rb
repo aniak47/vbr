@@ -3,6 +3,8 @@ class Blogpost < ActiveRecord::Base
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :staff_id, presence: true
+  validates :title, presence: true
+  validates :subtitle, presence: true
   validates :content, presence: true
   validate  :picture_size
 

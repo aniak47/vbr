@@ -20,10 +20,9 @@ Rails.application.routes.draw do
   get 'advertise'  => 'static_pages#advertise'
   get 'social'  => 'static_pages#social'
   
-  get 'addstaff'  => 'staffs#new'
   resources :staffs
   
-  resources :blogposts,          only: [:create, :destroy, :index]
+  resources :blogposts
   
   resources :specialty_shows
   
@@ -31,11 +30,9 @@ Rails.application.routes.draw do
   get 'promo' => 'events#promo'
   
   get 'hq'   => 'back_end_pages#main'
-  get 'postblog'   => 'back_end_pages#blog'
-  get 'addStaff'   => 'back_end_pages#add_staff'
-  get 'editProfile'   => 'back_end_pages#edit_profile'
+
   
-  resources :blogposts,          only: [:new, :show, :create, :destroy, :edit]
+  resources :articles,          only: [:new, :show, :create, :destroy, :edit]
   get 'news'  => 'articles#news'
   get 'sports'  => 'articles#sports'
   get 'station_news'  => 'articles#station_news'
