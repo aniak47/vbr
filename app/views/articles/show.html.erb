@@ -1,2 +1,33 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h3><%= @article.title %></h3>
+                <p><%= link_to @article.staff.name, @article.staff %> </h3>
+                | Posted <%= time_ago_in_words(@article.created_at) %> ago.
+                <% if current_staff?(@article.staff) %>
+                     <%= link_to "edit", edit_article_path(@article) %>
+                      | <%= link_to "delete", @article, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+                <% end %>
+                </p>
+            </div>
+        </div>
+        <div>
+            <p> <%= @article.content %> </p>
+            <% if @article.images.any? %>
+                <% @article.images.each do |image| %>
+                <div class"f-right">
+                    <div> <%= image_tag(image.picture.url, height:400) %></div>
+                    <p> <%= image.title %> </p>
+                </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+    </div>
+    
+</div>

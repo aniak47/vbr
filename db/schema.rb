@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119000426) do
+ActiveRecord::Schema.define(version: 20160121175829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20160119000426) do
     t.text     "content"
     t.text     "subtitle"
     t.integer  "staff_id"
-    t.string   "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "catergory"
   end
 
   add_index "articles", ["staff_id"], name: "index_articles_on_staff_id", using: :btree
@@ -53,6 +53,35 @@ ActiveRecord::Schema.define(version: 20160119000426) do
   end
 
   add_index "events", ["date", "catergory"], name: "index_events_on_date_and_catergory", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.time     "expire"
+    t.string   "picture"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "catergory"
+  end
+
+  add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
+
+  create_table "podcasts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "staff_id"
+    t.string   "audio"
+    t.string   "catergory"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "podcasts", ["catergory", "created_at"], name: "index_podcasts_on_catergory_and_created_at", using: :btree
+  add_index "podcasts", ["created_at"], name: "index_podcasts_on_created_at", using: :btree
+  add_index "podcasts", ["staff_id", "created_at"], name: "index_podcasts_on_staff_id_and_created_at", using: :btree
+  add_index "podcasts", ["staff_id"], name: "index_podcasts_on_staff_id", using: :btree
 
   create_table "specialty_shows", force: :cascade do |t|
     t.string   "name"
@@ -85,4 +114,5 @@ ActiveRecord::Schema.define(version: 20160119000426) do
 
   add_foreign_key "articles", "staffs"
   add_foreign_key "blogposts", "staffs"
+  add_foreign_key "podcasts", "staffs"
 end

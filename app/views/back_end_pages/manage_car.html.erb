@@ -1,0 +1,9 @@
+<h4><%= link_to "add to carousel",   carousel_path %></h4>
+
+<% @images.each do |image| %>
+<%= image_tag image.picture.url  %>
+<p><%= image.title  %></p>
+<p><%= image.description  %></p>
+<p><%= link_to "delete", @image, method: :delete,
+                            data: { confirm: "You sure?" } %></p>
+<% end %> 

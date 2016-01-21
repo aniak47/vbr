@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
+    @images = Image.carousel
+    @blogs = Blogpost.limit(10)
   end
 
   def help

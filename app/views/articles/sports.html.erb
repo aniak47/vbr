@@ -1,2 +1,19 @@
-<h1>Articles#sports</h1>
-<p>Find me in app/views/articles/sports.html.erb</p>
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h1>Sports</h1>
+            </div>
+        </div>
+
+        <div>
+             <% @articles.each do |article| %>
+               <%= render @articles %>
+            <% end %>
+        </div>
+          
+
+    </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+  </div>

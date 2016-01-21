@@ -4,8 +4,13 @@ class BackEndPagesController < ApplicationController
     def main
     end
 
-  
+    def add_carousel
+        @image = Image.new
+    end
     
+    def manage_car
+        @images = Image.carousel
+    end
 
     
 end

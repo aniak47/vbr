@@ -11,8 +11,9 @@
   
   <div class="carousel-inner">
     <div class="active item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+    <% @images.each do |image| %>
+        <div class="item"><%= image_tag image.picture.url  %></div>
+    <% end %>
   </div>
 
   <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
@@ -30,6 +31,11 @@
 </div>
 <div id="blogs" class="aframe">
     <p> blogs </p>
+    <ul>
+    <% @blogs.each do |blog| %>
+        <li><%= link_to blog.title, blog  %></li>
+    <% end %>
+    </ul>
 </div>
 <div id="ad-lgrec">
     <p>ad 2 </p>

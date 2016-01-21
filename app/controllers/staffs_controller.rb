@@ -56,8 +56,5 @@ class StaffsController < ApplicationController
       @staff = Staff.find(params[:id])
       redirect_to(root_url) unless current_staff?(@staff)
     end
-    # Confirms an admin user.
-    def admin_staff
-      redirect_to(root_url) unless current_staff.admin?
-    end
+   
 end
