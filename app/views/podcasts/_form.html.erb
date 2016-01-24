@@ -1,0 +1,19 @@
+<%= form_for(@podcast, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+    
+    <%= f.label :catergory %>
+    <%= f.select :catergory, options_for_select([["other"]]), class: 'form-control' %>
+    
+    <span class="picture">
+        <%= f.file_field :audio %>
+    </span>
+    
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+
+<% end %>

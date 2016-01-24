@@ -4,6 +4,6 @@
 <%= image_tag image.picture.url  %>
 <p><%= image.title  %></p>
 <p><%= image.description  %></p>
-<p><%= link_to "delete", @image, method: :delete,
+<p><%= link_to "delete", image, method: :delete,
                             data: { confirm: "You sure?" } %></p>
 <% end %> 

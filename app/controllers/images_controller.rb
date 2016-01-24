@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
     before_action :logged_in_staff, only: [:create, :edit, :update, :destroy]
+    
     def new
         @image = Image.new
     end
@@ -14,7 +15,10 @@ class ImagesController < ApplicationController
         end
     end
     
-    def delete
+    def update
+    end
+    
+    def destroy
         Image.find(params[:id]).destroy
         flash[:success] = "Image deleted"
         redirect_to mancar_url
@@ -26,6 +30,6 @@ class ImagesController < ApplicationController
     
     private
         def image_params
-            params.require(:image).permit(:title, :descrption, :expire, :type, :picture)
+            params.require(:image).permit(:title, :descrption, :expire, :catergory, :picture)
         end  
 end

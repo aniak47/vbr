@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-    scope :carousel, -> { where(catergory: 'Carousel') } 
+    scope :carousel, -> { where(catergory: 'carousel') } 
     mount_uploader :picture, PictureUploader
     validate  :picture_size
     validates :picture, presence: true

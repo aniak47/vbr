@@ -46,6 +46,7 @@ class EventsController < ApplicationController
   
   def promo
     @promos = Event.where(catergory: 'Promo')
+    @articles = Article.promo
   end
   
   private

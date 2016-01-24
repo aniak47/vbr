@@ -1,13 +1,17 @@
-<h3><%= link_to article.title, article %></h3>
-<p><%= article.subtitle %></p>
-<% if image = article.images.first %>
-    <div><%= image_tag(image.picture.url) %></div>
-<% end %>
-<span class="timestamp">
-    <%= link_to article.staff.name, article.staff %>
-    | Posted <%= time_ago_in_words(article.created_at) %> ago.
-    <% if logged_in? && current_staff?(article.staff) %>
-      <%= link_to "delete", article, method: :delete,
-                                       data: { confirm: "You sure?" } %>
+<div class="article">
+    <% if image = article.images.first %>
+        <%= image_tag(image.picture.url) %>
     <% end %>
-</span>
+    <h3><%= link_to article.title, article %></h3>
+    
+    <span class="timestamp">
+        <%= link_to article.staff.name, article.staff %>
+        | Posted <%= time_ago_in_words(article.created_at) %> ago.
+        <% if logged_in? && current_staff?(article.staff) %>
+          | <%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %>
+          | <%= link_to "edit", edit_article_path(article) %>
+        <% end %>
+    </span>
+    
+    <p><%= article.subtitle %></p>
+</div>

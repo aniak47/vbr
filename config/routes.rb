@@ -36,6 +36,6 @@ Rails.application.routes.draw do
   get 'sports'  => 'articles#sports'
   get 'station_news'  => 'articles#station_news'
   
-  resources :images,          only: [:create, :index]
+  resources :images,          only: [:create, :index, :destroy, :update]
   
 end
