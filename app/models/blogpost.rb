@@ -7,6 +7,7 @@ class Blogpost < ActiveRecord::Base
   validates :subtitle, presence: true
   validates :content, presence: true
   validate  :picture_size
+  belongs_to :blogable, polymorphic: true
 
   private
 

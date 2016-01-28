@@ -1,0 +1,26 @@
+<section class="blogpost_form">
+      
+  <%= form_for(@show) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <p> Select DJs affiliaed with this show</p>
+    <% staff = Staff.all.map { |s| [s.name, s.id] } %>
+    <% staff << ["Select DJ", 0] %>
+    <% 3.times do %>
+      <%= select_tag(name="choice[]", options_for_select(staff, 0)) %>
+    <% end %>
+    
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+
+      <%= f.label :day %>
+      <%= f.text_field :day, class: 'form-control' %>
+
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  
+  </section>

@@ -30,6 +30,6 @@ class ImagesController < ApplicationController
     
     private
         def image_params
-            params.require(:image).permit(:title, :descrption, :expire, :catergory, :picture)
+            params.require(:image).permit(:title, :description, :expire, :catergory, :picture)
         end  
 end

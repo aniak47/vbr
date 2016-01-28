@@ -1,0 +1,28 @@
+  <div class="row">
+    
+    <div class="col-sm-8">
+      
+      <div class="sec-head panel panel-default">
+          <div class="panel-body">
+              <h1>Specialty Shows</h1>
+              <p>Our specialty show hosts play a variety of music...</p>
+          </div>
+      </div>
+        
+      <ul class="blogposts">
+        <% @specialty_shows.each do |show| %>
+          <li>
+            <h2><%= link_to show.name, show %></h2>
+            <p><%= show.day %></p>
+          </li>
+        <% end %>
+      </ul>
+      
+    </div>
+    
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+    </div>
+    
+  </div>
+

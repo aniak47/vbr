@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121175829) do
+ActiveRecord::Schema.define(version: 20160128174216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,20 +24,25 @@ ActiveRecord::Schema.define(version: 20160121175829) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "catergory"
+    t.string   "video"
   end
 
+  add_index "articles", ["catergory", "created_at"], name: "index_articles_on_catergory_and_created_at", using: :btree
   add_index "articles", ["staff_id"], name: "index_articles_on_staff_id", using: :btree
 
   create_table "blogposts", force: :cascade do |t|
     t.text     "content"
     t.integer  "staff_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "picture"
     t.string   "title"
     t.string   "subtitle"
+    t.integer  "blogable_id"
+    t.string   "blogable_type"
   end
 
+  add_index "blogposts", ["blogable_type", "blogable_id"], name: "index_blogposts_on_blogable_type_and_blogable_id", using: :btree
   add_index "blogposts", ["staff_id", "created_at"], name: "index_blogposts_on_staff_id_and_created_at", using: :btree
   add_index "blogposts", ["staff_id"], name: "index_blogposts_on_staff_id", using: :btree
 
@@ -83,7 +88,7 @@ ActiveRecord::Schema.define(version: 20160121175829) do
   add_index "podcasts", ["staff_id", "created_at"], name: "index_podcasts_on_staff_id_and_created_at", using: :btree
   add_index "podcasts", ["staff_id"], name: "index_podcasts_on_staff_id", using: :btree
 
-  create_table "specialty_shows", force: :cascade do |t|
+  create_table "shows", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.text     "day"
@@ -91,9 +96,18 @@ ActiveRecord::Schema.define(version: 20160121175829) do
     t.time     "end"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "catergory"
   end
 
-  add_index "specialty_shows", ["name"], name: "index_specialty_shows_on_name", using: :btree
+  add_index "shows", ["name"], name: "index_shows_on_name", using: :btree
+
+  create_table "shows_staffs", id: false, force: :cascade do |t|
+    t.integer "show_id"
+    t.integer "staff_id"
+  end
+
+  add_index "shows_staffs", ["show_id"], name: "index_shows_staffs_on_show_id", using: :btree
+  add_index "shows_staffs", ["staff_id"], name: "index_shows_staffs_on_staff_id", using: :btree
 
   create_table "staffs", force: :cascade do |t|
     t.string   "name"

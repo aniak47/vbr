@@ -13,19 +13,18 @@
                 </p>
             </div>
         </div>
-
             <p> <b> <%= @article.subtitle %> </b> </p>
             <% if @article.images.any? %>
                 <% @article.images.each do |image| %>
                 <div>
-                    <div  class = "f-right captioned"> <%= image_tag(image.picture.url, height:400) %>
-                    <p> <b><%= image.title %></b>  <%= image.description %> </p>
+                    <div  class = "f-right captioned"> <%= image_tag(image.picture.url) %>
+                    <div class="caption"> <b><%= image.title %></b>  <%= image.description %> </div>
                     </div>
                 </div>
                 <% end %>
             <% end %>
-
         <p> <%= @article.content %> </p>
+        <div><%= video_tag(@article.video.url, width:500, controls: true) %></div>
     </div>
     
     <div class="col-sm-4">

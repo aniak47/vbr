@@ -1,0 +1,35 @@
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h1> <%= @show.name %> </h1>
+                <% if logged_in? && (current_staff.admin?) %>
+                    <%= link_to "edit", edit_show_path(@show) %>
+                    | <%= link_to "delete", @show, method: :delete,
+                    data: { confirm: "You sure?" } %>
+                    | <%= link_to "post a blog", new_blogpost_path(@show) %>
+                <% end %>
+            </div>
+        </div>
+        <div class="f-right info-box">
+            <h4>Tune in on</h4>
+            <p> <%= @show.day %> </p>
+            <p><%= @show.start %> - <%= @show.end %></p>
+            <p>Your hosts:</p>
+            <% @show.staffs.each do |staff| %>
+                <p><%= staff.name %></p>
+            <% end %>
+        </div>
+        <p><%= @show.description %> </p>
+        <h3>Blogposts (<%= @show.blogposts.count %>)</h3>
+        
+        
+        </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+  </div>
+
+
+
+
+

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   resources :podcasts
   
-  resources :specialty_shows
+  resources :shows
   
   resources :events
   get 'promo' => 'events#promo'

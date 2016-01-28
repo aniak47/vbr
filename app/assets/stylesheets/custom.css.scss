@@ -102,7 +102,7 @@ input {
   width: 600px;
   li {
     padding: 10px 0;
-    border-top: 1px solid #602020;
+    border-top: 1px solid #c2c2d6;
     clear: left;
     overflow: auto;
     h3{
@@ -309,8 +309,10 @@ input {
     border: 1px solid #29293d;
     padding: 5px;
     font-size: 12px;
+    display: table;
+    border-bottom: 0;
     img{
-      height:300px;
+      width:300px;
     }
     
   }
@@ -323,4 +325,17 @@ input {
   right: 10px;
   margin: 5px;
 
+}
+
+.info-box{
+  border: 1px solid #cccccc;
+  padding: 30px;
+  background-color: #f2f2f2;
+}
+.caption{
+  display: table-caption;
+  caption-side: bottom;
+  border: 1px black solid;
+  border-top: 0;
+  padding: 5px;
 }

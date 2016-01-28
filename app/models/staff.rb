@@ -1,4 +1,5 @@
 class Staff < ActiveRecord::Base
+  has_and_belongs_to_many :shows
   has_many :blogposts, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :podcasts

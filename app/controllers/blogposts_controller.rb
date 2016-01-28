@@ -4,11 +4,17 @@ class BlogpostsController < ApplicationController
   
   def new
     @blogpost = current_staff.blogposts.build if logged_in?
+    @id = params[:format]
   end
   
   def create
     @blogpost = current_staff.blogposts.build(blogpost_params)
     if @blogpost.save
+      id = params[:show].to_i
+      unless id === 0
+        show = Show.find()
+        show.blogposts << @blogpost
+      end
       flash[:success] = "Blog post created!"
       redirect_to @blogpost
     else
@@ -47,7 +53,7 @@ class BlogpostsController < ApplicationController
   private
 
     def blogpost_params
-      params.require(:blogpost).permit(:title, :subtitle, :content, :picture)
+      params.require(:blogpost).permit(:title, :subtitle, :content, :picture, :blogable_id, :blogable_type)
     end
     
     def correct_staff
