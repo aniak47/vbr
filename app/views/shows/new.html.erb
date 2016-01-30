@@ -3,6 +3,8 @@
   <%= form_for(@show, :html => {:multipart => true}) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     
+    <%= f.label :catergory %>
+    <%= f.select :catergory, options_for_select([["specialty"], ["podcast"]]), class: 'form-control' %>
     
     <p> Select DJs affiliaed with this show</p>
     <% staff = Staff.all.map { |s| [s.name, s.id] } %>

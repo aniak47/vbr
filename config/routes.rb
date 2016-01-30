@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :blogposts
   
   resources :podcasts
+  get 'pod_shows' => 'podcasts#shows'
   
   resources :shows
   

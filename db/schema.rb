@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128174216) do
+ActiveRecord::Schema.define(version: 20160129062807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,10 +81,12 @@ ActiveRecord::Schema.define(version: 20160128174216) do
     t.string   "catergory"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "show_id"
   end
 
   add_index "podcasts", ["catergory", "created_at"], name: "index_podcasts_on_catergory_and_created_at", using: :btree
   add_index "podcasts", ["created_at"], name: "index_podcasts_on_created_at", using: :btree
+  add_index "podcasts", ["show_id"], name: "index_podcasts_on_show_id", using: :btree
   add_index "podcasts", ["staff_id", "created_at"], name: "index_podcasts_on_staff_id_and_created_at", using: :btree
   add_index "podcasts", ["staff_id"], name: "index_podcasts_on_staff_id", using: :btree
 
@@ -128,5 +130,6 @@ ActiveRecord::Schema.define(version: 20160128174216) do
 
   add_foreign_key "articles", "staffs"
   add_foreign_key "blogposts", "staffs"
+  add_foreign_key "podcasts", "shows"
   add_foreign_key "podcasts", "staffs"
 end

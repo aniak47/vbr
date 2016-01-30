@@ -2,7 +2,7 @@
 <li id="blogpost-<%= blogpost.id %>">
   
   <%= link_to gravatar_for(blogpost.staff, size: 50), blogpost.staff %>
-  <%= image_tag(blogpost.picture.url, height:100) if blogpost.picture? %>
+  <%= image_tag(blogpost.picture.url(:thumb), height:100) if blogpost.picture? %>
   <h3><%= link_to blogpost.title, blogpost %></h3>
   <p><%= blogpost.subtitle %></p>
   <span class="timestamp">

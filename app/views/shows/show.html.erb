@@ -11,17 +11,38 @@
                 <% end %>
             </div>
         </div>
-        <div class="f-right info-box">
-            <h4>Tune in on</h4>
-            <p> <%= @show.day %> </p>
-            <p><%= @show.start %> - <%= @show.end %></p>
-            <p>Your hosts:</p>
-            <% @show.staffs.each do |staff| %>
-                <p><%= staff.name %></p>
+        
+        <% if @show.images.exists? %>
+            <% @show.images.each do |image| %>
+                <%= image_tag(image.picture.url, width: 380) %>
             <% end %>
-        </div>
+        <% end %>
+        
+        <% if @show.catergory === "specialty" %>
+            <div class="f-right info-box">
+                <h4>Tune in on</h4>
+                <p> <%= @show.day %> </p>
+                <p><%= @show.start.strftime("%H:%M%p") %> - <%= @show.end.strftime("%H:%M%p") %></p>
+                <p>Your hosts:</p>
+                <% @show.staffs.each do |staff| %>
+                    <p><%= staff.name %></p>
+                <% end %>
+            </div>
+        <% end %>
         <p><%= @show.description %> </p>
         <h3>Blogposts (<%= @show.blogposts.count %>)</h3>
+        <% @show.blogposts.each do |blogpost| %>
+        <h3><%= link_to blogpost.title, blogpost %></h3>
+        <p><%= blogpost.subtitle %></p>
+        <span class="timestamp">
+            <%= link_to blogpost.staff.name, blogpost.staff %>
+            | Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+            <% if logged_in? && current_staff?(blogpost.staff) %>
+              <%= link_to "delete", blogpost, method: :delete,
+                                               data: { confirm: "You sure?" } %>
+            <% end %>
+        </span>
+        <% end %>
         
         
         </div>

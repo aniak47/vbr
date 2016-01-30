@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_staff.articles.build(article_params)
-
         if @article.save
           flash[:success] = "Article created!"
           redirect_to '/news'

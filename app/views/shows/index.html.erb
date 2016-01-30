@@ -13,7 +13,10 @@
         <% @specialty_shows.each do |show| %>
           <li>
             <h2><%= link_to show.name, show %></h2>
-            <p><%= show.day %></p>
+            <h6><%= show.day %></h6>
+            <% if logged_in? %>
+            <%= link_to "edit", edit_show_path(show) %>
+            <% end %>
           </li>
         <% end %>
       </ul>

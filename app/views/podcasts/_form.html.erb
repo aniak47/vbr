@@ -14,6 +14,14 @@
         <%= f.file_field :audio %>
     </span>
     
+          Image:
+          
+        <%= f.fields_for :image do |builder| %>
+            <span class="picture">
+                <%= builder.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+            </span>
+        <% end %>
+        
     <%= f.submit "Submit", class: "btn btn-primary" %>
 
 <% end %>

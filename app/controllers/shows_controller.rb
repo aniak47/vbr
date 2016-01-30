@@ -4,7 +4,7 @@ class ShowsController < ApplicationController
     before_action :admin_staff, only: [:delete, :new]
     
     def index
-        @specialty_shows = Show.all
+        @specialty_shows = Show.specialty
     end
     def show
         @show = Show.find(params[:id])
@@ -27,6 +27,7 @@ class ShowsController < ApplicationController
     
     def edit
         @show = Show.find(params[:id])
+        @show.images.build
     end
   
     def update
@@ -49,8 +50,8 @@ class ShowsController < ApplicationController
     private
     
         def show_params
-          params.require(:show).permit(:name, :description, :day, :start, :end, 
-                        :images_attributes => [:id, :title, :descrption, :expire, :type, :picture])
+          params.require(:show).permit(:name, :description, :day, :start, :end, :catergory,
+                        :images_attributes => [:id, :title, :descrption, :expire, :catergory, :picture])
         end
         
         def can_access

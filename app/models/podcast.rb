@@ -15,6 +15,10 @@
 
 class Podcast < ActiveRecord::Base
   belongs_to :staff
+  belongs_to :show
+  has_one :image, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :image, :reject_if => lambda { |a| a[:picture].blank? }, :allow_destroy => true
+  
   default_scope -> { order(created_at: :desc) }
   mount_uploader :audio, AudioUploader
   
@@ -22,6 +26,5 @@ class Podcast < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 100 }
   validates :staff_id, presence: true
   validates :audio, presence: true
-
 
 end

@@ -3,6 +3,7 @@ class PodcastsController < ApplicationController
   
   def new
     @podcast = current_staff.podcasts.build if logged_in?
+    @podcast.build_image
   end
   
   def create
@@ -17,6 +18,7 @@ class PodcastsController < ApplicationController
 
   def edit
     @podcast = Podcast.find(params[:id])
+    @podcast.build_image if @podcast.image.nil?
   end
   
   def update
@@ -43,10 +45,15 @@ class PodcastsController < ApplicationController
     @podcast = Podcast.find(params[:id])
   end
   
+  def shows
+    @shows = Show.podcast
+  end
+  
   private
 
     def podcast_params
-      params.require(:podcast).permit(:title, :description, :audio, :catergory)
+      params.require(:podcast).permit(:title, :description, :audio, :catergory,
+                        :image_attributes => [:id, :title, :description, :catergory, :picture])
     end
     
 end

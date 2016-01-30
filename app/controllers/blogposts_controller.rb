@@ -12,7 +12,7 @@ class BlogpostsController < ApplicationController
     if @blogpost.save
       id = params[:show].to_i
       unless id === 0
-        show = Show.find()
+        show = Show.find(id)
         show.blogposts << @blogpost
       end
       flash[:success] = "Blog post created!"
