@@ -1,27 +1,35 @@
-<h1>Podcasts#show</h1>
-
-<li>
-  <span class="content">
-    <%= @podcast.title %>
-    
-<audio controls>
-  <source src=<%= @podcast.audio.url %> type="audio/mp3">
-  Your browser does not support the audio element.
-</audio>
-
-  </span>
-   
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(@podcast.created_at) %> ago.
-    <% if current_staff?(@podcast.staff) %>
-      <%= link_to "delete", @podcast, method: :delete,
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h1><%= @podcast.title %></h1>
+                  <span class="timestamp">
+                    Posted <%= time_ago_in_words(@podcast.created_at) %> ago.
+                    <% if current_staff?(@podcast.staff) %>
+                      <%= link_to "delete", @podcast, method: :delete,
                                        data: { confirm: "You sure?" } %>
-      | <%= link_to "edit", edit_podcast_path(@podcast) %>
-    <% end %>
-  </span>
-</li>
-<% if @podcast.image %>
+                      | <%= link_to "edit", edit_podcast_path(@podcast) %>
+                    <% end %>
+                  </span>
+            </div>
+        </div>
+        <div>
+            <p>Posted by: <%= @podcast.show.name %></p>
+            <p>Genre: <%= @podcast.catergory %></p>
+            <% if @podcast.image %>
+              <div><%= image_tag(@podcast.image.picture.url, width: 100) %></div>
+            <% end %>
+            <p><%= @podcast.description %></p>
+              
+            <audio controls>
+              <source src=<%= @podcast.audio.url %> type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+         
+         </div>
+    </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+  </div>
 
-    <div><%= image_tag(@podcast.image.picture.url, width: 100) %></div>
 
-<% end %>

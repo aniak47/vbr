@@ -1,18 +1,17 @@
 class Image < ActiveRecord::Base
-    scope :carousel, -> { where(catergory: 'carousel') } 
-    mount_uploader :picture, PictureUploader
-    validate  :picture_size
-    validates :picture, presence: true
-    belongs_to :imageable, polymorphic: true
-    
-    #carousel validate title + descrption
-    # expires after today
-    
-    
+  
+  mount_uploader :picture, PictureUploader
+  
+  belongs_to :imageable, polymorphic: true
+  
+  validate  :picture_size
+  validates :picture, presence: true
+  
+  scope :carousel, -> { where(catergory: 'carousel') } 
   
     
     private
-
+    
     # Validates the size of an uploaded picture.
     def picture_size
       if picture.size > 5.megabytes

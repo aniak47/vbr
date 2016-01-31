@@ -1,5 +1,6 @@
 class PodcastsController < ApplicationController
   before_action :logged_in_staff, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def new
     @podcast = current_staff.podcasts.build if logged_in?
@@ -52,8 +53,13 @@ class PodcastsController < ApplicationController
   private
 
     def podcast_params
-      params.require(:podcast).permit(:title, :description, :audio, :catergory,
+      params.require(:podcast).permit(:title, :description, :audio, :catergory, :show_id,
                         :image_attributes => [:id, :title, :description, :catergory, :picture])
+    end
+    
+    def correct_staff
+      @podcast = current_staff.podcasts.find_by(id: params[:id])
+      redirect_to root_url if @podcast.nil?
     end
     
 end

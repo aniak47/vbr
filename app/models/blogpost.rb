@@ -1,14 +1,17 @@
 class Blogpost < ActiveRecord::Base
-  belongs_to :staff
-  default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
+  
+  belongs_to :staff
+  belongs_to :blogable, polymorphic: true
+
   validates :staff_id, presence: true
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 200 }
   validates :subtitle, presence: true
   validates :content, presence: true
   validate  :picture_size
-  belongs_to :blogable, polymorphic: true
 
+  default_scope -> { order(created_at: :desc) }
+  
   private
 
     # Validates the size of an uploaded picture.

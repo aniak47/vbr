@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
     has_many :images, as: :imageable, dependent: :destroy
     accepts_nested_attributes_for :images, :reject_if => lambda { |a| a[:picture].blank? }, :allow_destroy => true
     
-    validates :title, presence: true
+    validates :title, presence: true, length: { maximum: 200 }
     validates :content, presence: true
     validates :staff_id, presence: true
     validates :catergory, inclusion: { in: %w(news sports station promo)}

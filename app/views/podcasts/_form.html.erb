@@ -4,11 +4,14 @@
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
     
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
+    <% shows = Show.all.map { |s| [s.name, s.id] } %>
+    <%= f.select :show_id, options_for_select(shows) %>
     
     <%= f.label :catergory %>
     <%= f.select :catergory, options_for_select([["other"]]), class: 'form-control' %>
+    
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
     
     <span class="picture">
         <%= f.file_field :audio %>

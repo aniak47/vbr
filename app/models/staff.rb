@@ -3,6 +3,7 @@ class Staff < ActiveRecord::Base
   has_many :blogposts, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :podcasts
+  has_many :top_tens
   
   
   

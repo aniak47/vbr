@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
     before_action :logged_in_staff, only: [:create, :new, :edit, :update, :delete]
-    # before_action :can_access, only: [:create, :new, :edit, :update, :delete]
-    before_action :admin_staff, only: [:delete, :new]
+    before_action :can_access, only: [:create, :new, :edit, :update, :delete]
+    before_action :admin_staff, only: [:delete, :new, :create]
     
     def index
         @specialty_shows = Show.specialty
@@ -56,7 +56,7 @@ class ShowsController < ApplicationController
         
         def can_access
             @show = current_staff.shows.find_by(id: params[:id])
-            redirect_to root_url unless !@show.nil? || admin_staff
+            redirect_to root_url unless !(@show.nil?) || current_staff.admin?
         end
         
         def show_staff

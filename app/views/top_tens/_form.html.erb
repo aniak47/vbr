@@ -1,0 +1,72 @@
+<%= form_for(@top) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+    
+    <%= f.label :ten_song, "#10 Song Title" %>
+    <%= f.text_field :ten_song, class: 'form-control' %>
+    
+    <%= f.label :ten_artist, "#10 Artist" %>
+    <%= f.text_field :ten_artist, class: 'form-control' %>
+    
+    <%= f.label :nine_song, "#9 Song Title" %>
+    <%= f.text_field :nine_song, class: 'form-control' %>
+    
+    <%= f.label :nine_artist, "#9 Artist" %>
+    <%= f.text_field :nine_artist, class: 'form-control' %>
+    
+    <%= f.label :eight_song, "#8 Song Title" %>
+    <%= f.text_field :eight_song, class: 'form-control' %>
+    
+    <%= f.label :eight_artist, "#8 Artist" %>
+    <%= f.text_field :eight_artist, class: 'form-control' %>
+    
+    <%= f.label :seven_song, "#7 Song Title" %>
+    <%= f.text_field :seven_song, class: 'form-control' %>
+    
+    <%= f.label :seven_artist, "#7 Artist" %>
+    <%= f.text_field :seven_artist, class: 'form-control' %>
+    
+    <%= f.label :six_song, "#6 Song Title" %>
+    <%= f.text_field :six_song, class: 'form-control' %>
+    
+    <%= f.label :six_artist, "#6 Artist" %>
+    <%= f.text_field :six_artist, class: 'form-control' %>
+    
+    <%= f.label :five_song, "#5 Song Title" %>
+    <%= f.text_field :five_song, class: 'form-control' %>
+    
+    <%= f.label :five_artist, "#5 Artist" %>
+    <%= f.text_field :five_artist, class: 'form-control' %>
+    
+    <%= f.label :four_song, "#4 Song Title" %>
+    <%= f.text_field :four_song, class: 'form-control' %>
+    
+    <%= f.label :four_artist, "#4 Artist" %>
+    <%= f.text_field :four_artist, class: 'form-control' %>
+    
+    <%= f.label :three_song, "#3 Song Title" %>
+    <%= f.text_field :three_song, class: 'form-control' %>
+    
+    <%= f.label :three_artist, "#3 Artist" %>
+    <%= f.text_field :three_artist, class: 'form-control' %>
+    
+    <%= f.label :two_song, "#2 Song Title" %>
+    <%= f.text_field :two_song, class: 'form-control' %>
+    
+    <%= f.label :two_artist, "#2 Artist" %>
+    <%= f.text_field :two_artist, class: 'form-control' %>
+    
+    <%= f.label :one_song, "#1 Song Title" %>
+    <%= f.text_field :one_song, class: 'form-control' %>
+    
+    <%= f.label :one_artist, "#1 Artist" %>
+    <%= f.text_field :one_artist, class: 'form-control' %>
+    
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+
+<% end %>

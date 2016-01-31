@@ -39,4 +39,6 @@ Rails.application.routes.draw do
   
   resources :images,          only: [:create, :index, :destroy, :update]
   
+  resources :top_tens
+  
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129062807) do
+ActiveRecord::Schema.define(version: 20160130214916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160129062807) do
     t.string   "catergory"
   end
 
+  add_index "images", ["catergory"], name: "index_images_on_catergory", using: :btree
   add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
 
   create_table "podcasts", force: :cascade do |t|
@@ -128,8 +129,40 @@ ActiveRecord::Schema.define(version: 20160129062807) do
 
   add_index "staffs", ["email"], name: "index_staffs_on_email", unique: true, using: :btree
 
+  create_table "top_tens", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "staff_id"
+    t.string   "one_song"
+    t.string   "one_artist"
+    t.string   "two_song"
+    t.string   "two_artist"
+    t.string   "three_song"
+    t.string   "three_artist"
+    t.string   "four_song"
+    t.string   "four_artist"
+    t.string   "five_song"
+    t.string   "five_artist"
+    t.string   "six_song"
+    t.string   "six_artist"
+    t.string   "seven_song"
+    t.string   "seven_artist"
+    t.string   "eight_song"
+    t.string   "eight_artist"
+    t.string   "nine_song"
+    t.string   "nine_artist"
+    t.string   "ten_song"
+    t.string   "ten_artist"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "top_tens", ["created_at"], name: "index_top_tens_on_created_at", using: :btree
+  add_index "top_tens", ["staff_id"], name: "index_top_tens_on_staff_id", using: :btree
+
   add_foreign_key "articles", "staffs"
   add_foreign_key "blogposts", "staffs"
   add_foreign_key "podcasts", "shows"
   add_foreign_key "podcasts", "staffs"
+  add_foreign_key "top_tens", "staffs"
 end

@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-    before_action :logged_in_staff, only: [:create, :edit, :update, :destroy]
+    before_action :logged_in_staff, only: [:new, :create, :edit, :update, :destroy]
     
     def new
         @image = Image.new
