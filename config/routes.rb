@@ -41,4 +41,8 @@ Rails.application.routes.draw do
   
   resources :top_tens
   
+  resources :account_activations, only: [:edit, :update]
+  
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  
 end

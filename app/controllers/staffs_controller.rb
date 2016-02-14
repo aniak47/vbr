@@ -17,9 +17,9 @@ class StaffsController < ApplicationController
   def create
     @staff = Staff.new(staff_params)
     if @staff.save
-      log_in @staff
-      flash[:success] = "Sign up successful!"
-      redirect_to @staff
+      StaffMailer.account_activation(@staff).deliver_now
+      flash[:info] = "New staff added."
+      redirect_to root_url
     else
       render 'new'
     end
