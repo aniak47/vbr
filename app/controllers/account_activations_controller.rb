@@ -1,5 +1,6 @@
 class AccountActivationsController < ApplicationController
-    before_action :correct_activation
+    before_action :get_staff
+    before_action :valid_staff
     
     
     def edit
@@ -10,6 +11,7 @@ class AccountActivationsController < ApplicationController
           @staff.errors.add(:password, "can't be empty")
           render 'edit'
         elsif @staff.update_attributes(user_params)
+          staff.activate
           log_in @staff
           flash[:success] = "Acount is now activated! Now Edit your profile."
           redirect_to @staff
@@ -19,13 +21,20 @@ class AccountActivationsController < ApplicationController
     end
     
       private
-
-    def user_params
-      params.require(:user).permit(:password, :password_confirmation, :name)
-    end
-    
-    private
-      def correct_activation
-        
+      
+      def staff_params
+        params.require(:staff).permit(:password, :password_confirmation, :name)
+      end
+      
+      def get_staff
+        @staff = Staff.find_by(email: params[:email])
+      end
+      
+      # Confirms a valid user.
+      def valid_staff
+        unless staff && !staff.activated? && staff.authenticated?(:activation, params[:id])
+          flash[:danger] = "Invalid activation link"
+          redirect_to root_url
+        end
       end
 end

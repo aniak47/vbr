@@ -1,7 +1,6 @@
 class Staff < ActiveRecord::Base
   
-  attr_accessor :activation_token, :reset_token
-  attr_accessor :remember_token
+  attr_accessor :activation_token, :reset_token, :remember_token
   before_save   :downcase_email
   before_create :create_activation_digest
   
@@ -40,13 +39,6 @@ class Staff < ActiveRecord::Base
     BCrypt::Password.new(digest).is_password?(token)
   end
 
-  # Returns true if the given token matches the digest.
-  def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
-  end
-
   # Returns the hash digest of the given string.
   def Staff.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -60,10 +52,6 @@ class Staff < ActiveRecord::Base
     update_attribute(:remember_digest, Staff.digest(remember_token))
   end
   
-  # Returns a random token.
-  def Staff.new_token
-    SecureRandom.urlsafe_base64
-  end
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
@@ -83,6 +71,17 @@ class Staff < ActiveRecord::Base
   # Sends password reset email.
   def send_password_reset_email
     StaffMailer.password_reset(self).deliver_now
+  end
+  
+  # Activates an account.
+  def activate
+    update_attribute(:activated,    true)
+    update_attribute(:activated_at, Time.zone.now)
+  end
+  
+  # Sends activation email.
+  def send_activation_email
+    StaffMailer.account_activation(self).deliver_now
   end
     
     private

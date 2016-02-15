@@ -6,9 +6,16 @@ class SessionsController < ApplicationController
   def create
     staff = Staff.find_by(email: params[:session][:email].downcase)
     if staff && staff.authenticate(params[:session][:password])
-      log_in staff
-      remember staff
-      redirect_back_or staff
+      if staff.activated?
+        log_in staff
+        params[:session][:remember_me] == '1' ? remember(staff) : forget(staff)
+        redirect_back_or staff
+      else
+        message  = "Account not activated. "
+        message += "Check your email for the activation link."
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
