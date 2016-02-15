@@ -9,7 +9,7 @@ module SessionsHelper
       @current_staff ||= Staff.find_by(id: staff_id)
     elsif (staff_id = cookies.signed[:staff_id])
       staff = Staff.find_by(id: staff_id)
-      if staff && staff.authenticated?(cookies[:remember_token])
+      if staff && staff.authenticated?(:remember, cookies[:remember_token])
         log_in staff
         @current_staff = staff
       end
