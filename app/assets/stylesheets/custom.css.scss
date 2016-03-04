@@ -5,16 +5,29 @@
 
 body {
   padding-top: 60px;
-  background-color: #1a000d;
+  background-color: black;
 }
-
 section {
   overflow: auto;
 }
-
-
+#topbar{
+  width: 1000px;
+  height: 50px;
+  background-color: #4d0000;
+  margin: -10px -10px 10px -10px;
+}
+#disk{
+  width: 70px;
+  position: absolute;
+  height: 70px;
+  background-image: url(/assets/smdisk.gif);
+  border-radius: 100%;
+  background-size:contain;
+  top: -10px;
+}
 .navbar{
   height: 100px;
+  background-color: black;
 
   .navbar-nav{
     margin-top: 50px;
@@ -31,38 +44,37 @@ textarea {
 .center {
   text-align: center;
 }
-
 .center h1 {
   margin-bottom: 10px;
 }
 .wide {
   width:100%;
-  height: 90%;
+  height: 70%;
   background-size:cover;
   background-image: url(/assets/records.jpg);
   background-size: cover;
   margin-top: -20px;
   position: fixed;
+  box-shadow: 0px -50px 90px 40px black inset;
 }
 .admin-bar{
   position: fixed;
   top: 100px;
 }
 .page-content{
-  background-color:   #262626;
-  min-height:500px;
+  background-color:   black;
+  min-height: 500px;
   margin: auto;
   position: relative;
   top: 300px;
   padding: 10px;
-  border-top: solid 20px #602020;
   margin: auto;
   width: 1000px;
   overflow: auto;
   margin-bottom: 50px;
 }
 .page-content > div{
-    margin: 5px;
+    margin: 15px;
     
 }
 .footer{
@@ -133,8 +145,6 @@ input {
     }
   }
 }
-
-
 /* carosol */
 .carousel-fade .carousel-inner .item {
   opacity: 0;
@@ -161,21 +171,21 @@ input {
 }
 
 .carousel, .carousel-inner, .carousel-inner .item {
-  height: 410px;
-  width: 700px;
+  height: 370px;
+  width: 600px;
 }
 .carousel{
   float: right;
+  margin: 10px;
   .item{
     
     img{
-      height: 400px;
+      height: 370px;
       width: auto;
-      padding-top: 10px;
+      padding: 0;
       margin: auto;
     }
   }
-  
   .topleft {
     position: absolute;
     font-size: 30px;
@@ -185,29 +195,76 @@ input {
     text-shadow: 0 0 10px black;
   }
 }
-
-
-.item:nth-child(1) {
-  background: silver;
+.caro{
+  padding: 5px;
+  overflow: auto;
 }
-
-
-
-
+.wrap1{
+  background-color: #452121;
+  overflow: auto;
+  padding: 10px;
+  margin: 30px;
+}
 .aframe{
-  border-top: solid 5px #602020;
+  .smimg{
+    img{
+      box-shadow: 0px 0px 10px 10px #1a1a1a inset;
+    }
+    padding: 0;
+    height: auto;
+    margin: 0;
+  }
+  border-top:  #602020;
   overflow-y: auto;
-  background-color: white;
+  background-color:  #d9d9d9;
+  margin: 10px;
+  padding: 0;
+  div{
+    background-color:  #130606;
+    margin: 0px;
+    padding: 0;
+    height: auto;
+    
+  }
+  h3{
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
+    color: white;
+    font-size: 20px;
+  }
+  a{
+    color: #737373;
+  }
+}
+#on-air{
+  width: 250px;
+  height: 250px;
+  float: left;
+  background-color: black;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  opacity: .7;
+  display: block;
   h3{
     text-align: center;
   }
-  
 }
-
-#on-air{
+#con2{
+  display: block;
   width: 250px;
-  height: 150px;
+  clear: left;
+  height: 50px;
   float: left;
+  background-color: black;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  opacity: .7;
+  h3{
+    text-align: center;
+  }
 }
 #ad-square {
   float: left;
@@ -232,24 +289,23 @@ input {
   height: 400px;
   ul{
     list-style-type: none;
+    
   }
 }
 #blogs {
   float: left;
   width: 305px;
   height: 400px;
-  
-  div{
-    margin-bottom: 15px;
+  ul{
+    padding: 10px 30px 20px 50px;
   }
-
   li{
     margin: 5px 20px 10px 0;
-    font-size: 12px;
-    list-style-type: circle;
+    font-size: 14px;
+    list-style-type: disk #ac3939;
     line-height: 130%;
+    
   }
-
 }
 #blogs::-webkit-scrollbar { 
   display: none;
@@ -260,10 +316,6 @@ input {
   height: 280px;
   border: solid black 2px;
 }
-
-
-
-
 /* calender */
 .calendar{
   width:100%;
@@ -291,18 +343,15 @@ input {
     font-size: 12px;
   }
 }
-
 .article{
   border-top: 1px solid #602020;
   overflow: auto;
-  
   img{
     width: 100px;
     float: right;
     margin: 5px;
   }
 }
-
 .article-show{
   font-size: 15px;
   .captioned{
@@ -314,19 +363,14 @@ input {
     img{
       width:300px;
     }
-    
   }
-  
 }
-
 .social{
   position: fixed;
   top: 5px;
   right: 10px;
   margin: 5px;
-
 }
-
 .info-box{
   border: 1px solid #cccccc;
   padding: 30px;

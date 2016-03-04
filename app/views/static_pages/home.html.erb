@@ -1,35 +1,46 @@
-<div id="on-air" class="aframe">
-    <p>on air now</p>
-</div>
+<div class="wrap1">
+    <div id="on-air">
+        <h3><b>ON AIR NOW</b></h3>
+        <hr>
+        <p><b>Show name</b></p>
+        <p>DJ name</p>
+        <hr>
+        <h4>Listener Line</h4>
+        <p>607-273-2121</p>
+    </div>
+    <div id="con2">
+        <p>Click here for....</p>
+    </div>
+    
+    <div class="caro">
+    <div id="carousel" class="carousel slide carousel-fade">
+      <% n = @images.size %>
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <% n.times do %>
+        <li data-target="#carousel" data-slide-to="<%= n %>"></li>
+        <% end %>
+      </ol>
+      
+      <div class="carousel-inner">
+        <div class="active item"><img src="/assets/newest604.jpg"/></div>
+        <% @images.each do |image| %>
+            <div class="item"><%= image_tag image.picture.url  %> <div class="topleft"><%= image.title %></div></div>
+        <% end %>
+      </div>
+    
+      <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
+      <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+    </div>
+    </div>
 
-<div id="carousel" class="carousel slide carousel-fade">
-  <% n = @images.size %>
-  <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <% n.times do %>
-    <li data-target="#carousel" data-slide-to="<%= n %>"></li>
-    <% end %>
-  </ol>
-  
-  <div class="carousel-inner">
-    <div class="active item"><img src="/assets/newest604.jpg"/></div>
-    <% @images.each do |image| %>
-        <div class="item"><%= image_tag image.picture.url  %> <div class="topleft"><%= image.title %></div></div>
-    <% end %>
-  </div>
-
-  <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
-  <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
-</div>
-
-<div id="ad-square">
-    <p>ad 1</p>
 </div>
 <div id="promote" >
     <img src="/assets/djservice.jpg" width="970px" height="150px" />
 </div>
 <div id="podcasts" class="aframe">
-    <h3> Podcasts </h3>
+    <div><h3> Podcasts </h3></div>
+    
     <ul>
     <% @podcasts.each do |pod| %>
         <li><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>  <%= link_to pod.title, pod  %></li>
@@ -37,7 +48,9 @@
     </ul>
 </div>
 <div id="blogs" class="aframe">
-    <div><h3> From our DJs </h3></div>
+    <div class="smimg"><img src="/assets/mic.jpg" width="305px" height="120px"/></div>
+    <div><h3> FROM OUR DJs </h3></div>
+    
     <ul>
     <% @blogs.each do |blog| %>
         <li><%= link_to blog.title, blog  %></li>
