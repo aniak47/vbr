@@ -11,6 +11,7 @@
             </div>
         </div>
         <div class="row">
+          <div class="wapper">
             <div class="col-sm-6">
                <%= gravatar_for( @staff, size: 250) %>
               <% if @staff.blogposts.any? %>
@@ -34,7 +35,7 @@
                 <h4>Favorite Music:</h4>
                 <h5><%= @staff.fav_music %></h5>
                 <% end %>
-
+              </div>
             </div>
         </div>
     </div>

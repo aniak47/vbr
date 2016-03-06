@@ -13,8 +13,10 @@
                 </p>
             </div>
         </div>
+        <div class="wapper">
         <div class="f-right"> <%= image_tag(@blogpost.picture.url, height:400) if @blogpost.picture? %> </div>
         <p><%= @blogpost.content %></p>
+        </div>
         
     </div>
     <div class="col-sm-4">

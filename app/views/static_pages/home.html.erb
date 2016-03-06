@@ -43,7 +43,7 @@
     
     <ul>
     <% @podcasts.each do |pod| %>
-        <li><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>  <%= link_to pod.title, pod  %></li>
+        <li> <%= link_to pod.title, pod  %></li>
     <% end %>
     </ul>
 </div>
@@ -58,7 +58,15 @@
     </ul>
 </div>
 <div id="ad-lgrec">
-    <p>ad 2 </p>
+    <h2>ad </h2>
+</div>
+<div id="news" class="aframe">
+    <div class="newspic"><%= image_tag(@news.first.images.first.picture.url) %></div>
+    <ul>
+    <% @news.each do |news| %>
+        <li><%= link_to news.title, news  %></li>
+    <% end %>
+    </ul>
 </div>
 
 

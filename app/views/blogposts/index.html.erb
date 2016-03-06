@@ -6,11 +6,13 @@
                 <h1>DJ Blog Posts</h1>
             </div>
         </div>
+        <div class="wapper">
         <%= will_paginate %>
         <ul class="blogposts">
           <%= render @blogposts %>
         </ul>
         <%= will_paginate %>
+        </div>
     </div>
     <div class="col-sm-4">
       <p>This column is for adds and links to featured items</p>

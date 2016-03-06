@@ -19,7 +19,10 @@
   <div class="row">
 
       <div class="page-content">
-        <div id="topbar"></div>
+        <div id="topbar">
+          <div class="disk"></div>
+          <h1>ITHACA'S REAL ROCK RADIO</h1>
+        </div>
         <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>

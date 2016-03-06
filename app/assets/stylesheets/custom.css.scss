@@ -12,9 +12,14 @@ section {
 }
 #topbar{
   width: 1000px;
-  height: 50px;
-  background-color: #4d0000;
+  height: 100px;
+  background-color: black;
+  border-top: solid 10px #4d0000;
   margin: -10px -10px 10px -10px;
+  h1{
+    margin-left: 200px;
+    font-style: Impact, Charcoal, sans-serif;
+  }
 }
 #disk{
   width: 70px;
@@ -55,7 +60,8 @@ textarea {
   background-size: cover;
   margin-top: -20px;
   position: fixed;
-  box-shadow: 0px -50px 90px 40px black inset;
+  box-shadow: 0px -50px 120px 40px black inset;
+  opacity: .4;
 }
 .admin-bar{
   position: fixed;
@@ -70,7 +76,7 @@ textarea {
   padding: 10px;
   margin: auto;
   width: 1000px;
-  overflow: auto;
+ 
   margin-bottom: 50px;
 }
 .page-content > div{
@@ -176,7 +182,7 @@ input {
 }
 .carousel{
   float: right;
-  margin: 10px;
+  margin: 5px;
   .item{
     
     img{
@@ -196,14 +202,14 @@ input {
   }
 }
 .caro{
-  padding: 5px;
+  padding: 0px;
   overflow: auto;
 }
 .wrap1{
-  background-color: #452121;
+  background-color: #4d0000;
   overflow: auto;
-  padding: 10px;
-  margin: 30px;
+  padding: 5px;
+  margin: 40px;
 }
 .aframe{
   .smimg{
@@ -238,14 +244,14 @@ input {
   }
 }
 #on-air{
-  width: 250px;
-  height: 250px;
+  width: 320px;
+  height: 280px;
   float: left;
   background-color: black;
   color: #ffffff;
-  padding: 10px;
-  margin: 10px;
-  opacity: .7;
+  padding: 5px;
+  margin: 5px;
+  opacity: 1;
   display: block;
   h3{
     text-align: center;
@@ -253,14 +259,14 @@ input {
 }
 #con2{
   display: block;
-  width: 250px;
+  width: 320px;
   clear: left;
-  height: 50px;
+  height: 80px;
   float: left;
   background-color: black;
   color: #ffffff;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   opacity: .7;
   h3{
     text-align: center;
@@ -288,8 +294,14 @@ input {
   width: 305px;
   height: 400px;
   ul{
-    list-style-type: none;
-    
+    list-style-type: disk #ac3939;
+    margin: 30px 50px 0 0;
+  }
+    li{
+    margin: 5px 20px 10px 0;
+    font-size: 14px;
+    list-style-type: disk #ac3939;
+    line-height: 100%;
   }
 }
 #blogs {
@@ -312,9 +324,11 @@ input {
 }
 #ad-lgrec {
   float: right;
-  width: 336px;
+  width: 280px;
   height: 280px;
-  border: solid black 2px;
+  border: solid white 2px;
+  background-color: white;
+  opacity: .5;
 }
 /* calender */
 .calendar{
@@ -382,4 +396,31 @@ input {
   border: 1px black solid;
   border-top: 0;
   padding: 5px;
+}
+.wapper{
+  background-color: #F5F5F5;
+  padding: 10px;
+  overflow: auto;
+}
+.disk{
+  border-radius: 100%;
+  width: 140px;
+  height: 140px;
+  background-image: url(/assets/disk.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: -40px;
+  left: 30px;
+  box-shadow: 0 0 20px gray;
+}
+#news{
+  float: left;
+  height: 300px;
+  width: 640px;
+}
+.newspic{
+  float: left;
+  height: 300px;
+  width: 300px;
 }
