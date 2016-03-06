@@ -13,6 +13,7 @@
                 </p>
             </div>
         </div>
+        <div class="wapper">
             <p> <b> <%= @article.subtitle %> </b> </p>
             <% if @article.images.any? %>
                 <% @article.images.each do |image| %>
@@ -24,7 +25,10 @@
                 <% end %>
             <% end %>
         <p> <%= @article.content %> </p>
+        <% if @article.video? %>
         <div><%= video_tag(@article.video.url, width:500, controls: true) %></div>
+        <% end %>
+        </div>
     </div>
     
     <div class="col-sm-4">

@@ -2,10 +2,11 @@
     <div class="col-sm-8">
         <div class="sec-head panel panel-default">
             <div class="panel-body">
-                <h1>DJ Blog Posts</h1>
+                <h1>Podcasts</h1>
             </div>
         </div>
-        <div>
+        
+        <div class="wapper">
         <% @podcasts.each do |podcast| %>
             <div>
               <h2><%= link_to podcast.title, podcast %></h2>
@@ -16,7 +17,6 @@
                 <% end %>
                   </span>
                   <p>Genre: <%= podcast.catergory %></p>
-                  <p><%= podcast.description %></p>
                   
                   <audio controls>
                   <source src=<%= podcast.audio.url %> type="audio/mp3">
@@ -31,11 +31,3 @@
     <div class="col-sm-4">
       <p>This column is for adds and links to featured items</p>
   </div>
-
-
-
-
-
-
-        
-

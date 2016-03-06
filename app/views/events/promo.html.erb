@@ -5,6 +5,7 @@
                 <h1> Rock and Roll Patrol</h1>
             </div>
         </div>
+        <div class="wapper">
         <h2>Upcoming Events</h2>
         <% @promos.each do |event| %>
             <div>
@@ -18,6 +19,7 @@
         <% @articles.each do |article| %>
                <%= render @articles %>
         <% end %>
+    </div>
     </div>
     <div class="col-sm-4">
       <p>This column is for adds and links to featured items</p>

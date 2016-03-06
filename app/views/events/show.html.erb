@@ -3,7 +3,7 @@
         <h1><%= @event.name %></h1>
     </div>
 </div>
-
+    <div class="wapper">
     <p><%= @event.date.strftime('%a %d %b %Y') %> | <%= @event.time.strftime('%r') %> | <%= @event.location %></p>
     <% if logged_in? %>
                      <%= link_to "edit", edit_event_path(@event) %>
@@ -11,3 +11,4 @@
                                        data: { confirm: "You sure?" } %>
                 <% end %>
     <h3><%= @event.blurb %></h3>
+    </div>

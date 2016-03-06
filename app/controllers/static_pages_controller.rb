@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @blogs = Blogpost.limit(10)
     @podcasts = Podcast.limit(10)
     @news = Article.news.limit(10)
+    @image = Image.first
   end
 
   def help

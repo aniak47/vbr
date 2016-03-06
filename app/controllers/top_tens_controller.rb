@@ -18,6 +18,13 @@ class TopTensController < ApplicationController
   end
   
   def update
+    @top = TopTen.find(params[:id])
+    if @top.update_attributes(top_params)
+      flash[:success] = "Top Ten updated"
+      redirect_to @top
+    else
+      render 'edit'
+    end
   end
   
   def delete

@@ -11,7 +11,7 @@
                 <% end %>
             </div>
         </div>
-        
+        <div class="wapper">
         <% if @show.images.exists? %>
             <% @show.images.each do |image| %>
                 <%= image_tag(image.picture.url, width: 380) %>
@@ -30,6 +30,26 @@
             </div>
         <% end %>
         <p><%= @show.description %> </p>
+        <% if  @show.podcasts.any? %>
+          <% @show.podcasts.each do |podcast| %>
+            <div>
+              <h2><%= link_to podcast.title, podcast %></h2>
+              <span class="timestamp">
+                Posted <%= time_ago_in_words(podcast.created_at) %> ago.
+                <% if current_staff?(podcast.staff) %>
+                  <%= link_to "delete", podcast, method: :delete, data: { confirm: "You sure?" } %>
+                <% end %>
+                  </span>
+                  <p>Genre: <%= podcast.catergory %></p>
+                  
+                  <audio controls>
+                  <source src=<%= podcast.audio.url %> type="audio/mp3">
+                  Your browser does not support the audio element.
+                  </audio>
+
+            </div>
+         <% end %>
+        <% end %>
         <h3>Blogposts (<%= @show.blogposts.count %>)</h3>
         <% @show.blogposts.each do |blogpost| %>
         <h3><%= link_to blogpost.title, blogpost %></h3>
@@ -43,7 +63,7 @@
             <% end %>
         </span>
         <% end %>
-        
+        </div>
         
         </div>
     <div class="col-sm-4">

@@ -1,6 +1,6 @@
 class PodcastsController < ApplicationController
   before_action :logged_in_staff, only: [:new, :create, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_staff, only: [:edit, :update, :destroy]
   
   def new
     @podcast = current_staff.podcasts.build if logged_in?
