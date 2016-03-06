@@ -61,7 +61,7 @@
     <h2>ad </h2>
 </div>
 <div id="news" class="aframe">
-    <div class="newspic"><%= image_tag(@news.first.images.first.picture.url) %></div>
+    <div class="newspic"><%= image_tag(@news.first.images.first.picture.url,  width:"300px", height:"300px") %></div>
     <ul>
     <% @news.each do |news| %>
         <li><%= link_to news.title, news  %></li>
