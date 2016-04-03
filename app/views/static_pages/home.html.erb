@@ -1,27 +1,30 @@
 <div class="wrap1">
     <div id="on-air">
         <h3><b>ON AIR NOW</b></h3>
+        <div>
+        <h5><b>The Rock and Roll Club</b></h5>
+        <h6>Anna Kryczka, Sanat Valencha and Steve Brightenstein</h6>
+        <p>Four hours of nothing but vinyl every firday night. Listen to music strait from the grooves of our favorite records. </p>
+        </div>
+        
+        <h4>Listener Line -- 607-273-2121</h4>
         <hr>
-        <p><b>Show name</b></p>
-        <p>DJ name</p>
-        <hr>
-        <h4>Listener Line</h4>
-        <p>607-273-2121</p>
+        <div id="donate"> CLICK HERE TO DONATE! </div>
+        
     </div>
-    <div id="con2">
-        <p>Click here for....</p>
-    </div>
+
     
     <div class="caro">
     <div id="carousel" class="carousel slide carousel-fade">
+        
       <% n = @images.size %>
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" >
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <% n.times do %>
         <li data-target="#carousel" data-slide-to="<%= n %>"></li>
         <% end %>
       </ol>
-      
+    
       <div class="carousel-inner">
         <div class="active item"><img src="/assets/newest604.jpg"/></div>
         <% @images.each do |image| %>
@@ -29,15 +32,45 @@
         <% end %>
       </div>
     
-      <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
-      <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+      <a class="carousel-control left" href="#carousel" data-slide="prev"> ‹ </a>
+      <a class="carousel-control right" href="#carousel" data-slide="next"> › </a>
+      
     </div>
     </div>
 
 </div>
+
 <div id="promote" >
     <img src="/assets/djservice.jpg" width="970px" height="150px" />
 </div>
+
+<div id="blogs" class="aframe">
+   
+    <div><h3> FROM OUR DJs </h3></div>
+    
+    <ul>
+    <% @blogs.each do |blog| %>
+        <li><%= link_to blog.title, blog  %></li>
+    <% end %>
+    </ul>
+    <h6 ><%= link_to "See all blogs", blogposts_path  %> </h6>
+</div>
+
+<div id="news" class="aframe">
+    <div class="newspic"><%= image_tag(@image.picture,  width:"300px", height:"400px") %></div>
+    <div>
+        <h3> News Center </h3>
+    </div>
+    <div>
+    <ul>
+    <% @news.each do |news| %>
+        <li><%= link_to news.title, news  %></li>
+    <% end %>
+    </ul>
+    </div>
+</div>
+
+
 <div id="podcasts" class="aframe">
     <div><h3> Podcasts </h3></div>
     
@@ -47,30 +80,11 @@
     <% end %>
     </ul>
 </div>
-<div id="blogs" class="aframe">
-    <div class="smimg"><img src="/assets/mic.jpg" width="305px" height="120px"/></div>
-    <div><h3> FROM OUR DJs </h3></div>
-    
-    <ul>
-    <% @blogs.each do |blog| %>
-        <li><%= link_to blog.title, blog  %></li>
-    <% end %>
-    </ul>
-</div>
+
 <div id="ad-lgrec">
     <h2>ad </h2>
 </div>
-<div id="news" class="aframe">
-    <div class="newspic"><%= image_tag(@image.picture,  width:"300px", height:"300px") %></div>
-    <div class="articles">
-        <h3> News Center </h3>
-    </div>
-    <ul>
-    <% @news.each do |news| %>
-        <li><%= link_to news.title, news  %></li>
-    <% end %>
-    </ul>
-</div>
+
 
 
 

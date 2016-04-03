@@ -4,6 +4,7 @@ class AccountActivationsController < ApplicationController
     
     
     def edit
+      
     end
     
     def update
@@ -32,7 +33,7 @@ class AccountActivationsController < ApplicationController
       
       # Confirms a valid user.
       def valid_staff
-        unless staff && !staff.activated? && staff.authenticated?(:activation, params[:id])
+        unless @staff && !@staff.activated? && @staff.authenticated?(:activation, params[:id])
           flash[:danger] = "Invalid activation link"
           redirect_to root_url
         end

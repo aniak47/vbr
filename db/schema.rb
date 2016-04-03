@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214230552) do
+ActiveRecord::Schema.define(version: 20160402205642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,25 @@ ActiveRecord::Schema.define(version: 20160214230552) do
   add_index "podcasts", ["show_id"], name: "index_podcasts_on_show_id", using: :btree
   add_index "podcasts", ["staff_id", "created_at"], name: "index_podcasts_on_staff_id_and_created_at", using: :btree
   add_index "podcasts", ["staff_id"], name: "index_podcasts_on_staff_id", using: :btree
+
+  create_table "shifts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "blurb"
+    t.time     "start"
+    t.time     "end"
+    t.boolean  "active"
+    t.string   "day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shifts_staffs", id: false, force: :cascade do |t|
+    t.integer "staff_id"
+    t.integer "shift_id"
+  end
+
+  add_index "shifts_staffs", ["shift_id"], name: "index_shifts_staffs_on_shift_id", using: :btree
+  add_index "shifts_staffs", ["staff_id"], name: "index_shifts_staffs_on_staff_id", using: :btree
 
   create_table "shows", force: :cascade do |t|
     t.string   "name"

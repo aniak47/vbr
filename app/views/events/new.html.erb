@@ -4,6 +4,7 @@
   </div>
 </div>
 <section class="blogpost_form">
+  <div class="aframe">
       
   <%= form_for(@event) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
@@ -28,5 +29,5 @@
 
       <%= f.submit "Create Event", class: "btn btn-primary" %>
     <% end %>
-  
-  </section>
+  </div>
+</section>

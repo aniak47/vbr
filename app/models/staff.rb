@@ -5,11 +5,14 @@ class Staff < ActiveRecord::Base
   before_create :create_activation_digest
   
   has_and_belongs_to_many :shows
+  has_and_belongs_to_many :shifts
   has_many :blogposts, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :podcasts
   has_many :top_tens
   
+  scope :activated, -> { where(activated: true) } 
+
   
   
   before_save { self.email = email.downcase }
