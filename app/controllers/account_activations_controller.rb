@@ -1,6 +1,6 @@
 class AccountActivationsController < ApplicationController
     before_action :get_staff
-    before_action :valid_staff
+    before_action :valid_staff,  only: [:edit]
     
     
     def edit
