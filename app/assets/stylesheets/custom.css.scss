@@ -465,3 +465,32 @@ input {
   float: left;
   
 }
+
+.schedule{
+  width: 990px;
+  margin: auto;
+  td tr{
+    height: 80px;
+    font-size: 10px;
+    padding: 0;
+    
+  }
+  td {
+    height: 80px;
+    padding: 0;
+    border: 1px solid black;
+    vertical-align: top;
+    width: 140px;
+  }
+  tr{
+    text-align:center;
+  }
+  .shift{
+  background-color: blue;
+  width: 141px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  
+}
+}

@@ -1,4 +1,6 @@
 class ShiftsController < ApplicationController
+  include ShiftsHelper
+  
   before_action :logged_in_staff, only: [:create, :new, :edit, :update, :destroy]
   
   def new
@@ -37,6 +39,11 @@ class ShiftsController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def schedule
+    @date = params[:date]? Date.parse(params[:date]) : Date.today
+    @shifts = Shift.all.group_by(&:day)
   end
   
   private

@@ -11,7 +11,7 @@ class AccountActivationsController < ApplicationController
         if params[:staff][:password].empty?
           @staff.errors.add(:password, "can't be empty")
           render 'edit'
-        elsif @staff.update_attributes(user_params)
+        elsif @staff.update_attributes(staff_params)
           staff.activate
           log_in @staff
           flash[:success] = "Acount is now activated! Now Edit your profile."
@@ -24,7 +24,7 @@ class AccountActivationsController < ApplicationController
       private
       
       def staff_params
-        params.require(:staff).permit(:password, :password_confirmation, :name)
+        params.require(:staff).permit(:email, :password, :password_confirmation, :name)
       end
       
       def get_staff
