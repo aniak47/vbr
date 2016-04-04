@@ -12,7 +12,7 @@ class AccountActivationsController < ApplicationController
           @staff.errors.add(:password, "can't be empty")
           render 'edit'
         elsif @staff.update_attributes(staff_params)
-          staff.activate
+          @staff.activate
           log_in @staff
           flash[:success] = "Acount is now activated! Now Edit your profile."
           redirect_to @staff
