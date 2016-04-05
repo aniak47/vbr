@@ -229,29 +229,30 @@ input {
     height: auto;
     margin: 0;
   }
-  border-top:  gray solid 2px;
   overflow-y: auto;
-  background-color:  #d9d9d9;
+  background-color:  rgb(255, 255, 255);
+  border-top: red;
   margin: 10px;
   padding: 0;
   div{
     margin: 0px;
     padding: 0;
     height: auto;
-    background-color: #cc3333;
   }
   h3{
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     margin: 0px;
-    color: black;
+    color: red;
     font-size: 20px;
-    color: white;
+    font-family: Impact, Charcoal, sans-serif;
   }
   a{
     color: black;
-    font-weight: bold;
-    
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  }
+  h6{
+    text-align: center;
   }
 }
 #on-air{
@@ -329,20 +330,44 @@ input {
   }
 }
 #blogs {
-  float: left;
-  width: 305px;
-  height: 400px;
-  ul{
-    padding: 20px 30px 20px 50px;
-    list-style-type: circle;
+  overlow: auto;
+  table{
+    width: 100%;
+    td{
+      padding: 10px;
+      width: 49%;
+      background-color: #eee;
+      border: 4px black solid;
+      vertical-align: top;
+      margin: 3px;
+      img{
+        float: left;
+        margin: 10px;
+      }
+    }
   }
-  li{
-    margin: 5px 20px 10px 0;
-    font-size: 14px;
-    list-style-type: disk #ac3939;
-    line-height: 120%;
-    
+
+  h6{
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+    a{
+    color: black;
+    }
   }
+  h5{
+    font-size: 11px;
+    margin: 0;
+    a{
+      color: #4d0000;  
+    }
+
+  }
+  p{
+    margin: 0;
+  }
+  
+
 }
 .aframe::-webkit-scrollbar { 
   display: none;
@@ -444,9 +469,11 @@ input {
   float: left;
   height: 400px;
   width: 670px;
+  overflow: hidden;
 
   ul{
-    margin: 15px;
+    margin: 20px;
+    text-align: left;
   }
   :nth-child(2){
     float: right;
@@ -455,8 +482,9 @@ input {
   :nth-child(3){
     float: right;
     width: 370px;
-    background-color: white;
+    border: 0;
     height: 350px;
+    overflow: auto;
   }
 }
 .newspic{
@@ -493,4 +521,12 @@ input {
   color: white;
   
 }
+}
+.bframe{
+  width: 100%;
+  h3{
+    color: red;
+    font-size: 40px;
+    
+  }
 }

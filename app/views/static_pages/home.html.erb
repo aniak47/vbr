@@ -43,18 +43,34 @@
 <div id="promote" >
     <img src="/assets/djservice.jpg" width="970px" height="150px" />
 </div>
+  <div class="row">
+    <div class="col-sm-8">
+         <div class="bframe" id="blogs">
+            <h3> DJ BLOGS </h3>
+            <table>
+                <% @blogs.each do |blog| %>
+              <tr>
+                 <% blog.each do |b| %>
+                    <td>
+                        <%= image_tag(b.picture.url(:thumb), height:100) if b.picture? %>
+                        <h6><%= link_to b.title, b  %></h6>
+                        <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
+                        <p><%= truncate(b.content, length: 200)  %></p>
+                    </td>
+                 <% end %>
+              </tr>
+              <% end %>
+            </table>
+            <ul>
 
-<div id="blogs" class="aframe">
-   
-    <div><h3> FROM OUR DJs </h3></div>
-    
-    <ul>
-    <% @blogs.each do |blog| %>
-        <li><%= link_to blog.title, blog  %></li>
-    <% end %>
-    </ul>
-    <h6 ><%= link_to "See all blogs", blogposts_path  %> </h6>
-</div>
+            <h6 ><%= link_to "See all blogs", blogposts_path  %> </h6>
+        </div> 
+
+    </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+    </div>
+  </div>
 
 <div id="news" class="aframe">
     <div class="newspic"><%= image_tag(@image.picture,  width:"300px", height:"400px") %></div>

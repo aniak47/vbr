@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @images = Image.carousel
-    @blogs = Blogpost.limit(10)
+    @blogs = Blogpost.limit(6).in_groups_of(2)
     @podcasts = Podcast.limit(10)
     @news = Article.news.limit(10)
     @image = Image.first
