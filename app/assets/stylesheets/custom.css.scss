@@ -6,22 +6,34 @@
 body {
   padding-top: 60px;
   background-color: black;
-
+  a{
+    color: maroon;
+  }
 }
 section {
   overflow: auto;
 }
 #topbar{
-  width: 800px;
-  height: 120px;
+  width: 620px;
+  height: 70px;
   border-radius: 15em;
-  background-color: gray;
+  background-color: black;
   margin: auto;
-  margin-top: -100px;
+  left: 240px;
+  top: -50px;
+  background-image: url(/assets/chrome.jpg);
+  position: absolute;
+  box-shadow: inset 0px -1px 10px rgba(0,0,0,0.5);
+  img{
+    position: absolute;
+    top: -60px;
+    left: -20px;
+  }
   
   h1{
-    margin-left: 200px;
+    margin-left: 150px;
     font-style: Impact, Charcoal, sans-serif;
+    font-size: 30px;
   }
 }
 #disk{
@@ -64,7 +76,7 @@ textarea {
   margin-top: -20px;
   position: fixed;
   box-shadow: 0px -50px 120px 40px black inset;
-  opacity: .4;
+  opacity: .6;
 }
 .admin-bar{
   position: fixed;
@@ -77,10 +89,16 @@ textarea {
   position: relative;
   top: 300px;
   padding: 20px;
+  padding-top: 50px;
   margin: auto;
-  width: 90%;
-  min-width: 1000px;
+  width: 100%;
+  min-width: 1100px;
   margin-bottom: 50px;
+  box-shadow: 0 0 10px 10px black;
+  .pc1{
+    width: 1100px;
+    margin: auto;
+  }
 }
 .page-content > div{
     margin: 15px;
@@ -121,7 +139,9 @@ input {
   list-style: none;
   padding: 0;
   width: 100%;
+
   li {
+
     padding: 10px 0;
     border-top: 1px solid #c2c2d6;
     clear: left;
@@ -139,6 +159,8 @@ input {
     .timestamp {
       color: $gray-light;
       margin-left: 0px;
+      font-weight: bold;
+
     }
     .gravatar {
       float: left;
@@ -218,17 +240,10 @@ input {
   border-top: red solid 2px;
   padding: 10px;
   margin: auto;
+  margin-top: 30px;
 }
 .aframe{
 
-  .smimg{
-    img{
-      box-shadow: 0px 0px 10px 10px #1a1a1a inset;
-    }
-    padding: 0;
-    height: auto;
-    margin: 0;
-  }
   overflow-y: auto;
   background-color:  rgb(255, 255, 255);
   border-top: red;
@@ -254,6 +269,9 @@ input {
   h6{
     text-align: center;
   }
+  h1{
+    text-align: center;
+  }
 }
 #on-air{
   width: 300px;
@@ -268,6 +286,11 @@ input {
       background-color: red;
       border-radius: 10em;
       text-align: center;
+      margin: 10px;
+  }
+  h6{
+    color: red;
+    margin-top: 0;
   }
   div{
     border-top: solid gray 1px;
@@ -280,6 +303,7 @@ input {
   }
   h3{
     text-align: left;
+    margin-top: 0;
   }
 }
 #con2{
@@ -315,31 +339,43 @@ input {
   height: 150px;
 }
 #podcasts {
-  float: left;
-  width: 305px;
-  height: 400px;
-  ul{
-    list-style-type: disk #ac3939;
-    margin: 30px 50px 0 0;
+  div{
+    background-color: #eee;
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center; 
+    display: inline-block;
+    margin: 3px;
   }
-    li{
-    margin: 5px 20px 10px 0;
-    font-size: 14px;
-    list-style-type: disk #ac3939;
-    line-height: 100%;
+  h6{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    a{
+      color: white;
+    }
   }
 }
 #blogs {
   overlow: auto;
   table{
     width: 100%;
+
     td{
       padding: 10px;
       width: 49%;
       background-color: #eee;
-      border: 4px black solid;
+      border: 10px black solid;
       vertical-align: top;
       margin: 3px;
+      div{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 110px;
+      }
+      
       img{
         float: left;
         margin: 10px;
@@ -347,26 +383,6 @@ input {
     }
   }
 
-  h6{
-    margin: 0;
-    font-weight: bold;
-    font-size: 15px;
-    a{
-    color: black;
-    }
-  }
-  h5{
-    font-size: 11px;
-    margin: 0;
-    a{
-      color: #4d0000;  
-    }
-
-  }
-  p{
-    margin: 0;
-  }
-  
 
 }
 .aframe::-webkit-scrollbar { 
@@ -379,8 +395,16 @@ input {
   border: solid white 2px;
   background-color: white;
   opacity: .5;
+  margin: 40px;
 }
 /* calender */
+#month{
+  text-align: center;
+  font-size: 40px;
+  a{
+    color: black;
+  }
+}
 .calendar{
   width:100%;
   td th{
@@ -449,9 +473,10 @@ input {
 }
 .wapper{
   background-color: #F5F5F5;
-  padding: 10px;
+  background-color: #76614D;
+  padding: 30px;
   overflow: auto;
-  border-top: 5px solid gray;
+  border-top: 4px solid  #4d0000;
 }
 .disk{
   border-radius: 100%;
@@ -467,30 +492,19 @@ input {
 }
 #news{
   float: left;
-  height: 400px;
-  width: 670px;
-  overflow: hidden;
-
-  ul{
-    margin: 20px;
-    text-align: left;
-  }
-  :nth-child(2){
-    float: right;
-    width: 370px;
-  }
-  :nth-child(3){
-    float: right;
-    width: 370px;
-    border: 0;
-    height: 350px;
+  overflow: auto;
+  .art{
+    background-color: #eee;
+    width: 98%;
     overflow: auto;
+    padding: 20px;
+    margin: 5px;
   }
+
 }
 .newspic{
-  height: 400px;
-  width: 300px;
   float: left;
+  margin-right: 20px;
   
 }
 
@@ -527,6 +541,171 @@ input {
   h3{
     color: red;
     font-size: 40px;
-    
+    margin: 20px;
   }
+    h6{
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+    a{
+    color: black;
+    }
+  }
+  h5{
+    font-size: 11px;
+    margin: 0;
+    a{
+      color: #4d0000;  
+    }
+  }
+  p{
+    margin: 0;
+  }
+}
+#events{
+  background-color: #1b1818;
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+  div{
+    width: 100%;
+    padding: 10px;
+    div{
+    background-color: #eee;
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 3px;
+    }
+    h6{
+        margin: 0;
+      a{
+        color: white;
+        font-size: 20px;
+    }
+    } 
+    h1{
+      margin: 0px;
+      text-align: center;
+      font-size: 28px;
+    }
+  }
+  h2{
+    color: red;
+    margin: 20px;
+    margin-bottom: 50px;
+  }
+  p{
+    color: red;
+  }
+}
+
+.panel{
+  background-color: #1b1818;
+  border: gray;
+  border-top: 2px  maroon;
+  color: white;
+  margin: 20px;
+  border-radius: 0;
+  box-shadow: 0 0 5px 5px #1b1818;
+  p{
+    fornt-size: 20px;
+    color: gray;
+  }
+  h1{
+    font-size: 60px;
+    color: maroon;
+    margin: 10px;
+  }
+  
+}
+.boxlist{
+  div{
+    background-color: #eee;
+    background-color: #cccccc;
+    border-top: red 1px solid;
+    margin: 10px;
+    overflow: auto;
+    padding: 10px;
+    h5{
+      margin: 0;
+      a{
+        color: maroon;
+      }
+    }
+    h3{
+      margin: 0;
+      a{
+        color: black;
+      }
+    }
+    h6{
+      margin: 0;
+      color: black;
+
+    }
+    img{
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+.ashow{
+
+    margin: auto;
+    margin-bottom: 30px;
+    height: 400px;
+    width: 700px;
+    background-size: cover;
+    padding: 20px;
+    color: white;
+  h2{
+    margin: 0;
+    a{
+      color: 	#211212;
+    }
+  }
+  div{
+    height: 130px;
+    opacity: .7;
+    background: black;
+    margin-top: 230px;
+    padding: 10px;
+  }
+  hr{
+    margin: 5px;
+  }
+}
+.showshow{
+  color: #1a1a1a;
+  h1{
+    font-size: 50px;
+    margin: 0;
+    color: 	#211212;
+  }
+  img{
+    margin: auto;
+  }
+  hr{
+    color:	#211212;
+        border-top: 1px solid;
+  }
+  h4{
+    margin: 0;
+  }
+  a{
+    color: 	#211212;
+  }
+  h2{
+    color: 	#211212;
+    margin: 0;
+  }
+  h3{
+    margin: 0;
+  }
+}
+.center{
+  margin: auto;
 }

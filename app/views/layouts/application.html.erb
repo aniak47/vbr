@@ -18,9 +18,9 @@
 <div class="container-fluid">
   
 
-      <div class="page-content">
+      <div class="page-content"><div class="pc1">
         <div id="topbar">
-
+           <%= image_tag("/assets/play.png",  height:"170px")%>
           <h1>ITHACA'S REAL ROCK RADIO</h1>
         </div>
         <% flash.each do |message_type, message| %>
@@ -29,7 +29,7 @@
         <%= yield %>
         <%= render 'layouts/footer' %>
          <%= debug(params) %>
-    </div>
+      </div></div>
 
 
 </div>

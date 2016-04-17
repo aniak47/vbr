@@ -1,21 +1,26 @@
 
   <div class="row">
-    <div class="col-sm-8">
         <div class="sec-head panel panel-default">
             <div class="panel-body">
                 <h1>DJ Blog Posts</h1>
+                <p> Check here for interesting content rought to you by our DJs.</p>
             </div>
         </div>
-        <div class="wapper">
+        <hr>
+    <div class="col-sm-8">
+
+        <div>
         <%= will_paginate %>
-        <ul class="blogposts">
+        <div class="boxlist">
           <%= render @blogposts %>
         </ul>
         <%= will_paginate %>
         </div>
+      </div>
     </div>
     <div class="col-sm-4">
       <p>This column is for adds and links to featured items</p>
+    </div>
   </div>
 
 

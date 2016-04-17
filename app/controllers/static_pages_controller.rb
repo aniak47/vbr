@@ -3,8 +3,8 @@ class StaticPagesController < ApplicationController
     @images = Image.carousel
     @blogs = Blogpost.limit(6).in_groups_of(2)
     @podcasts = Podcast.limit(10)
-    @news = Article.news.limit(10)
-    @image = Image.first
+    @news = Article.news.limit(6)
+    @events = Event.limit(6)
   end
 
   def help

@@ -27,5 +27,6 @@ class Podcast < ActiveRecord::Base
   validates :staff_id, presence: true
   validates :show_id, presence: true
   validates :audio, presence: true
+  validates_presence_of :image
 
 end

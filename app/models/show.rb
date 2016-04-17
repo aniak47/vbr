@@ -10,6 +10,7 @@ class Show < ActiveRecord::Base
     validates :catergory, inclusion: { in: %w(specialty podcast)}, allow_blank: true
     validates :end, presence: true, if: :specialty?
     validates :start, presence: true, if: :specialty?
+    validates_presence_of :images
     
     scope :specialty, -> { where(catergory: 'specialty') } 
     scope :podcast, -> { where(catergory: 'podcast') } 

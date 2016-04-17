@@ -5,11 +5,13 @@
         <h5><b>The Rock and Roll Club</b></h5>
         <h6>Anna Kryczka, Sanat Valencha and Steve Brightenstein</h6>
         <p>Four hours of nothing but vinyl every firday night. Listen to music strait from the grooves of our favorite records. </p>
+        <%= link_to "See full schedule", schedule_path  %>
         </div>
-        
-        <h4>Listener Line -- 607-273-2121</h4>
-        <hr>
         <div id="donate"> CLICK HERE TO DONATE! </div>
+        <hr>
+        <h4>Listener Line -- 607-273-2121</h4>
+        
+        
         
     </div>
 
@@ -51,12 +53,12 @@
                 <% @blogs.each do |blog| %>
               <tr>
                  <% blog.each do |b| %>
-                    <td>
+                    <td><div>
                         <%= image_tag(b.picture.url(:thumb), height:100) if b.picture? %>
                         <h6><%= link_to b.title, b  %></h6>
                         <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
                         <p><%= truncate(b.content, length: 200)  %></p>
-                    </td>
+                    </div></td>
                  <% end %>
               </tr>
               <% end %>
@@ -65,41 +67,53 @@
 
             <h6 ><%= link_to "See all blogs", blogposts_path  %> </h6>
         </div> 
+        <div class="bframe" id="news">
+            <h3> WVBR Newscenter </h3>
+            
+            <% @news.each do |news| %>
+                <div class="art">
+                    <div class="newspic"><%= image_tag(news.images.first.picture,  height:"100px") if news.images.first%></div> 
+                    <h6><%= link_to news.title, news  %></h6>
+                    <h5><%= link_to news.staff.name, news.staff  %>  - <%= time_ago_in_words(news.created_at) %> ago.</h5>
+                    <p><%= truncate(news.content, length: 300)%></p>
+                </div>
+            <% end %>
+        </div>
+        <div class="bframe" id="podcasts">
+            <h3> Podcasts </h3>
 
+                <% @podcasts.each do |pod| %>
+                    
+                    <div style="background-image: url(<%= pod.image.picture if pod.image %>)"> 
+                        <h6><%= link_to pod.title, pod  %></h6>
+                    </div>
+                <% end %>
+
+        </div>
     </div>
     <div class="col-sm-4">
-      <p>This column is for adds and links to featured items</p>
+        <div id="ad-lgrec">
+            <h2>ad </h2>
+        </div>
+      <div id="events">
+          <h2> Upcoming Events</h2>
+          <% @events.each do |event| %>
+              <div>
+                  <div>
+                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
+                  </div>
+                <h6><%= link_to event.name, event  %></h6>  
+                <p><%= event.location %></p>
+              </div>
+          <% end %>
+      </div>
     </div>
   </div>
 
-<div id="news" class="aframe">
-    <div class="newspic"><%= image_tag(@image.picture,  width:"300px", height:"400px") %></div>
-    <div>
-        <h3> News Center </h3>
-    </div>
-    <div>
-    <ul>
-    <% @news.each do |news| %>
-        <li><%= link_to news.title, news  %></li>
-    <% end %>
-    </ul>
-    </div>
-</div>
 
 
-<div id="podcasts" class="aframe">
-    <div><h3> Podcasts </h3></div>
-    
-    <ul>
-    <% @podcasts.each do |pod| %>
-        <li> <%= link_to pod.title, pod  %></li>
-    <% end %>
-    </ul>
-</div>
 
-<div id="ad-lgrec">
-    <h2>ad </h2>
-</div>
+
 
 
 

@@ -1,35 +1,53 @@
   <div class="row">
     <div class="col-sm-8">
-        <div class="sec-head panel panel-default">
-            <div class="panel-body">
-                <h1> <%= @show.name %> </h1>
+
+        <div class="wapper showshow">
+          <h1> <%= @show.name %> </h1>
+          
+            <% if @show.catergory === "specialty" %>
+              <h4><%= @show.day %> | <%= @show.start.strftime("%H:%M%p") %> - <%= @show.end.strftime("%H:%M%p") %></h4>
+              <p>
+              <% @show.staffs.each do |staff| %>
+                  <%= staff.name %>
+              <% end %></p>
+            <% end %>
+        
                 <% if logged_in? && (current_staff.admin?) %>
-                    <%= link_to "edit", edit_show_path(@show) %>
+                    <p><%= link_to "edit", edit_show_path(@show) %>
                     | <%= link_to "delete", @show, method: :delete,
                     data: { confirm: "You sure?" } %>
-                    | <%= link_to "post a blog", new_blogpost_path(@show) %>
-                <% end %>
-            </div>
-        </div>
-        <div class="wapper">
+                    | <%= link_to "post a blog", new_blogpost_path(@show) %></p>
+                <% end %><hr>
+
         <% if @show.images.exists? %>
             <% @show.images.each do |image| %>
-                <%= image_tag(image.picture.url, width: 380) %>
+                <div class="center"><%= image_tag(image.picture.url, width: 600) %></div>
             <% end %>
         <% end %>
-        
-        <% if @show.catergory === "specialty" %>
-            <div class="f-right info-box">
-                <h4>Tune in on</h4>
-                <p> <%= @show.day %> </p>
-                <p><%= @show.start.strftime("%H:%M%p") %> - <%= @show.end.strftime("%H:%M%p") %></p>
-                <p>Your hosts:</p>
-                <% @show.staffs.each do |staff| %>
-                    <p><%= staff.name %></p>
-                <% end %>
-            </div>
-        <% end %>
+        <hr>
         <p><%= @show.description %> </p>
+        
+        
+        
+        <h2>Posts (<%= @show.blogposts.count %>)</h2>
+        <hr>
+        <% @show.blogposts.each do |blogpost| %>
+        <h3><%= link_to blogpost.title, blogpost %></h3>
+        
+        <span class="timestamp">
+            <%= link_to blogpost.staff.name, blogpost.staff %>
+            | Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+            <% if logged_in? && current_staff?(blogpost.staff) %>
+              <%= link_to "delete", blogpost, method: :delete,
+                                               data: { confirm: "You sure?" } %>
+            <% end %>
+        </span>
+        <p><%= blogpost.subtitle %></p><hr>
+        <% end %> 
+        
+        
+        
+        
         <% if  @show.podcasts.any? %>
           <% @show.podcasts.each do |podcast| %>
             <div>
@@ -50,19 +68,7 @@
             </div>
          <% end %>
         <% end %>
-        <h3>Blogposts (<%= @show.blogposts.count %>)</h3>
-        <% @show.blogposts.each do |blogpost| %>
-        <h3><%= link_to blogpost.title, blogpost %></h3>
-        <p><%= blogpost.subtitle %></p>
-        <span class="timestamp">
-            <%= link_to blogpost.staff.name, blogpost.staff %>
-            | Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
-            <% if logged_in? && current_staff?(blogpost.staff) %>
-              <%= link_to "delete", blogpost, method: :delete,
-                                               data: { confirm: "You sure?" } %>
-            <% end %>
-        </span>
-        <% end %>
+        
         </div>
         
         </div>

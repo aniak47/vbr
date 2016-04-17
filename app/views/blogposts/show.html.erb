@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-sm-8">
-        <div class="sec-head panel panel-default">
-            <div class="panel-body">
-                <h3><%= @blogpost.title %></h3>
+        <div class="wapper">
+            <h3><%= @blogpost.title %></h3>
                 <p><%= link_to @blogpost.staff.name, @blogpost.staff %> 
                 | Posted <%= time_ago_in_words(@blogpost.created_at) %> ago.
                 <% if current_staff?(@blogpost.staff) %>
@@ -11,10 +10,8 @@
                                        data: { confirm: "You sure?" } %>
                 <% end %>
                 </p>
-            </div>
-        </div>
-        <div class="wapper">
         <div class="f-right"> <%= image_tag(@blogpost.picture.url, height:400) if @blogpost.picture? %> </div>
+        <h5><%= @blogpost.subtitle %></h5>
         <p><%= @blogpost.content %></p>
         </div>
         
