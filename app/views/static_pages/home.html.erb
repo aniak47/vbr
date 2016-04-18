@@ -52,6 +52,7 @@
             <table>
                 <% @blogs.each do |blog| %>
               <tr>
+                  <% if blog %>
                  <% blog.each do |b| %>
                     <td><div>
                         <%= image_tag(b.picture.url(:thumb), height:100) if b.picture? %>
@@ -59,7 +60,7 @@
                         <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
                         <p><%= truncate(b.content, length: 200)  %></p>
                     </div></td>
-                 <% end %>
+                 <% end %><% end %>
               </tr>
               <% end %>
             </table>
