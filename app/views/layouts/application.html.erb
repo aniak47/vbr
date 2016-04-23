@@ -20,12 +20,15 @@
 
       <div class="page-content"><div class="pc1">
         <div id="topbar">
-           <%= image_tag("/assets/play.png",  height:"170px")%>
+          <div id="listenbutton"><a title="Click Here To Play" href="http://www.streamlicensing.com/play/player.php?sid=4728&stream_id=8885"><img src="http://www.streamlicensing.com/play/buttons/15.png" width="300" height="100" style="border:none;"/></a>
+          </div>
           <h1>ITHACA'S REAL ROCK RADIO</h1>
+          <a id="tunein" href="http://tunein.com/radio/WVBR-FM-935-s23473/"  target="_blank"><img src="/assets/tunein.png"/></a>
         </div>
         <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
+        <hr id="hr1">
         <%= yield %>
         <%= render 'layouts/footer' %>
          <%= debug(params) %>

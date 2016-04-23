@@ -5,11 +5,14 @@
         <h5><b>The Rock and Roll Club</b></h5>
         <h6>Anna Kryczka, Sanat Valencha and Steve Brightenstein</h6>
         <p>Four hours of nothing but vinyl every firday night. Listen to music strait from the grooves of our favorite records. </p>
-        <%= link_to "See full schedule", schedule_path  %>
+        <h4>Request Line: 607-273-2121</h4>
+        <h2><%= link_to "See full schedule", schedule_path  %></h2>
+
         </div>
         <div id="donate"> CLICK HERE TO DONATE! </div>
         <hr>
-        <h4>Listener Line -- 607-273-2121</h4>
+        
+        <p>WVBR FM a non-profit organization and community radio station. We are suppported by generous donations!</p>
         
         
         
@@ -48,17 +51,17 @@
   <div class="row">
     <div class="col-sm-8">
          <div class="bframe" id="blogs">
-            <h3> DJ BLOGS </h3>
+            <h3> DJ BLOGS </h3><hr>
             <table>
                 <% @blogs.each do |blog| %>
               <tr>
                   <% if blog %>
                  <% blog.each do |b| %>
                     <td><div>
-                        <%= image_tag(b.picture.url(:thumb), height:100) if b.picture? %>
+                        <%= image_tag(b.picture.url(:thumb), height:80) if b.picture? %>
                         <h6><%= link_to b.title, b  %></h6>
                         <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
-                        <p><%= truncate(b.content, length: 200)  %></p>
+                        <p><%= truncate(b.content, length: 150)  %></p>
                     </div></td>
                  <% end %><% end %>
               </tr>
@@ -69,7 +72,7 @@
             <h6 ><%= link_to "See all blogs", blogposts_path  %> </h6>
         </div> 
         <div class="bframe" id="news">
-            <h3> WVBR Newscenter </h3>
+            <h3> WVBR Newscenter </h3><hr>
             
             <% @news.each do |news| %>
                 <div class="art">
@@ -81,7 +84,7 @@
             <% end %>
         </div>
         <div class="bframe" id="podcasts">
-            <h3> Podcasts </h3>
+            <h3> Podcasts </h3><hr>
 
                 <% @podcasts.each do |pod| %>
                     

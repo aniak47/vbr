@@ -14,24 +14,19 @@ section {
   overflow: auto;
 }
 #topbar{
-  width: 620px;
-  height: 70px;
-  border-radius: 15em;
+  width: 850px;
+  height: 100px;
+  border-radius: 1em;
   background-color: black;
   margin: auto;
-  left: 240px;
-  top: -50px;
+  left: 200px;
+  top: -70px;
   background-image: url(/assets/chrome.jpg);
   position: absolute;
   box-shadow: inset 0px -1px 10px rgba(0,0,0,0.5);
-  img{
-    position: absolute;
-    top: -60px;
-    left: -20px;
-  }
-  
   h1{
-    margin-left: 150px;
+    margin-left: 390px;
+    margin-top: 20px;
     font-style: Impact, Charcoal, sans-serif;
     font-size: 30px;
   }
@@ -89,7 +84,7 @@ textarea {
   position: relative;
   top: 300px;
   padding: 20px;
-  padding-top: 50px;
+  padding-top: 40px;
   margin: auto;
   width: 100%;
   min-width: 1100px;
@@ -277,7 +272,7 @@ input {
   width: 300px;
   height: 280px;
   float: left;
-  color: #ffffff;
+  color: ivory;
   padding: 5px;
   margin: 5px;
   opacity: 1;
@@ -289,21 +284,41 @@ input {
       margin: 10px;
   }
   h6{
-    color: red;
-    margin-top: 0;
+    color:  maroon;
+    margin-top: 2px;
+    font-weight: bolder;
+    margin-bottom: 5px;
   }
   div{
     border-top: solid gray 1px;
     border-left: solid gray 1px;
     padding: 5px;
+    margin-bottom: 30px;
     h5{
-      font-size: 16px;
+      font-size:18px;
       margin-bottom: 0;
+      margin-top: 5px;
     }
   }
   h3{
     text-align: left;
     margin-top: 0;
+    margin-left: 30px;
+  }
+  p{
+    margin-bottom: 30px;
+  }
+  h4{
+    text-align: right;
+    margin: 0;
+  }
+  hr{
+    margin: 5px;
+  }
+  h2{
+    margin: 0;
+    text-align: right;
+    font-size: 12px;
   }
 }
 #con2{
@@ -337,6 +352,7 @@ input {
   width: 970px;
   clear: both;
   height: 150px;
+  margin: 20px;
 }
 #podcasts {
   div{
@@ -366,7 +382,7 @@ input {
     td{
       padding: 10px;
       width: 49%;
-      background-color: #eee;
+      background-color: seashell;
       border: 10px black solid;
       vertical-align: top;
       margin: 3px;
@@ -474,6 +490,7 @@ input {
 .wapper{
   background-color: #F5F5F5;
   background-color: #76614D;
+  background-color: oldlace;
   padding: 30px;
   overflow: auto;
   border-top: 4px solid  #4d0000;
@@ -537,6 +554,8 @@ input {
 }
 }
 .bframe{
+  margin-bottom: 30px;
+  overflow: auto;
   width: 100%;
   h3{
     color: red;
@@ -603,20 +622,20 @@ input {
 }
 
 .panel{
-  background-color: #1b1818;
-  border: gray;
-  border-top: 2px  maroon;
+  background-color: #602020;
   color: white;
   margin: 20px;
+  margin-top: 0;
+  border: 0;
   border-radius: 0;
-  box-shadow: 0 0 5px 5px #1b1818;
   p{
     fornt-size: 20px;
     color: gray;
   }
   h1{
     font-size: 60px;
-    color: maroon;
+    color: black;
+    font-weight: bold;
     margin: 10px;
   }
   
@@ -625,6 +644,7 @@ input {
   div{
     background-color: #eee;
     background-color: #cccccc;
+    background-color: oldlace;
     border-top: red 1px solid;
     margin: 10px;
     overflow: auto;
@@ -708,4 +728,26 @@ input {
 }
 .center{
   margin: auto;
+}
+#listenbutton{
+  top: 15px;
+  left: 15px;
+  position: absolute;
+  img{
+    height: 70px;
+    width: 160px;
+  }
+  
+}
+#tunein{
+  left: 190px;
+  top: 15px;
+  position: absolute;
+  img{
+    height: 70px;
+    width: 190px;
+  }
+}
+#hr1{
+  border: 0;
 }

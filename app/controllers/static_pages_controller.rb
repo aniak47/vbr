@@ -19,6 +19,9 @@ class StaticPagesController < ApplicationController
   def schedule
   end
   
+  def weather
+  end
+  
   def history
   end
   
