@@ -784,6 +784,24 @@ input {
 #hr1{
   border: 0;
 }
+.bblog{
+  overflow: auto;
+  h3{
+    margin: 0;
+    font-size: 50px;
+  }
+  h5{
+    font-weight: bold;
+  }
+  img{
+    margin: auto;
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+  }
+  
+}
 .ablog{
   display: inline-block;
   width: 340px;
