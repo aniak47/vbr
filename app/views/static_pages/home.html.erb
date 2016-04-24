@@ -2,14 +2,14 @@
     <div id="on-air">
         <h3><b>ON AIR NOW</b></h3>
         <div>
-        <h5><b>The Rock and Roll Club</b></h5>
-        <h6>Anna Kryczka, Sanat Valencha and Steve Brightenstein</h6>
-        <p>Four hours of nothing but vinyl every firday night. Listen to music strait from the grooves of our favorite records. </p>
+        <h5><b>Real Rock Radio</b></h5>
+        <h6>Specifics coming soon</h6>
+        <p>Tune in for a well crafted mix of classic rock, alternative, idie and everything in between. </p>
         <h4>Request Line: 607-273-2121</h4>
         <h2><%= link_to "See full schedule", schedule_path  %></h2>
 
         </div>
-        <div id="donate"> CLICK HERE TO DONATE! </div>
+        <div id="donate"> <%= link_to "CLICK HERE TO DONATE!", donate_path  %> </div>
         <hr>
         
         <p>WVBR FM a non-profit organization and community radio station. We are suppported by generous donations!</p>
@@ -96,9 +96,7 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div id="ad-lgrec">
-            <h2>ad </h2>
-        </div>
+       
       <div id="events">
           <h2> Upcoming Events</h2>
           <% @events.each do |event| %>
@@ -111,6 +109,7 @@
               </div>
           <% end %>
       </div>
+       <img class="ebr" src="/assets/ebr.png" width="300"/>
     </div>
   </div>
 

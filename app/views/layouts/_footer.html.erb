@@ -1,10 +1,29 @@
-<footer class="footer">   
-  <nav>
-            
-            <% if logged_in? %>
+<div class="footer1">   
 
-            <% else %>
-              <h4><%= link_to "Admin Log in", login_path %></h4>
-            <% end %>
-  </nav>
-</footer>
+            
+            
+            
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7" >
+        <% if logged_in? %>
+        <% else %>
+          <h4><%= link_to "Admin Log in", login_path %></h4>
+        <% end %>
+      </div>
+      <div class="col-md-5" >
+        <div class="legal">
+          <p>
+            About WVBR
+           <br> WVBR is an independent, non-profit commercial radio station broadcasting from Ithaca, New York to the Counties of Tompkins, Tioga, Cortland, Cayuga, Seneca, Schuyler, and Chemung.
+            <br>Privacy Policy | Terms of Use | EEO | Advertise
+            <br>© 2012 Cornell Radio Guild, Inc.
+            <br>All Rights Reserved.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>

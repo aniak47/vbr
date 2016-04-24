@@ -9,7 +9,8 @@ class StaffsController < ApplicationController
     @blogposts = @staff.blogposts.paginate(page: params[:page])
   end
   def index
-    @staffs = Staff.paginate(page: params[:page])
+    @week = Staff.active.activated.week
+    @special = Staff.active.activated.special
   end
   def new
     @staff = Staff.new
@@ -46,7 +47,7 @@ class StaffsController < ApplicationController
   private
     def staff_params
       params.require(:staff).permit(:name, :email, :password, :password_confirmation, :active, :hometown, :fav_music,
-                                            :duties, :intrests, :avatar_url)
+                                            :duties, :intrests, :photo, :joktype)
     end
     
     # Before filters

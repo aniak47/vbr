@@ -27,8 +27,13 @@ section {
   h1{
     margin-left: 390px;
     margin-top: 20px;
+    margin-bottom: 5px;
     font-style: Impact, Charcoal, sans-serif;
     font-size: 30px;
+  }
+  p{
+    margin-left: 550px;
+    font-size: 18px;
   }
 }
 #disk{
@@ -40,12 +45,25 @@ section {
   background-size:contain;
   top: -10px;
 }
-.navbar{
+.nb{
   height: 100px;
   background-color: black;
+  min-width: 1200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  
+  z-index: 1030;
 
   .navbar-nav{
-    margin-top: 50px;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background-color: black;
+    a{
+      color: gray;
+    }
   }
 }
 .f-right{
@@ -64,7 +82,7 @@ textarea {
 }
 .wide {
   width:100%;
-  height: 70%;
+  height: 50%;
   background-size:cover;
   background-image: url(/assets/records.jpg);
   background-size: cover;
@@ -79,30 +97,38 @@ textarea {
 }
 .page-content{
   background-color:  black;
-  min-height: 500px;
   margin: auto;
   position: relative;
   top: 300px;
   padding: 20px;
   padding-top: 40px;
-  margin: auto;
   width: 100%;
   min-width: 1100px;
-  margin-bottom: 50px;
   box-shadow: 0 0 10px 10px black;
   .pc1{
     width: 1100px;
     margin: auto;
+    
   }
 }
 .page-content > div{
     margin: 15px;
     
 }
-.footer{
-  margin-top: 50px;
-  clear: both;
+.footer1{
   border-top: 1px solid #602020;
+  background-color: maroon;
+  height: 250px;
+  margin-top: 280px;
+  width: 100%;
+  padding: 40px;
+  .legal{
+    border: 1px black solid;
+    background-color: darkred;
+    color: silver;
+    padding: 20px;
+    border-radius: 2em;
+  }
 }
 .admin_bar{
   position: fixed;
@@ -120,13 +146,7 @@ input {
   height: auto !important;
 }
 .users {
-  list-style: none;
   margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
 }
 /* blogposts */
 
@@ -171,7 +191,7 @@ input {
     }
   }
 }
-/* carosol */
+/* carousel */
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   -webkit-transition-property: opacity;
@@ -282,6 +302,9 @@ input {
       border-radius: 10em;
       text-align: center;
       margin: 10px;
+      a{
+        color: white;
+      }
   }
   h6{
     color:  maroon;
@@ -494,6 +517,10 @@ input {
   padding: 30px;
   overflow: auto;
   border-top: 4px solid  #4d0000;
+  margin-left: 10px;
+  hr{
+    border-top: 1px solid grey;
+  }
 }
 .disk{
   border-radius: 100%;
@@ -558,7 +585,8 @@ input {
   overflow: auto;
   width: 100%;
   h3{
-    color: red;
+    color: maroon;
+    font-weight: bold;
     font-size: 40px;
     margin: 20px;
   }
@@ -612,7 +640,7 @@ input {
     }
   }
   h2{
-    color: red;
+    color: maroon;
     margin: 20px;
     margin-bottom: 50px;
   }
@@ -622,19 +650,22 @@ input {
 }
 
 .panel{
-  background-color: #602020;
+  box-shadow: 0 0 5px 5px #410b0b inset;
+  background-color: maroon;
   color: white;
   margin: 20px;
   margin-top: 0;
   border: 0;
   border-radius: 0;
+  opacity: .6;
+  padding: 30px;
   p{
     fornt-size: 20px;
     color: gray;
   }
   h1{
     font-size: 60px;
-    color: black;
+    color: #0d0d0d;
     font-weight: bold;
     margin: 10px;
   }
@@ -684,7 +715,7 @@ input {
   h2{
     margin: 0;
     a{
-      color: 	#211212;
+      color: 	maroon;
     }
   }
   div{
@@ -716,7 +747,7 @@ input {
     margin: 0;
   }
   a{
-    color: 	#211212;
+    color: 	maroon;
   }
   h2{
     color: 	#211212;
@@ -750,4 +781,27 @@ input {
 }
 #hr1{
   border: 0;
+}
+.ablog{
+  h3{
+    margin: 0;
+    font-size: 50px;
+  }
+  h5{
+    font-weight: bold;
+  }
+  img{
+    margin: auto;
+  }
+  
+}
+.ebr{
+  margin: 20px;
+}
+.all{
+  overflow: auto;
+}
+.user{
+  display: inline-block;
+  margin: 5px;
 }

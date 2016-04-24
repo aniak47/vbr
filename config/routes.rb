@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   root             'static_pages#home'
+ 
 
   resources :shifts,          only: [:new, :create, :destroy, :edit, :update, :index]
   get 'schedule'  => 'shifts#schedule'
@@ -49,5 +50,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit, :update]
   
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  
+  get '*path', to: 'static_pages#home'
   
 end

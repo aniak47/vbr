@@ -2,18 +2,24 @@
 
   <div class="row">
     <div class="col-sm-8">
-        <div class="sec-head panel panel-default">
-            <div class="panel-body">
-                <h1><%= @staff.name %></h1>
+
+        <div class="row">
+          <div class="wapper">
+            <div>
+              <h1><%= @staff.name %></h1>
                 <% if @staff.duties.present? %>
                 <h4> <%= @staff.duties %> </h4>
                 <% end %>
+                <hr>
             </div>
-        </div>
-        <div class="row">
-          <div class="wapper">
             <div class="col-sm-6">
-               <%= gravatar_for( @staff, size: 250) %>
+              
+              <% if @staff.photo %>
+                <%= image_tag(@staff.photo.url, width:300) %>
+              <% else %>
+              
+              <% end %>
+              
               <% if @staff.blogposts.any? %>
                 <h3>Blogposts (<%= @staff.blogposts.count %>)</h3>
                 <ol class="blogposts">
@@ -23,7 +29,7 @@
               <% end %>
             </div>
             <div class="col-sm-6">
-              <h2>About Me</h2>
+              <h2>About Me</h2><hr>
                 <% if @staff.hometown.present? %>
                 <h4>Hometown: <%= @staff.hometown %></h4>
                 <% end %>

@@ -1,29 +1,28 @@
   <div class="row">
+
     <div class="col-sm-8">
-        <div class="sec-head panel panel-default">
-            <div class="panel-body">
-                <h1><%= @podcast.title %></h1>
-                  <span class="timestamp">
-                    Posted <%= time_ago_in_words(@podcast.created_at) %> ago by
-                    <%= @podcast.show.name %>
-                    <% if current_staff?(@podcast.staff) %>
-                      | <%= link_to "delete", @podcast, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-                      | <%= link_to "edit", edit_podcast_path(@podcast) %>
-                    <% end %>
-                  </span>
-            </div>
-        </div>
         <div class="wapper">
-            <p>Genre: <%= @podcast.catergory %></p>
-            <% if @podcast.image %>
-              <div><%= image_tag(@podcast.image.picture.url, width: 100) %></div>
+          <h1><%= @podcast.title %></h1>
+          <span class="timestamp">
+            Posted <%= time_ago_in_words(@podcast.created_at) %> ago by
+            <%= @podcast.show.name %>
+            <% if current_staff?(@podcast.staff) %>
+              | <%= link_to "delete", @podcast, method: :delete,
+                               data: { confirm: "You sure?" } %>
+              | <%= link_to "edit", edit_podcast_path(@podcast) %>
             <% end %>
-              
+          </span>
+            <p>Genre: <%= @podcast.catergory %></p>
             <audio controls>
               <source src=<%= @podcast.audio.url %> type="audio/mp3">
               Your browser does not support the audio element.
             </audio>
+            <hr>
+            <% if @podcast.image %>
+              <div class="f-right"><%= image_tag(@podcast.image.picture.url, width: 100) %></div>
+            <% end %>
+              
+            
             <p><%= @podcast.description %></p>
          
          </div>

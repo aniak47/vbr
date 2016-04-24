@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@staff) do |f| %>
+    <%= form_for(@staff, html: { multipart: true }) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
@@ -12,8 +12,8 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
       
-      <%= f.label :avatar_url, "Profile image url" %>
-      <%= f.text_field :avatar_url, class: 'form-control' %>
+      <%= f.label :joktype %>
+      <%= f.select :joktype, options_for_select([["weekday"], ["specialty"], ["none"]]), class: 'form-control' %>
       
       <%= f.label :hometown %>
       <%= f.text_field :hometown, class: 'form-control' %>
@@ -30,6 +30,11 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+      
+      <span class="picture">
+        <h3>Profile Picture</h3>
+        <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+      </span>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>

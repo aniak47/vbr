@@ -7,9 +7,9 @@
             <% if @show.catergory === "specialty" %>
               <h4><%= @show.day %> | <%= @show.start.strftime("%H:%M%p") %> - <%= @show.end.strftime("%H:%M%p") %></h4>
               <p>
-              <% @show.staffs.each do |staff| %>
-                  <%= staff.name %>
-              <% end %></p>
+              <% sh =  @show.staffs.map{|s| s.name }%>
+              <%= sh.to_sentence %>
+              </p>
             <% end %>
         
                 <% if logged_in? && (current_staff.admin?) %>
@@ -26,12 +26,12 @@
         <% end %>
         <hr>
         <p><%= @show.description %> </p>
+        <br><br>
         
+        <% if @show.blogposts.any? %>
+        <h2>Posts from us</h2>
         
-        
-        <h2>Posts (<%= @show.blogposts.count %>)</h2>
-        <hr>
-        <% @show.blogposts.each do |blogpost| %>
+        <% @show.blogposts.each do |blogpost| %><hr>
         <h3><%= link_to blogpost.title, blogpost %></h3>
         
         <span class="timestamp">
@@ -42,13 +42,14 @@
                                                data: { confirm: "You sure?" } %>
             <% end %>
         </span>
-        <p><%= blogpost.subtitle %></p><hr>
+        <p><%= blogpost.subtitle %></p>
+        <% end %> 
         <% end %> 
         
-        
-        
+        <br>
         
         <% if  @show.podcasts.any? %>
+        <h2>Podcasts</h2><hr>
           <% @show.podcasts.each do |podcast| %>
             <div>
               <h2><%= link_to podcast.title, podcast %></h2>

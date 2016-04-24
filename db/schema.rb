@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402205642) do
+ActiveRecord::Schema.define(version: 20160423202630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160402205642) do
     t.string   "subtitle"
     t.integer  "blogable_id"
     t.string   "blogable_type"
+    t.string   "photo"
   end
 
   add_index "blogposts", ["blogable_type", "blogable_id"], name: "index_blogposts_on_blogable_type_and_blogable_id", using: :btree
@@ -143,13 +144,15 @@ ActiveRecord::Schema.define(version: 20160402205642) do
     t.text     "fav_music"
     t.text     "duties"
     t.text     "intrests"
-    t.string   "avatar_url"
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
     t.string   "remember_digest"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "photo"
+    t.string   "joktype"
+    t.integer  "power"
   end
 
   add_index "staffs", ["email"], name: "index_staffs_on_email", unique: true, using: :btree

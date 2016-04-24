@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-8">
-        <div class="wapper">
+        <div class="wapper ablog">
             <h3><%= @blogpost.title %></h3>
                 <p><%= link_to @blogpost.staff.name, @blogpost.staff %> 
                 | Posted <%= time_ago_in_words(@blogpost.created_at) %> ago.
@@ -9,6 +9,7 @@
                       | <%= link_to "delete", @blogpost, method: :delete,
                                        data: { confirm: "You sure?" } %>
                 <% end %>
+                <hr>
                 </p>
         <div class="f-right"> <%= image_tag(@blogpost.picture.url, height:400) if @blogpost.picture? %> </div>
         <h5><%= @blogpost.subtitle %></h5>

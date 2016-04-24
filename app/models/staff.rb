@@ -3,7 +3,9 @@ class Staff < ActiveRecord::Base
   attr_accessor :activation_token, :reset_token, :remember_token
   before_save   :downcase_email
   before_create :create_activation_digest
+  mount_uploader :photo, PictureUploader
   
+  validates :joktype, inclusion: { in: %w(weekday none specialty)}
   has_and_belongs_to_many :shows
   has_and_belongs_to_many :shifts
   has_many :blogposts, dependent: :destroy
@@ -12,6 +14,10 @@ class Staff < ActiveRecord::Base
   has_many :top_tens
   
   scope :activated, -> { where(activated: true) } 
+  scope :active, -> { where(active: true) } 
+  scope :week, ->  { where(joktype: 'weekday') } 
+  scope :special, ->  { where(joktype: 'specialty') } 
+  scope :other, ->  { where(joktype: 'none') } 
 
   
   
