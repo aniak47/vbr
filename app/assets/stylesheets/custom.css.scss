@@ -123,10 +123,12 @@ textarea {
   width: 100%;
   padding: 40px;
   .legal{
+    margin-top: 10px;
     border: 1px black solid;
     background-color: darkred;
     color: silver;
     padding: 20px;
+    width: 470px;
     border-radius: 2em;
   }
 }
@@ -538,7 +540,7 @@ input {
   float: left;
   overflow: auto;
   .art{
-    background-color: #eee;
+    background-color: seashell;
     width: 98%;
     overflow: auto;
     padding: 20px;
@@ -783,6 +785,13 @@ input {
   border: 0;
 }
 .ablog{
+  display: inline-block;
+  width: 340px;
+  margin: 3px;
+  height: 140px;
+  overflow: hidden;
+  background-color: seashell;
+  padding: 10px;
   h3{
     margin: 0;
     font-size: 50px;
@@ -792,6 +801,10 @@ input {
   }
   img{
     margin: auto;
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
   }
   
 }
@@ -804,4 +817,15 @@ input {
 .user{
   display: inline-block;
   margin: 5px;
+}
+.cf{
+  min-width: 1150px;
+  margin: auto;
+  padding: 0px;
+}
+.ib{
+  display: inline-block;
+}
+.f1{
+  width: 55%;
 }
