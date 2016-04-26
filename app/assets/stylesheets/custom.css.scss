@@ -19,8 +19,8 @@ section {
   border-radius: 1em;
   background-color: black;
   margin: auto;
-  left: 200px;
-  top: -70px;
+  left: 130px;
+  top: -130px;
   background-image: url(/assets/chrome.jpg);
   position: absolute;
   box-shadow: inset 0px -1px 10px rgba(0,0,0,0.5);
@@ -106,6 +106,7 @@ textarea {
   min-width: 1100px;
   box-shadow: 0 0 10px 10px black;
   .pc1{
+    position: relative;
     width: 1100px;
     margin: auto;
     
