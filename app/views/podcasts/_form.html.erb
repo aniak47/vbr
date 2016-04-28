@@ -1,3 +1,4 @@
+<div class="wapper">
 <%= form_for(@podcast, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     
@@ -28,3 +29,4 @@
     <%= f.submit "Submit", class: "btn btn-primary" %>
 
 <% end %>
+</div>

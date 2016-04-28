@@ -1,7 +1,6 @@
-<h1>DJs post individual blogs</h1>
-
+<div class="wapper">
 <section class="blogpost_form">
-      
+      <h1>Post a Blog</h1>
   <%= form_for(@blogpost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     
@@ -33,3 +32,4 @@
     }
   });
 </script>
+</div>

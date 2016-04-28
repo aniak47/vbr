@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
+    4.times {@article.images.build} 
   end
   
   def update

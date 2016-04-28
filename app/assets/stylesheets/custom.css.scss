@@ -94,6 +94,7 @@ textarea {
 .admin-bar{
   position: fixed;
   top: 100px;
+
 }
 .page-content{
   background-color:  black;
@@ -136,7 +137,14 @@ textarea {
 .admin_bar{
   position: fixed;
   top: 100px;
+  z-index: 1030;
+  background-color: dimgray;
+  opacity: .7;
+  width: 100%;
 }
+  .admin_bar:hover{
+    opacity: 1;
+  }
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -389,15 +397,21 @@ input {
     background-size: cover;
     background-position: center; 
     display: inline-block;
-    margin: 3px;
+    margin: 5px;
+    position: relative;
   }
   h6{
     position: absolute;
-    bottom: 0;
     padding: 10px;
+    background-color: black;
+    opacity: .5;
+    width: 100%;
     a{
       color: white;
     }
+  }
+  h6:hover{
+    opacity: .9;
   }
 }
 #blogs {
