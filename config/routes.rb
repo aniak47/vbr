@@ -33,10 +33,12 @@ Rails.application.routes.draw do
   
   resources :events
   get 'promo' => 'events#promo'
+  get 'concerts' => 'events#concerts'
   
   get 'hq'   => 'back_end_pages#main'
   get 'carousel'   => 'back_end_pages#add_carousel'
   get 'mancar'   => 'back_end_pages#manage_car'
+  get 'manage_staff'   => 'back_end_pages#manage_staff'
   
   resources :articles,          only: [:new, :show, :create, :destroy, :edit, :update]
   get 'news'  => 'articles#news'

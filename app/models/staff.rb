@@ -14,6 +14,7 @@ class Staff < ActiveRecord::Base
   has_many :top_tens
   
   scope :activated, -> { where(activated: true) } 
+  scope :unactivated, -> { where(activated: false) } 
   scope :active, -> { where(active: true) } 
   scope :week, ->  { where(joktype: 'weekday') } 
   scope :special, ->  { where(joktype: 'specialty') } 

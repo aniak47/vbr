@@ -1,0 +1,27 @@
+
+
+
+
+<h2> Activated Users</h2>
+
+
+<% @aa.each do |s| %>
+    <h5><%= s.name %></h5>
+    <p><%= s.email %></p>
+
+<% end %>
+
+
+
+
+<h2> Unactivated Users</h2>
+
+
+<% @in.each do |s| %>
+    <p><%= s.email %></p>
+      <% if logged_in? && current_staff.admin? && !current_staff?(s) %>
+    | <%= link_to "delete", s, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+<% end %>
+

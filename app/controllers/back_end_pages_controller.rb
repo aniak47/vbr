@@ -11,6 +11,11 @@ class BackEndPagesController < ApplicationController
     def manage_car
         @images = Image.carousel
     end
+    
+    def manage_staff
+        @aa = Staff.activated
+        @in = Staff.unactivated
+    end
 
     
 end

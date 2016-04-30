@@ -49,6 +49,9 @@ class EventsController < ApplicationController
     @articles = Article.promo
   end
   
+  def concerts
+    @events = Event.concert
+  
   private
     
     def event_params
