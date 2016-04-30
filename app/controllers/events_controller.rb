@@ -51,6 +51,7 @@ class EventsController < ApplicationController
   
   def concerts
     @events = Event.concert
+  end
   
   private
     
