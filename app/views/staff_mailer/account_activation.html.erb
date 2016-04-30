@@ -1,10 +1,12 @@
-<h1>Sample App</h1>
+<h1>WVBR FM</h1>
 
 <p>Hi there,</p>
 
 <p>
-Welcome to the Sample App! Click on the link below to activate your account:
+An account was created for <%= @staff.email %>
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(@staff.activation_token,
-                                                    email: @staff.email) %>
+</p>Link to activate:  
+<%= edit_account_activation_url(@staff.activation_token, email: @staff.email) %></p>
+
+<p>Please click on the link start using your account!</p>

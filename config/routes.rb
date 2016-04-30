@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   root             'static_pages#home'
  
-
   resources :shifts,          only: [:new, :create, :destroy, :edit, :update, :index]
   get 'schedule'  => 'shifts#schedule'
   
