@@ -137,7 +137,7 @@ textarea {
 .admin_bar{
   position: fixed;
   top: 100px;
-  z-index: 1030;
+  z-index: 1000;
   background-color: dimgray;
   opacity: .7;
   width: 100%;
@@ -244,10 +244,11 @@ input {
     }
   }
   .topleft {
+    width: 600px;
     position: absolute;
     font-size: 30px;
     top: 8px;
-    left: 16px;
+    left: 70px;
     color: white;
     text-shadow: 0 0 10px black;
   }

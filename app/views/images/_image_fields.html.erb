@@ -5,6 +5,10 @@
      
     <%= f.label :description %>
     <%= f.text_field :description, class: 'form-control' %>
+    
+    <%= f.check_box '_destroy' %>
+    <%= f.label :_destroy, "Remove Image" %>
+    <%= image_tag f.object.picture.url(:thumb) %>
             
     <span class="picture">
                 <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>

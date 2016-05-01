@@ -57,6 +57,6 @@ class ArticlesController < ApplicationController
     
       def article_params
         params.require(:article).permit(:title, :subtitle, :content, :catergory, :video,
-                        :images_attributes => [:id, :title, :description, :expire, :type, :picture])
+                        :images_attributes => [:id, :title, :description, :expire, :type, :picture, :_destroy])
       end
 end
