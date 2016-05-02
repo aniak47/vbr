@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-md-12 wapper">
-
-    
+<h1> WVBR Concert Log</h1>
+<hr> <hr>    
     <h2  id="month">  <%= link_to "<", date: @date.prev_month %>
     <%= @date.strftime("%B, %Y") %>
     <%= link_to ">", date: @date.next_month %> </h2>
@@ -21,15 +21,4 @@
 
 
 
-<div class="col-md-12">
-    <%= will_paginate %>
-        <% @events.each do |event| %>
-              <h2><%= link_to event.name, event %></h2>
-              <p><%= event.date.strftime('%a %d %b %Y') %></p>
-              <p><%= event.time.strftime('%r') %></p>
-              <p><%= event.location %></p>
-          <% end %>
-    <%= will_paginate %>
-
-</div>
 </div>
