@@ -2,20 +2,23 @@
 
 <div class="wapper">
 
-<h2> Activated Users</h2>
+<h2> Activated Users (<%= @aa.size %>)</h2>
 
 
 <% @aa.each do |s| %>
     <hr>
     <h5><%= s.name %></h5>
     <p><%= s.email %></p>
-
+        <% if logged_in? && current_staff.admin? && !current_staff?(s) %>
+        <%= link_to "delete", s, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+        <% end %>
 <% end %>
 
 
 
 
-<h2> Unactivated Users</h2>
+<h2> Unactivated Users  (<%= @in.size %>)</h2>
 
 
 <% @in.each do |s| %>

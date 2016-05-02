@@ -1,14 +1,24 @@
-<div class="sec-head panel panel-default">
-    <div class="panel-body">
-        <h1><%= @event.name %></h1>
+<div class="row">
+    <div class="col-sm-8 article-show">
+        
+        <div class="wapper">
+            
+            
+              <h1><%= @event.name %></h1>
+                <h3><%= @event.date.strftime('%a %d %b %Y') %> | <%= @event.time.strftime('%r') %> <br> <%= @event.location %></h3>
+                <% if logged_in? %>
+                    <%= link_to "edit", edit_event_path(@event) %>
+                    | <%= link_to "delete", @event, method: :delete,
+                    data: { confirm: "You sure?" } %>
+                <% end %><hr><hr>
+                <h3><%= @event.blurb %></h3>
+        </div>
+        
+        
     </div>
+    
+    <div class="col-sm-4">
+      <<%= render 'shared/aside' %>
+    </div>
+    
 </div>
-    <div class="wapper">
-    <p><%= @event.date.strftime('%a %d %b %Y') %> | <%= @event.time.strftime('%r') %> | <%= @event.location %></p>
-    <% if logged_in? %>
-                     <%= link_to "edit", edit_event_path(@event) %>
-                      | <%= link_to "delete", @event, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-                <% end %>
-    <h3><%= @event.blurb %></h3>
-    </div>

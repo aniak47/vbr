@@ -31,16 +31,17 @@
             <div class="col-sm-6">
               <h2>About Me</h2><hr>
                 <% if @staff.hometown.present? %>
-                <h4>Hometown: <%= @staff.hometown %></h4>
+                <h4><b>Hometown:</b> <%= @staff.hometown %></h4>
                 <% end %>
                 <% if @staff.intrests.present? %>
-                <h4>Intrests:</h4>
+                <h4><b>Intrests:</b></h4>
                 <h5><%= @staff.intrests %></h5>
                 <% end %>
                 <% if @staff.fav_music.present? %>
-                <h4>Favorite Music:</h4>
+                <h4><b>Favorite Music:</b></h4>
                 <h5><%= @staff.fav_music %></h5>
                 <% end %>
+  
               </div>
             </div>
         </div>
