@@ -11,9 +11,10 @@
                 <% end %>
                 <hr>
                 </p>
-        <div class="f-right"> <%= image_tag(@blogpost.picture.url, height:400) if @blogpost.picture? %> </div>
+        
         <h5><%= @blogpost.subtitle %></h5>
         <p><%= @blogpost.content %></p>
+        <div class="f-right"> <%= image_tag(@blogpost.picture.url, height:400) if @blogpost.picture? %> </div>
         </div>
         
     </div>
