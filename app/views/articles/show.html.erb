@@ -22,7 +22,7 @@
                 </div>
                 <% end %>
             <% end %>
-        <p> <%= @article.content %> </p>
+        <p> <%= simple_format(@article.content) %> </p>
         <% if @article.video? %>
         <div><%= video_tag(@article.video.url, width:500, controls: true) %></div>
         <% end %>
