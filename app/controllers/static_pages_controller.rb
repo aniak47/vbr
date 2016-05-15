@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
     @blogs = Blogpost.limit(6)
     @podcasts = Podcast.limit(10)
     @news = Article.news.limit(6)
-    @events = Event.limit(6)
+    @events = Event.future.limit(6)
   end
 
   def help
