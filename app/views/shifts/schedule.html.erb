@@ -1,18 +1,19 @@
 <div class="aframe">
 <h1>This Week's Schedule</h1><hr>
+
 <%= schedule @date do |date| %>
     <% s = @shifts[date[1]] %>
-    <% if s %>
-    <% s.each do |h| %>
-    <%if h.start.strftime("%H")=== date[0].to_s %>
-    <% hpx = (h.end.strftime("%H").to_i - h.start.strftime("%H").to_i)*80 %>
-    <%(hpx = 24 + hpx) if hpx < 0  %>
-        <div class="shift" style="height:<%= hpx%>px">
-        <p><%= h.title %></p>
-        <p>DJ Names</p>
-        </div>
-    <% end %>
-    <% end %>
+        <% if s %>
+            <% s.each do |h| %>
+            <%if h.start.strftime("%H")=== date[0].to_s %>
+            <% hpx = (h.end.strftime("%H").to_i - h.start.strftime("%H").to_i)*80 - 4 %>
+            <%(hpx = 24 + hpx) if hpx < 0  %>
+                <div class="shift" style="height:<%= hpx%>px">
+                <p><%= h.title %></p>
+                <p></p>
+                </div>
+            <% end %>
+        <% end %>
     <% end %>
    
 <% end %>

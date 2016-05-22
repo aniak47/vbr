@@ -42,7 +42,7 @@ class ShiftsController < ApplicationController
   end
   
   def schedule
-    @date = params[:date]? Date.parse(params[:date]) : Date.today
+    @date = Date.today
     @shifts = Shift.all.group_by(&:day)
   end
   

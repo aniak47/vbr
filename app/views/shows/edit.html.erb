@@ -7,7 +7,7 @@
     <%= f.select :catergory, options_for_select([["specialty"], ["podcast"]]), class: 'form-control' %>
     
     <p> Select DJs affiliaed with this show</p>
-    <% staff = Staff.all.activated.map { |s| [s.name, s.id] } %>
+    <% staff = Staff.all.active.map { |s| [s.name, s.id] } %>
     <% staff << ["Select DJ", 0] %>
     <% 3.times do %>
       <%= select_tag(name="choice[]", options_for_select(staff, 0)) %>

@@ -14,22 +14,22 @@ section {
   overflow: auto;
 }
 #topbar{
-  width: 850px;
-  height: 100px;
-  border-radius: 1em;
-  background-color: black;
+  opacity: 5;
+  width: 1100px;
+  height: 120px;
+  background-color: silver;
   margin: auto;
-  left: 130px;
-  top: -130px;
-  background-image: url(/assets/chrome.jpg);
+  left: 0px;
+  top: -140px;
   position: absolute;
-  box-shadow: inset 0px -1px 10px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 0px 5px 5px gray;
   h1{
-    margin-left: 390px;
-    margin-top: 20px;
+    margin-left: 500px;
+    margin-top: 30px;
     margin-bottom: 5px;
     font-style: Impact, Charcoal, sans-serif;
     font-size: 30px;
+    color: black;
   }
   p{
     margin-left: 550px;
@@ -46,24 +46,26 @@ section {
   top: -10px;
 }
 .nb{
-  height: 100px;
+  height: 150px;
   background-color: black;
   min-width: 1200px;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  
   z-index: 1030;
 
   .navbar-nav{
     position: fixed;
-    top: 50px;
+    top: 100px;
     right: 20px;
     background-color: black;
     a{
       color: gray;
     }
+  }
+  .toplogo{
+    margin-left: 20px;
   }
 }
 .f-right{
@@ -82,30 +84,29 @@ textarea {
 }
 .wide {
   width:100%;
-  height: 50%;
+  height: 80%;
   background-size:cover;
   background-image: url(/assets/records.jpg);
   background-size: cover;
   margin-top: -20px;
   position: fixed;
   box-shadow: 0px -50px 120px 40px black inset;
-  opacity: .6;
+  opacity: .8;
 }
 .admin-bar{
   position: fixed;
-  top: 100px;
+  top: 150px;
 
 }
 .page-content{
-  background-color:  black;
   margin: auto;
   position: relative;
-  top: 300px;
+  top: 200px;
   padding: 20px;
   padding-top: 40px;
   width: 100%;
   min-width: 1100px;
-  box-shadow: 0 0 10px 10px black;
+
   .pc1{
     position: relative;
     width: 1100px;
@@ -118,12 +119,12 @@ textarea {
     
 }
 .footer1{
-  border-top: 1px solid #602020;
   background-color: maroon;
   height: 250px;
   margin-top: 280px;
   width: 100%;
   padding: 40px;
+  box-shadow: 0 0 40px 40px maroon;
   .legal{
     margin-top: 10px;
     border: 1px black solid;
@@ -136,10 +137,10 @@ textarea {
 }
 .admin_bar{
   position: fixed;
-  top: 100px;
+  top: 150px;
   z-index: 1000;
   background-color: dimgray;
-  opacity: .7;
+  opacity: .4;
   width: 100%;
 }
   .admin_bar:hover{
@@ -158,6 +159,7 @@ input {
 }
 .users {
   margin: 0;
+  width: 200px;
 }
 /* blogposts */
 
@@ -388,6 +390,8 @@ input {
   clear: both;
   height: 150px;
   margin: 20px;
+  width: 1060px;
+  background-color: black;
 }
 #podcasts {
   div{
@@ -417,28 +421,7 @@ input {
 }
 #blogs {
   overlow: auto;
-  table{
-    width: 100%;
 
-    td{
-      padding: 10px;
-      width: 49%;
-      background-color: seashell;
-      border: 10px black solid;
-      vertical-align: top;
-      margin: 3px;
-      div{
-        text-overflow: ellipsis;
-        overflow: hidden;
-        height: 110px;
-      }
-      
-      img{
-        float: left;
-        margin: 10px;
-      }
-    }
-  }
 
 
 }
@@ -512,7 +495,7 @@ input {
 }
 .social{
   position: fixed;
-  top: 5px;
+  top: 10px;
   right: 10px;
   margin: 5px;
 }
@@ -529,9 +512,7 @@ input {
   padding: 5px;
 }
 .wapper{
-  background-color: #F5F5F5;
-  background-color: #76614D;
-  background-color: oldlace;
+  background-color: seashell;
   padding: 30px;
   overflow: auto;
   border-top: 4px solid  #4d0000;
@@ -591,10 +572,15 @@ input {
   }
   .shift{
   background-color: blue;
-  width: 141px;
+  width: 137px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 1em;
   position: absolute;
   text-align: center;
   color: white;
+  opacity: .95;
+  vertical-align: middle;
   
 }
 }
@@ -606,7 +592,9 @@ input {
     color: maroon;
     font-weight: bold;
     font-size: 40px;
-    margin: 20px;
+    margin: 0px;
+    background-color: seashell;
+    padding: 20px;
   }
     h6{
     margin: 0;
@@ -630,7 +618,7 @@ input {
 #events{
   background-color: #1b1818;
   width: 100%;
-  height: 400px;
+  min-height: 400px;
   overflow: auto;
   div{
     width: 100%;
@@ -661,6 +649,8 @@ input {
     color: maroon;
     margin: 20px;
     margin-bottom: 50px;
+    font-size: 35px;
+    font-weight: bold;
   }
   p{
     color: red;
@@ -675,8 +665,8 @@ input {
   margin-top: 0;
   border: 0;
   border-radius: 0;
-  opacity: .6;
-  padding: 30px;
+  opacity: .9;
+  padding: 20px;
   p{
     fornt-size: 20px;
     color: gray;
@@ -691,9 +681,7 @@ input {
 }
 .boxlist{
   div{
-    background-color: #eee;
-    background-color: #cccccc;
-    background-color: oldlace;
+    background-color: seashell;
     border-top: red 1px solid;
     margin: 10px;
     overflow: auto;
@@ -779,9 +767,10 @@ input {
   margin: auto;
 }
 #listenbutton{
-  top: 15px;
-  left: 15px;
-  position: absolute;
+  position: fixed;
+  top: 10px;
+  left: 350px;
+
   img{
     height: 70px;
     width: 160px;
@@ -789,9 +778,9 @@ input {
   
 }
 #tunein{
-  left: 190px;
-  top: 15px;
-  position: absolute;
+  position: fixed;
+  top: 10px;
+  left: 520px;
   img{
     height: 70px;
     width: 190px;
@@ -819,8 +808,8 @@ input {
 }
 .ablog{
   display: inline-block;
-  width: 340px;
-  margin: 3px;
+  width: 350px;
+  margin: 4px;
   height: 140px;
   overflow: hidden;
   background-color: seashell;
@@ -869,4 +858,7 @@ input {
   overflow: auto;
   background-color: #1b1818;
   color: gray;
+}
+.dj-col{
+  margin: 20px;
 }
