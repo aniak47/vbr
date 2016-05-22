@@ -6,8 +6,9 @@
         <% if s %>
             <% s.each do |h| %>
             <%if h.start.strftime("%H")=== date[0].to_s.rjust(2, '0') %>
-            <% hpx = (h.end.strftime("%H").to_i - h.start.strftime("%H").to_i)*80 - 4 %>
-            <%(hpx = 24 + hpx) if hpx < 0  %>
+            <% hpx = (h.end.strftime("%H").to_i - h.start.strftime("%H").to_i) %>
+            <%(hpx = 24 + hpx) if hpx <= 0  %>
+            <% hpx = (hpx)*80 - 4 %>
                 <div class="shift" style="height:<%= hpx%>px">
                 <p><%= h.title %></p>
                 <p><%= h.start.strftime("%I%P") + "-" + h.end.strftime("%I%P") %></p>
