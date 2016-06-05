@@ -5,7 +5,8 @@
             
 		<div class="panel-body">
           
-     		<h1> Song History</h1>                  
+     		<h1> Song History</h1>
+     		<p>Now Playing: <span data-shoutcast-value="songtitle"></span></p>
 		</div>
         
 	</div>
@@ -19,18 +20,7 @@
         
 		<div class="wapper">
 			<h2> Content coming very soon!</h2>
-			<script>
-			$.SHOUTcast({
-   				host : 'smoke.wavestreamer.com',
-   				port : 7820
-			}).played(function(tracks){
-   				$('ul').html('');
-   				$.each(tracks,function(k,track){
-      				$('ul').append('<li>'+track.title+'</li>');
-   				});
-			});
-			<p data-shoutcast-value="songtitle"></p>
-		</script>
+
 		</div>
     
 	</div>
