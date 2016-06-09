@@ -2,8 +2,7 @@ class EventsController < ApplicationController
   before_action :logged_in_staff, only: [:create, :new, :edit, :update, :destroy]
   
   def index
-    @events = Event.future.paginate(page: params[:page])
-    @events_by_date = Event.all.group_by(&:date)
+    @events_by_date = Event.general.group_by(&:date)
     @date = params[:date]? Date.parse(params[:date]) : Date.today
   end
 
@@ -50,6 +49,7 @@ class EventsController < ApplicationController
   end
   
   def concerts
+    @events = Event.concert.future.paginate(page: params[:page])
     @events_by_date = Event.concert.group_by(&:date)
     @date = params[:date]? Date.parse(params[:date]) : Date.today
   end

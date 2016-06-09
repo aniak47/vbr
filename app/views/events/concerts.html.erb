@@ -18,6 +18,15 @@
     <% end %>
 </div>
 
+<div class="col-md-12 wapper">
+    <%= will_paginate %>
+        <% @events.each do |event| %>
+              <h2><%= link_to event.name, event %></h2>
+              <p><%= event.date.strftime('%a %d %b %Y') %> | <%= event.time.strftime('%r') %> | <%= event.location %></p>
+          <% end %>
+    <%= will_paginate %>
+
+</div>
 
 
 
