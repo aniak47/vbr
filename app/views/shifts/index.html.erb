@@ -1,3 +1,4 @@
+<div class="wapper">
 <h1>Shifts#index</h1>
 <p>Find me in app/views/shifts/index.html.erb</p>
 
@@ -10,10 +11,11 @@
             <p><%= staff.name %></p>
         <% end %>
         <% if logged_in? %>
-        <%= link_to "edit", edit_show_path(show) %>
+        <%= link_to "edit", edit_shift_path(show) %>
         | <%= link_to "delete", show, method: :delete,
                     data: { confirm: "You sure?" } %>
         <% end %>
       </li>
     <% end %>
 </ul>
+</div>

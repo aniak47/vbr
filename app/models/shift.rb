@@ -5,5 +5,5 @@ class Shift < ActiveRecord::Base
     validates :day, presence: true
     validates :start, presence: true
     validates :end, presence: true
-    validates :blurb, presence: true, length: { maximum: 200 }
+    validates :blurb, length: { maximum: 200 }
 end
