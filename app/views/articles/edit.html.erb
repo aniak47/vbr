@@ -2,11 +2,12 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-3 wapper">
         <h1>Edit Article</h1>
+        <hr>
        <%= form_for(@article, :html => {:multipart => true}) do |f| %>
        <%= render 'shared/error_messages', object: f.object %>
        
        <%= f.label :catergory %>
-       <%= f.select :catergory, options_for_select([["promo"], ["news"], ["sports"], ["station"]]), class: 'form-control' %>
+       <%= f.select :catergory, options_for_select([["promo"], ["news"], ["sports"], ["station"]], @article.catergory), class: 'form-control' %>
 
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
@@ -17,14 +18,14 @@
       <%= f.label :content %>
       <%= f.text_area :content, rows: 20, class: 'form-control' %>
       
-          Images:
-      <ul>
+          <b>Images:</b>
+      <ul class = "image-form">
         <%= f.fields_for :images do |builder| %>
           <%= render "images/image_fields", :f => builder %>
         <% end %>
         
       </ul>
-        Video:
+        <b>Video:</b>
       <span class="picture">
         <%= f.file_field :video %>
       </span>

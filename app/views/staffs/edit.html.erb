@@ -1,8 +1,9 @@
 <% provide(:title, "Edit staff") %>
-<h1>Update your profile</h1>
+
 
 <div class="row">
   <div class="wapper col-md-6 col-md-offset-3">
+    <h1>Update your profile</h1><hr>
     <%= form_for(@staff, html: { multipart: true }) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 

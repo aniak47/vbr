@@ -19,15 +19,15 @@
       <%= f.label :content %>
       <%= f.text_area :content, rows: 20, placeholder: "Better make it interesting..." , class: 'form-control' %>
       
-          Images:
-      <ul>
+          <b>Images:</b>
+      <ul class="image-form">
         <%= f.fields_for :images do |builder| %>
           <%= render "images/image_fields", :f => builder %>
         <% end %>
         
       </ul>
       
-        Video:
+        <b>Video:</b>
       <span class="picture">
         <%= f.file_field :video %>
       </span>

@@ -1,9 +1,10 @@
-<h1>Staffs#new</h1>
+
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+
 
 <div class="row">
   <div class="wapper col-md-6 col-md-offset-3">
+    <h3> Add new staff </h3> <hr>
        <%= form_for(@staff) do |f| %>
        <%= render 'shared/error_messages', object: f.object  %>
 

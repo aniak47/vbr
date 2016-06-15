@@ -60,6 +60,11 @@ class ShowsController < ApplicationController
         end
         
         def show_staff
+            @show.staffs.each do |s|
+                idn = s.id.to_s.to_sym
+                rem = params[idn][:remove]
+               @show.staffs.delete(s) if  rem == "1"
+            end
             staff_ids = params[:choice]
             staff_ids.each do |id|
                 if id.to_i > 0

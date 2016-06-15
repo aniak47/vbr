@@ -12,13 +12,16 @@
     <%= f.text_field :subtitle, class: 'form-control' %>
     
     <div class="field">
-      <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+      <%= f.text_area :content, rows: 15 %>
     </div>
     
-    <%= f.submit "Update", class: "btn btn-primary" %>
+    <b>Add a picture:</b>
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
+    
+    <%= f.submit "Update", class: "btn btn-primary" %>
+
       <% end %>
   
   </section>

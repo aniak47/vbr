@@ -1,33 +1,31 @@
-<div class="sec-head panel panel-default">
-  <div class="panel-body">
-      <h1>Create Event</h1>
-  </div>
+<div class="wapper">
+    <h1>New Article</h1>
+    <hr>
+    <hr>
+  <section class="blogpost_form">
+        
+    <%= form_for(@event) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+  
+        <%= f.label :blurb %>
+        <%= f.text_field :blurb, class: 'form-control' %>
+  
+        <%= f.label :catergory %>
+        <%= f.select :catergory, options_for_select([["Promo"], ["Concert"], ["Other"]]), class: 'form-control' %>
+        
+        <%= f.label :location %>
+        <%= f.text_field :location, class: 'form-control' %>
+        
+        <%= f.label :date %>
+        <%= f.date_field :date, class: 'form-control' %>
+        
+        <%= f.label :time %>
+        <%= f.time_field :time, class: 'form-control' %>
+  
+        <%= f.submit "Create Event", class: "btn btn-primary" %>
+      <% end %>
+  </section>
 </div>
-<section class="blogpost_form">
-  <div class="aframe">
-      
-  <%= form_for(@event) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-
-      <%= f.label :blurb %>
-      <%= f.text_field :blurb, class: 'form-control' %>
-
-      <%= f.label :catergory %>
-      <%= f.select :catergory, options_for_select([["Promo"], ["Concert"], ["Other"]]), class: 'form-control' %>
-      
-      <%= f.label :location %>
-      <%= f.text_field :location, class: 'form-control' %>
-      
-      <%= f.label :date %>
-      <%= f.date_field :date, class: 'form-control' %>
-      
-      <%= f.label :time %>
-      <%= f.time_field :time, class: 'form-control' %>
-
-      <%= f.submit "Create Event", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</section>

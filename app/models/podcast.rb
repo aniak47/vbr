@@ -25,7 +25,6 @@ class Podcast < ActiveRecord::Base
   validates :catergory,  inclusion: { in: %w(other)}, allow_blank: true
   validates :title, presence: true, length: { maximum: 100 }
   validates :staff_id, presence: true
-  validates :show_id, presence: true
   validates :audio, presence: true
   validates_presence_of :image
 

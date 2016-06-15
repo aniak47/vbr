@@ -1,20 +1,31 @@
 <section class="wapper blogpost_form">
-      
+  <h1>Edit Show</h1>
+  <hr>
   <%= form_for(@show, :html => {:multipart => true}) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     
     <%= f.label :catergory %>
-    <%= f.select :catergory, options_for_select([["specialty"], ["podcast"]]), class: 'form-control' %>
+    <%= f.select :catergory, options_for_select([["specialty"], ["podcast"]], @show.catergory), class: 'form-control' %>
     
-    <p> Select DJs affiliaed with this show</p>
+    <b>Current DJs:</b>
+    <% if @show.staffs.any? %>
+      <% @show.staffs.each do |s| %>
+        <br> <%= s.name %> :
+        <%= check_box(name=s.id, "remove") %> Check to remove this DJ
+      <% end %>
+    <% else %>
+      <p>None</p>
+    <% end %>
+    <br>
+    <b> Add DJs affiliated with this show</b>
     <% staff = Staff.all.active.map { |s| [s.name, s.id] } %>
     <% staff << ["Select DJ", 0] %>
-    <% 3.times do %>
+    <% 2.times do %>
       <%= select_tag(name="choice[]", options_for_select(staff, 0)) %>
     <% end %>
     
         Images:
-      <ul>
+      <ul class="image-form">
         <%= f.fields_for :images do |builder| %>
           <%= render "images/image_fields", :f => builder %>
         <% end %>
@@ -24,10 +35,10 @@
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :description %>
-      <%= f.text_area :description, rows: 20, class: 'form-control' %>
+      <%= f.text_area :description, rows: 10, class: 'form-control' %>
 
       <%= f.label :day %>
-      <%= f.text_field :day, class: 'form-control' %>
+      <%= f.select :day, options_for_select([["Monday"], ["Tuesday"], ["Wednesday"], ["Thursday"], ["Friday"], ["Saturday"], ["Sunday"]], @show.day), class: 'form-control' %>
       
       <%= f.label :start %>
       <%= f.time_field :start, class: 'form-control' %>

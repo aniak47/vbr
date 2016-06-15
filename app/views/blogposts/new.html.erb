@@ -1,6 +1,7 @@
 <div class="wapper">
 <section class="blogpost_form">
       <h1>Post a Blog</h1>
+      <hr>
   <%= form_for(@blogpost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     
@@ -13,13 +14,16 @@
     <%= f.text_field :subtitle, class: 'form-control' %>
     
     <div class="field">
-      <%= f.text_area :content, placeholder: "Compose new post..." %>
+      <%= f.text_area :content, rows: 15, placeholder: "Compose new post..." %>
     </div>
     
-    <%= f.submit "Post", class: "btn btn-primary" %>
+    <b>Add a picture:</b>
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    
       <% end %>
   
   </section>
