@@ -5,7 +5,7 @@
           <h1> <%= @show.name %> </h1>
           
             <% if @show.catergory === "specialty" %>
-              <h4><%= @show.day %> | <%= @show.start.strftime("%H:%M%p") %> - <%= @show.end.strftime("%H:%M%p") %></h4>
+              <h4><%= @show.day %> | <%= @show.start.strftime("%I:%M%p") %> - <%= @show.end.strftime("%I:%M%p") %></h4>
               <p>
               <% sh =  @show.staffs.map{|s| s.name }%>
               <%= sh.to_sentence %>

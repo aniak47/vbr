@@ -60,9 +60,18 @@ section {
     top: 100px;
     right: 20px;
     background-color: black;
-    a{
+      a{
       color: gray;
+      }
+    
+    .dropdown{
+    li{
+      a{
+        color: black;
+      }
     }
+    }
+ 
   }
   .toplogo{
     margin-left: 20px;
@@ -556,14 +565,15 @@ input {
 .schedule{
   width: 990px;
   margin: auto;
+  margin-bottom: 30px;
   td tr{
-    height: 80px;
+    
     font-size: 10px;
     padding: 0;
     
   }
   td {
-    height: 80px;
+    height: 60px;
     padding: 0;
     border: 1px solid black;
     vertical-align: top;
@@ -583,8 +593,17 @@ input {
   color: white;
   opacity: .95;
   vertical-align: middle;
-  
+  overflow: hidden;
+  }
 }
+.times{
+      position: absolute;
+      height: 1461px;
+      left: 20px;
+      top: 110px;
+      h6{
+        margin-bottom: 47px;
+      }
 }
 .bframe{
   margin-bottom: 30px;
@@ -660,15 +679,15 @@ input {
 }
 
 .panel{
-  box-shadow: 0 0 5px 5px #410b0b inset;
-  background-color: maroon;
+  box-shadow: 0 0 5px 5px gray inset;
+  background-color: dimgray;
   color: white;
   margin: 20px;
   margin-top: 0;
   border: 0;
   border-radius: 0;
-  opacity: .9;
-  padding: 20px;
+  opacity: .95;
+  padding: 10px;
   p{
     fornt-size: 20px;
     color: gray;

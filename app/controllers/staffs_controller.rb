@@ -11,6 +11,7 @@ class StaffsController < ApplicationController
   def index
     @week = Staff.active.activated.week
     @special = Staff.active.activated.special
+    @other = Staff.active.activated.other
   end
   def new
     @staff = Staff.new
