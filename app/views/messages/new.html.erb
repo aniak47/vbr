@@ -1,0 +1,29 @@
+<div class="wapper">
+    <h1> Create Message</h1>
+    <section class="blogpost_form">
+      <hr>
+  <%= form_for(@message) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <input type="hidden" name="show" value=<%=@id%> >
+    
+     <b><p>Select who this message is for</p></b>
+    <%= f.select :target, options_for_select([["Advertise"], ["New Music"], ["Events"], ["Promotion"]]), class: 'form-control' %>
+    
+    <%= f.label :subject %>
+    <%= f.text_field :subject, class: 'form-control' %>
+    
+    <%= f.label :from %> - Leave an email or phone number for us to get back to you
+    <%= f.text_field :from, class: 'form-control' %>
+    
+    <%= f.label :content %>
+    <div class="field">
+      <%= f.text_area :content, rows: 15, placeholder: "Write message..." %>
+    </div>
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    
+    <% end %>
+  </section>
+    
+</div>

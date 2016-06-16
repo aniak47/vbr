@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :messages, only: [:new, :create, :index]
+
   root             'static_pages#home'
  
   resources :shifts,          only: [:new, :create, :destroy, :edit, :update, :index]

@@ -1,0 +1,11 @@
+<div class="wapper">
+    <h1>Messages</h1>
+    <hr>
+    <% @messages.each do |m| %>
+        <h3><%= m.subject %></h3>
+        <p><%= m.content %> | reply to: <%= m.from %></p>
+    
+    
+    
+    <% end %>
+</div>

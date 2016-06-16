@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423202630) do
+ActiveRecord::Schema.define(version: 20160616155310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,15 @@ ActiveRecord::Schema.define(version: 20160423202630) do
   add_index "images", ["catergory"], name: "index_images_on_catergory", using: :btree
   add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
 
+  create_table "messages", force: :cascade do |t|
+    t.string   "target"
+    t.string   "from"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "podcasts", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -101,6 +110,7 @@ ActiveRecord::Schema.define(version: 20160423202630) do
     t.string   "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "color"
   end
 
   create_table "shifts_staffs", id: false, force: :cascade do |t|

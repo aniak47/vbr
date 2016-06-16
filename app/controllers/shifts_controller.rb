@@ -49,7 +49,7 @@ class ShiftsController < ApplicationController
   private
     
     def shift_params
-      params.require(:shift).permit(:title, :blurb, :start, :end, :day)
+      params.require(:shift).permit(:title, :blurb, :start, :end, :day, :color)
     end 
     
     def shift_staff

@@ -17,7 +17,9 @@
                 <% hpx = (h.end.strftime("%H").to_i - h.start.strftime("%H").to_i) %>
                 <%(hpx = 24 + hpx) if hpx <= 0  %>
                 <% hpx = (hpx)*60 - 4 %>
-                    <div class="shift" style="height:<%= hpx%>px">
+                <% color = "red" %>
+                <% color = h.color if h.color %>
+                    <div class="shift" style="height:<%= hpx%>px; background-color:<%=color%>">
                     <p><%= h.title %></p>
                     <p></p>
                     </div>
