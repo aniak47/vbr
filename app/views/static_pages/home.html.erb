@@ -51,7 +51,9 @@
   <div class="row">
     <div class="col-sm-8">
          <div class="bframe" id="blogs">
-            <h3> DJ BLOGS </h3><hr>
+            <h3> DJ BLOGS </h3> 
+            
+            <hr>
                 <% @blogs.each do |b| %>
                     <div class="ablog">
                         <%= image_tag(b.picture.url(:thumb), height:80) if b.picture? %>
@@ -99,6 +101,9 @@
                 <p><%= event.location %></p>
               </div>
           <% end %>
+          <div class="aff">
+          <a target='_blank' href="http://track.flexlinks.com/a.ashx?foid=1082161.2009999&fot=9999&foc=1" rel="nofollow">Up to 80% off of flights on FlightHub!</a>
+          </div>
       </div>
        <img class="ebr" src="/assets/ebr.png" width="300"/>
     </div>
