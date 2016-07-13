@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'advertise'  => 'static_pages#advertise'
   get 'social'  => 'static_pages#social'
   get 'weather'  => 'static_pages#weather'
+  get 'rockthewaters'    => 'static_pages#rockthewaters'
   
   resources :staffs
   

@@ -10,6 +10,10 @@ class StaticPagesController < ApplicationController
   def help
   end
   
+  def rockthewaters
+    
+  end
+  
   def about
   end
   
