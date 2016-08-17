@@ -3,7 +3,7 @@
 		<div class="p30">
 		<h1>On Air Now</h1> 
 		<h6>Real Rock Radio</h6><hr>
-		<a href="#">See Full Schedule </a>
+		<%= link_to("See Full Schedule", schedule_path) %>
 		<div class="lplate"><h6>Listener Line: 607-273-2121</h6></div>
 		<br>
 		<a href="/donate"><div class="cbutton"><p>Donate</p></div></a>
@@ -97,7 +97,7 @@
 				<a target="blank" href="http://www.hangartheatre.org/"><img class="ad" src="/assets/hangar.jpg" width="300"></a>
 				<div class="ad"></div>
 				<img class="ebr" src="/assets/ebr.png" width="300"/>
-				<div class="clog"><h3>Community Events</h3>
+				<div class="clog" id="events"><h3>Community Events</h3>
 				
 				<% @cevents.each do |event| %>
 		              <div>
