@@ -1,25 +1,22 @@
-<div class="wrap1">
-    <div id="on-air">
-        <h3><b>ON AIR NOW</b></h3>
-        <div>
-        <h5><b>Real Rock Radio</b></h5>
-        <h6>Ithaca's Home of Rock</h6>
-        <p>Tune in for a well crafted mix of classic rock, alternative, indie and everything in between. </p>
-        <h4>Request Line: 607-273-2121</h4>
-        <h2><%= link_to "See full schedule", schedule_path  %></h2>
+		<div class="wideblock" id="first">
+		<div class="cbox">
+		<div class="p30">
+		<h1>On Air Now</h1> 
+		<h6>Real Rock Radio</h6><hr>
+		<a href="#">See Full Schedule </a>
+		<div class="lplate"><h6>Listener Line: 607-273-2121</h6></div>
+		<br>
+		<a href="/donate"><div class="cbutton"><p>Donate</p></div></a>
+		<a href="/contact"><div class="cbutton"><p>Join Us</p></div></a>
+		<a href="/advertise"><div class="cbutton"><p>Advertise</p></div></a>
+		<hr>
 
-        </div>
-        <div id="donate"> <%= link_to "CLICK HERE TO DONATE!", donate_path  %> </div>
-        <hr>
-        
-        <p>WVBR FM a non-profit organization and community radio station. We are suppported by generous donations!</p>
-        
-        
-        
-    </div>
+		<h6>WVBR FM a non-profit organization and community radio station. We are suppported by generous donations!</h6>
 
-    
-    <div class="caro">
+
+		</div>
+		<div class="p40">
+			    <div class="caro">
     <div id="carousel" class="carousel slide carousel-fade">
         
       <% n = @images.size %>
@@ -43,73 +40,77 @@
     </div>
     </div>
 
-</div>
+		</div>
+		
+		
+		</div>
+		</div>
 
-<div id="promote" >
-    <a href="/rockthewaters"><img src="/assets/rockthewaters.jpg" width="970px" height="150px" /></a>
-</div>
-  <div class="row">
-    <div class="col-sm-8">
-         <div class="bframe" id="blogs">
-            <h3> DJ BLOGS </h3> 
-            
-            <hr>
-                <% @blogs.each do |b| %>
-                    <div class="ablog">
-                        <%= image_tag(b.picture.url(:thumb), height:80) if b.picture? %>
-                        <h6><%= link_to b.title, b  %></h6>
+		<div class="wideblock" id="second">
+			<div class="cbox">
+				<div class="f-left blist">
+				
+				<h2>DJ Blogposts</h2>
+			
+				<% @blogs.each do |b| %>
+                    <div class="oa">
+                    	<% if b.picture? %>
+                    	<div class="image-container" style="background-image: url(<%= b.picture%>)"></div>
+                    	<% else %>
+                    	<div class="image-container"></div>
+                    	<% end %>
+                        <h4><%= link_to b.title, b  %></h4>
                         <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
                         <p><%= truncate(b.content, length: 150)  %></p>
                     </div>
                 <% end %>
-            <h6 ><%= link_to "See all blogs", blogposts_path  %> </h6>
-        </div> 
-        <div class="bframe" id="news">
-            <h3> WVBR Newscenter </h3><hr>
-            
-            <% @news.each do |news| %>
-                <div class="art">
-                    <div class="newspic"><%= image_tag(news.images.first.picture,  height:"100px") if news.images.first%></div> 
-                    <h6><%= link_to news.title, news  %></h6>
-                    <h5><%= link_to news.staff.name, news.staff  %>  - <%= time_ago_in_words(news.created_at) %> ago.</h5>
-                    <p><%= truncate(news.content, length: 300)%></p>
-                </div>
-            <% end %>
-        </div>
-        <div class="bframe" id="podcasts">
-            <h3> Podcasts </h3><hr>
-
-                <% @podcasts.each do |pod| %>
-                    
-                    <div style="background-image: url(<%= pod.image.picture if pod.image %>)"> 
-                        <h6><%= link_to pod.title, pod  %></h6>
-                    </div>
-                <% end %>
-
-        </div>
-    </div>
-    <div class="col-sm-4">
-      <div><a target="blank" href="http://www.hangartheatre.org/"><img class="hangar" src="/assets/hangar.jpg" width="350"/></a></div>
-      <br>
-      <div id="events">
-          <h2> Upcoming Events</h2>
-          <% @events.each do |event| %>
-              <div>
-                  <div>
-                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
-                  </div>
-                <h6><%= link_to event.name, event  %></h6>  
-                <p><%= event.location %></p>
-              </div>
-          <% end %>
-          <div class="aff">
-          <a target='_blank' href="http://track.flexlinks.com/a.ashx?foid=1082161.2009999&fot=9999&foc=1" rel="nofollow">Up to 80% off of flights on FlightHub!</a>
-          </div>
-          
-      </div>
-      <div><a target="blank" href="http://www.kitchentheatre.org/"><img class="hangar" src="/assets/ktclogo.jpg" width="350"/></a></div>
-       <img class="ebr" src="/assets/ebr.png" width="300"/>
-    </div>
-  </div>
-
-<meta name="fo-verify" content="c6fbc974-f806-450d-aed7-6389e89cde3a">
+				
+				<div class="bframe" id="podcasts">
+            		<h2> Podcasts </h2><hr>
+	                <% @podcasts.each do |pod| %>
+	                    <div style="background-image: url(<%= pod.image.picture if pod.image %>)"> 
+	                        <h6><%= link_to pod.title, pod  %></h6>
+	                    </div>
+	                <% end %>
+        		</div>
+				
+				
+				</div>
+				<div class="f-right">
+					<a target="blank" href="http://www.kitchentheatre.org/"><img class="ad" src="/assets/ktclogo.jpg" width="300"></a>
+					
+				<div class="clog" id="events">
+					<h3>Concert Log</h3>
+					
+					<% @events.each do |event| %>
+			              <div>
+			                  <div>
+			                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
+			                  </div>
+			                <h6><%= link_to event.name, event  %></h6>  
+			                <p><%= event.location %></p>
+			              </div>
+			          <% end %>
+					
+					
+				</div>
+				<a target="blank" href="http://www.hangartheatre.org/"><img class="ad" src="/assets/hangar.jpg" width="300"></a>
+				<div class="ad"></div>
+				<img class="ebr" src="/assets/ebr.png" width="300"/>
+				<div class="clog"><h3>Community Events</h3>
+				
+				<% @cevents.each do |event| %>
+		              <div>
+		                  <div>
+		                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
+		                  </div>
+		                <h6><%= link_to event.name, event  %></h6>  
+		                <p><%= event.location %></p>
+		              </div>
+		          <% end %>
+				
+				</div>
+				
+				</div>
+			</div>
+		</div>

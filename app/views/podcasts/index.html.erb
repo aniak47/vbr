@@ -1,14 +1,12 @@
-  <div class="row">
-    <div class="sec-head panel panel-default">
-        <div class="panel-body">
-            <h1>Podcasts</h1>
-        </div>
-    </div>
+<div class="panel"><h1> Podcasts</h1></div>
+  <div class="wapper">
+
     <div class="col-sm-8">
         
         <div class="wapper">
         <% @podcasts.each do |podcast| %>
             <div>
+              <hr>
               <h2><%= link_to podcast.title, podcast %></h2>
               <span class="timestamp">
                 Posted <%= time_ago_in_words(podcast.created_at) %> ago.
@@ -31,3 +29,4 @@
     <div class="col-sm-4">
       <%= render 'shared/aside' %>
   </div>
+</div>

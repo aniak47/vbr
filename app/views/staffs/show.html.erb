@@ -1,12 +1,12 @@
 <% provide(:title, @staff.name) %>
 
-  <div class="row">
+  <div class="wapper">
     <div class="col-sm-8">
 
         <div class="row">
           <div class="wapper">
             <div>
-              <h1><%= @staff.name %></h1>
+              <h2><%= @staff.name %></h2>
                 <% if @staff.duties.present? %>
                 <h4> <%= @staff.duties %> </h4>
                 <% end %>
