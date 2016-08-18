@@ -28,7 +28,7 @@
       </ol>
     
       <div class="carousel-inner">
-        <div class="active item"><img src="/assets/newest604.jpg"/></div>
+        <div class="active item"><img src="/assets/caro-ontheair.jpg"/></div>
         <% @images.each do |image| %>
             <div class="item"><%= image_tag image.picture.url  %> <div class="topleft"><%= image.title %></div></div>
         <% end %>
@@ -81,6 +81,9 @@
 					
 				<div class="clog" id="events">
 					<h3>Concert Log</h3>
+					<h5> <b>Brought to you by the Rhine House!</b> <br> Super duper cool tavern on the West Side of town. We've got drinks that are priced to move! We love fun and so should you! Don't be scared.
+					<a href="https://twitter.com/rhineithaca" target="blank">@RhineIthaca</a>
+					</h5>
 					
 					<% @events.each do |event| %>
 			              <div>
@@ -95,7 +98,10 @@
 					
 				</div>
 				<a target="blank" href="http://www.hangartheatre.org/"><img class="ad" src="/assets/hangar.jpg" width="300"></a>
-				<div class="ad"></div>
+				<div class="flight">
+					<h2> Going out of town?</h2>
+					<a target='_blank' href="http://track.flexlinks.com/a.ashx?foid=1082161.2009999&fot=9999&foc=1" rel="nofollow">Up to 80% off of flights on FlightHub!</a><img src='http://track.flexlinks.com/i.ashx?foid=1082161.2009999&fot=9999&foc=1' border='0' />
+				</div>
 				<img class="ebr" src="/assets/ebr.png" width="300"/>
 				<div class="clog" id="events"><h3>Community Events</h3>
 				
