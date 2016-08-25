@@ -1,0 +1,40 @@
+<div class="aframe">
+<h1 style="color:black"><b>On Air This Week</b></h1><hr>
+<div class="times">
+    <h6>6am</h6> <h6>7am</h6> <h6>8am</h6> <h6>9am</h6> <h6>10am</h6> <h6>11am</h6> <h6>12pm</h6> <h6>1pm</h6>
+    <h6>2pm</h6> <h6>3pm</h6> <h6>4pm</h6> <h6>5pm</h6> <h6>6pm</h6> <h6>7pm</h6> <h6>8pm</h6> <h6>9pm</h6>
+    <h6>10pm</h6> <h6>11pm</h6> <h6>12am</h6> <h6>1am</h6> <h6>2am</h6> <h6>3am</h6> <h6>4am</h6> <h6>5am</h6>
+    
+</div>
+
+
+<div style="margin-left:70px">
+    <%= schedule @date do |date| %>
+        <% s = @shifts[date[1]] %>
+            <% if s %>
+                <% s.each do |h| %>
+                <%if h.start.strftime("%H")=== date[0].to_s.rjust(2, '0') %>
+                <% hpx = (h.end.strftime("%H").to_i - h.start.strftime("%H").to_i) %>
+                <%(hpx = 24 + hpx) if hpx <= 0  %>
+                <% hpx = (hpx)*60 - 4 %>
+                <% color = "red" %>
+                <% color = h.color if h.color %>
+                    <div class="shift" style="height:<%= hpx%>px; background-color:<%=color%>">
+                    <p><%= h.title %></p>
+                    <p>
+                        <% if logged_in? && current_staff.admin? %>
+                            <%= link_to "X", h, method: :delete,
+                            data: { confirm: "You sure?" } %>
+                            <%= link_to "E", edit_shift_path(h) %>
+                        <% end %>
+                        
+                    </p>
+                    </div>
+                <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>
+    
+    
+</div>

@@ -36,7 +36,7 @@ module ShiftsHelper
         
         
         def weeks
-          hours = (6..24).to_a + (1..5).to_a
+          hours = (6..23).to_a + (0..5).to_a
           shifts=hours.product(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"])
           shifts.in_groups_of(7)
         end

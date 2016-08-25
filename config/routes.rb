@@ -7,6 +7,7 @@ Rails.application.routes.draw do
  
   resources :shifts,          only: [:new, :create, :destroy, :edit, :update, :index]
   get 'schedule'  => 'shifts#schedule'
+  get 'scheduler'  => 'shifts#scheduler'
   
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
