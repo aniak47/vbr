@@ -19,7 +19,7 @@ class ShiftsController < ApplicationController
     @shift = Shift.new(shift_params)
     if @shift.save
       shift_staff
-      redirect_to shifts_url
+      redirect_to '/scheduler'
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class ShiftsController < ApplicationController
     @shift = Shift.find(params[:id])
     if @shift.update_attributes(shift_params)
       flash[:success] = "Shift updated"
-      redirect_to shifts_url
+      redirect_to '/scheduler'
     else
       render 'edit'
     end
