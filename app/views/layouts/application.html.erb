@@ -12,10 +12,7 @@
 </head>
 <body>
 
-<% render 'layouts/header' %>
-<% if logged_in? %>
-  <% render 'layouts/admin_bar' %>
-<% end %>
+
 
 
 <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -29,13 +26,18 @@
             <a href="https://open.spotify.com/user/wvbr" target="_blank"><img src="/assets/icon-spotify.png" width="30px" height="30px" /></a>
             <a href="https://twitter.com/wvbr" target="_blank"><img src="/assets/twitter-icon.png" width="30px" height="30px" /></a>
           </div>
+		
+		</div>
 		<div id="menu" class="header"> <%= render 'layouts/header' %> </div>
 		<% if logged_in? %>
         <%= render 'layouts/admin_bar' %>
     <% end %>
-		</div>
+    
 		<div class="wideblock" id="image">
 		</div>
+		
+		
+		
 <%= yield %>
 		<div class="wideblock" id="footr">
 		  <div class="legal">

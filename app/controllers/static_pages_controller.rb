@@ -41,4 +41,7 @@ class StaticPagesController < ApplicationController
   def social
   end
   
+  def beine
+  end
+  
 end
