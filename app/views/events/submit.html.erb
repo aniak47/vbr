@@ -1,5 +1,10 @@
 <div class="wapper">
-    <h1>New Event</h1>
+    <h1>Submit an Event</h1>
+    <p>
+      This is the submission space for both the WVBR Concert Log and Community Calendar. 
+      Once you submit your event, we will review and approve it. It may take a 1-3 days for your 
+      event to be approved and appear on the calendar so make sure you submit your event in advance. Thanks!
+    </p>
     <hr>
     <hr>
   <section class="blogpost_form">
@@ -7,15 +12,15 @@
     <%= form_for(@event) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       
-        <%= f.label :name %>
+        <%= f.label :name, 'Name of event' %>
         <%= f.text_field :name, class: 'form-control' %>
   
-        <%= f.label :blurb %>
+        <%= f.label :blurb, 'Tell us about the event (optional)' %>
         <%= f.text_area :blurb, class: 'form-control' %>
-  
-        <%= f.label :catergory %>
-        <%= f.select :catergory, options_for_select([["Promo"], ["Concert"], ["Other"]]), class: 'form-control' %>
         
+        <%= f.hidden_field :catergory, :value => "Unapproved" %>
+
+
         <%= f.label :location %>
         <%= f.text_field :location, class: 'form-control' %>
         
@@ -25,7 +30,7 @@
         <%= f.label :time %>
         <%= f.time_field :time, class: 'form-control' %>
   
-        <%= f.submit "Create Event", class: "btn btn-primary" %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
   </section>
 </div>

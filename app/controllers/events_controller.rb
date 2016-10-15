@@ -1,9 +1,14 @@
 class EventsController < ApplicationController
-  before_action :logged_in_staff, only: [:create, :new, :edit, :update, :destroy]
+  before_action :logged_in_staff, only: [:new, :edit, :update, :destroy, :approve]
+  before_action :admin_staff, only: [:approve]
   
   def index
     @events_by_date = Event.general.group_by(&:date)
     @date = params[:date]? Date.parse(params[:date]) : Date.today
+  end
+  
+  def approve
+    @events = Event.unapproved
   end
 
   def show
@@ -17,10 +22,19 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
+      flash[:success] = "Your event has been submitted"
       redirect_to events_url
     else
-      render 'new'
+      if current_staff
+        render 'new'
+      else
+        render 'submit'
+      end
     end
+  end
+  
+  def submit
+    @event = Event.new
   end
   
   def edit
@@ -33,7 +47,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event updated"
       redirect_to @event
     else
-      render 'edit'
+        render 'edit'
     end
   end
   

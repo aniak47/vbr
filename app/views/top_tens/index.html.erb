@@ -1,20 +1,15 @@
-<div class="row">
-    <div class="col-sm-8">
-        <div class="sec-head panel panel-default">
-            <div class="panel-body">
-                <h1>Top Ten @ Ten</h1>
-            </div>
-            
-        </div>
-        <div class="wapper">
+<div class="wapper">
+    <h1>Top 10 at 10</h1>
+    <p> 
+    On week days when the clock strikes ten our joks will bring you the top 10 songs of a catergory of their pick.
+    </p>
+    
+    <hr>
+
         <% @tops.each do |top| %>
-            <%= link_to top.title, top %>
+            <h4>> <%= link_to top.title, top %> </h4>
         <% end %>
-        </div>
-    </div>
+
         
-        
-    <div class="col-sm-4">
-      <p>This column is for adds and links to featured items</p>
-    </div>
+
 </div>

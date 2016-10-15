@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   resources :events
   get 'promo' => 'events#promo'
   get 'concerts' => 'events#concerts'
+  get 'submit_event' => 'events#submit'
+  get 'approve_event' => 'events#approve'
   
   get 'hq'   => 'back_end_pages#main'
   get 'carousel'   => 'back_end_pages#add_carousel'
