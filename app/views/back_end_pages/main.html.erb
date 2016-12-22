@@ -1,4 +1,24 @@
 
-<h4><%= link_to "Add staff",   new_staff_path %></h4>
-<h4><%= link_to "add to carousel",   carousel_path %></h4>
-<h4><%= link_to "manage carousel",   mancar_path %></h4>
+
+<div class="wapper">
+    <div class="col-md-8 col-md-offset-2 wapper">
+        <h1> Admin Home </h1>
+        <hr>
+        <h4>Welcome! If you are new to the site, we will have some instructions up here soon. 
+            If you want to work with web content, please contact the web team (akk77)
+        </h4>
+        <br>
+        <h4><b>Staff</b></h4>
+        <p><%= link_to "Add staff",   new_staff_path %></p>
+        <p><%= link_to "See All Staff",   manage_staff_path %></p>
+        
+        <h4><b>Content</b></h4>
+        <p><%= link_to "Manage Carousel Content",   mancar_path %></p>
+        <p><%= link_to "Add Slide to Carousel",   carousel_path %></p>
+        
+        <h4><b>Community<b></h4>
+        <p><%= link_to "Event Submissions",   approve_event_path %></p>
+        <p><%= link_to "Messages",   messages_path %></p>
+    </div>
+</div>
+    

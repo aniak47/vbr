@@ -7,8 +7,8 @@
     
     <input type="hidden" name="show" value=<%=@id%> >
     
-     <b><p>Select who this message is for</p></b>
-    <%= f.select :target, options_for_select([["Advertise"], ["New Music"], ["Events"], ["Promotion"]]), class: 'form-control' %>
+     <b><p>Topic of Message</p></b>
+    <%= f.select :target, options_for_select([["Advertising"], ["Promotion"], ["Interested in Joining"], ["Other"]]), class: 'form-control' %>
     
     <%= f.label :subject %>
     <%= f.text_field :subject, class: 'form-control' %>
