@@ -9,6 +9,14 @@ module ApplicationHelper
     end
   end
   
+  def meta_tag(tag, text)
+    content_for :"meta_#{tag}", text
+  end
+
+  def yield_meta_tag(tag, default_text='')
+    content_for?(:"meta_#{tag}") ? content_for(:"meta_#{tag}") : default_text
+  end
+  
   def audio_path(source, options = {})
     path_to_asset(source, {type: :audio}.merge!(options))
   end
