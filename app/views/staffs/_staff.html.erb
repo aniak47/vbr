@@ -5,8 +5,4 @@
       <img src="/assets/default.jpg" width="50"/>
     <% end %>
   <%= link_to staff.name, staff %>
-  <% if logged_in? && current_staff.admin? && !current_staff?(staff) %>
-    | <%= link_to "delete", staff, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
 </div>

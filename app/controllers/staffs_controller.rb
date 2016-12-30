@@ -58,7 +58,7 @@ class StaffsController < ApplicationController
     # Confirms the correct user.
     def correct_staff
       @staff = Staff.find(params[:id])
-      redirect_to(root_url) unless current_staff?(@staff)
+      redirect_to(root_url) unless current_staff?(@staff) || current_staff.admin?
     end
    
 end

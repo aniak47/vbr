@@ -29,7 +29,9 @@
      	<div class="wideblock" id="image">
      	  <!-- Here is the image of the records -->
      	</div>
-     		
+     	  <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
      	<%= yield %>
      	
       <%= render 'layouts/footer' %> 

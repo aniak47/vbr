@@ -59,7 +59,7 @@ class PodcastsController < ApplicationController
     
     def correct_staff
       @podcast = current_staff.podcasts.find_by(id: params[:id])
-      redirect_to root_url if @podcast.nil?
+      redirect_to root_url unless !(@podcast.nil?) || current_staff.admin?
     end
     
 end

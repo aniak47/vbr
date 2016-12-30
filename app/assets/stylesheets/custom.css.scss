@@ -166,9 +166,9 @@ a{
   margin-bottom: 10px;
 }
 .panel{
-  box-shadow: 0 0 5px 5px gray inset;
-  background-color: dimgray;
-  color: white;
+  border-bottom: white 3px solid;
+  background-color:  seashell;
+  color: gray;
   margin-top: 0;
   border: 0;
   border-radius: 0;
@@ -179,10 +179,11 @@ a{
     color: gray;
   }
   h1{
-    font-size: 60px;
-    color: #0d0d0d;
+    padding-left: 50px;
+    font-size: 40px;
+    color: black;
     font-weight: bold;
-    margin: 10px;
+    margin: 20px;
   }
 }
 .wapper{
@@ -477,7 +478,7 @@ textarea {
 /*Used for blogposts*/
 .boxlist{
   div{
-    border-top: gray 1px solid;
+    border-bottom: gray 1px solid;
     margin: 10px;
     overflow: auto;
     padding: 10px;
