@@ -1,3 +1,52 @@
 // Place all the styles related to the Shifts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.schedule{
+  width: 990px;
+  margin: auto;
+  margin-bottom: 30px;
+  tbody{
+    margin-left: 30px;
+  }
+  td tr{
+    
+    font-size: 10px;
+    padding: 0;
+    
+  }
+  td {
+    height: 60px;
+    padding: 0;
+    border: 1px solid black;
+    vertical-align: top;
+    width: 140px;
+  }
+  tr{
+    text-align:center;
+  }
+  .shift{
+  background-color: blue;
+  width: 137px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 1em;
+  position: absolute;
+  text-align: center;
+  color: white;
+  opacity: .95;
+  vertical-align: middle;
+  overflow: hidden;
+  }
+}
+
+.times{
+  position: absolute;
+  height: 1461px;
+  left: 20px;
+  top: 110px;
+  h6{
+    margin-bottom: 43px;
+    color: black;
+  }
+}

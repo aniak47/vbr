@@ -1,78 +1,85 @@
+<div class="header">
+  
+  <a href="http://www.wvbr.com"><img class="toplogo" src="/assets/logoblack.jpg" width="250px" height="100px" /></a>
+  <div id="listenbutton"><a title="Click Here To Play" href="http://www.streamlicensing.com/play/player.php?sid=4728&stream_id=8885"><img src="http://www.streamlicensing.com/play/buttons/15.png" width="300" height="100" style="border:none;"/></a></div>
+  <a id="tunein" href="http://tunein.com/radio/WVBR-FM-935-s23473/"  target="_blank"><img src="/assets/tunein.png"/></a>
+  <div class="social">
+    <a href="https://www.facebook.com/WVBRFM/" target="_blank"><img src="/assets/fb.png" width="30px" height="30px" /></a>
+    <a href="https://open.spotify.com/user/wvbr" target="_blank"><img src="/assets/icon-spotify.png" width="30px" height="30px" /></a>
+    <a href="https://twitter.com/wvbr" target="_blank"><img src="/assets/twitter-icon.png" width="30px" height="30px" /></a>
+  </div>
+</div>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   root_path %></li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  MUSIC <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Schedule", schedule_path %></li>
-                  <li><%= link_to "Specialty Shows", shows_path %></li>
-                  <li><%= link_to "Weekday Lineup", lineup_path %></li>
-                  <li><%= link_to "Song History", songhistory_path %></li>
-                </ul>
-              </li>
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  STATION <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "About", about_path %></li>
-                  <li><%= link_to "Station News", station_news_path %></li>
-                  <li><%= link_to "R&R Patrol", promo_path %></li>
-                  <li><%= link_to "Events", events_path %></li>
-                  
-                </ul>
-              </li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  DJs <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "DJ Profiles", staffs_path %></li>
-                  <li><%= link_to "DJ Blogs", blogposts_path %></li>
-                  <li><%= link_to "Top Tens", top_tens_path %></li>
+<div id="menu" class="header">
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to "Home",   root_path %></li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        MUSIC <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Schedule", schedule_path %></li>
+        <li><%= link_to "Specialty Shows", shows_path %></li>
+        <li><%= link_to "Weekday Lineup", lineup_path %></li>
+        <li><%= link_to "Song History", songhistory_path %></li>
+      </ul>
+    </li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        STATION <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Station News", station_news_path %></li>
+        <li><%= link_to "R&R Patrol", promo_path %></li>
+        <li><%= link_to "Events", events_path %></li>
+      </ul>
+    </li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        DJs <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "DJ Profiles", staffs_path %></li>
+        <li><%= link_to "DJ Blogs", blogposts_path %></li>
+        <li><%= link_to "Top Tens", top_tens_path %></li>
+      </ul>
+    </li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        LOCAL <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "News", news_path %></li>
+        <li><%= link_to "Concert Log", concerts_path %></li>
+        <li><%= link_to "Weather", weather_path %></li>
+      </ul>
+    </li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        PODCASTS <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "All Podcasts", podcasts_path %></li>
+      </ul>
+    </li>
+    
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        CONTACT <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Contact Info", contact_path %></li>
+        <li><%= link_to "Advertise", advertise_path %></li>
+        <li><%= link_to "Donate", donate_path %></li>
+        <li><%= link_to "Social Media", social_path %></li>
+      </ul>
+    </li>
+  </ul>
 
-                </ul>
-              </li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  LOCAL <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "News", news_path %></li>
-                  <li><%= link_to "Concert Log", concerts_path %></li>
-                  <li><%= link_to "Weather", weather_path %></li>
-
-                </ul>
-              </li>
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  PODCASTS <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-
-                  <li><%= link_to "All Podcasts", podcasts_path %></li>
-                </ul>
-              </li>
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  CONTACT <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Contact Info", contact_path %></li>
-                  <li><%= link_to "Advertise", advertise_path %></li>
-                  <li><%= link_to "Donate", donate_path %></li>
-                  <li><%= link_to "Social Media", social_path %></li>
-                </ul>
-              </li>
-              
-            
-          </ul>
-
+</div>

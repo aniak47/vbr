@@ -53,8 +53,8 @@
 			<div class="cbox">
 				<div class="f-left blist">
 				
-				<h2>DJ Blogposts</h2>
-			
+				<h2><b>DJ Blogposts | </b> <%= link_to 'more...', '/blogposts'%></h2>
+				
 				<% @blogs.each do |b| %>
                     <div class="oa">
                     	<% if b.picture? %>
@@ -69,7 +69,7 @@
                 <% end %>
 				
 				<div class="bframe" id="podcasts">
-            		<h2> Podcasts </h2><hr>
+            		<h2><b> Podcasts  | </b> <%= link_to 'more...', '/podcasts'%></h2><hr>
 	                <% @podcasts.each do |pod| %>
 	                    <div style="background-image: url(<%= pod.image.picture if pod.image %>)"> 
 	                        <h6><%= link_to pod.title, pod  %></h6>

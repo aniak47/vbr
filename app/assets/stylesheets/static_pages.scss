@@ -1,3 +1,68 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*Home Page Elements*/
+
+.ebr{
+  margin: 20px;
+}
+
+
+/* carousel */
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+.carousel, .carousel-inner, .carousel-inner .item {
+  height: 350px;
+  width: 550px;
+}
+.carousel{
+  float: right;
+  margin: 5px;
+  .item{
+    
+    img{
+      height: 350px;
+      width: auto;
+      padding: 0;
+      margin: auto;
+    }
+  }
+  .topleft {
+    width: 600px;
+    position: absolute;
+    font-size: 30px;
+    top: 8px;
+    left: 70px;
+    color: white;
+    text-shadow: 0 0 10px black;
+  }
+}
+.caro{
+  float: right;
+  padding: 0px;
+  overflow: auto;
+  padding: 10px;
+}

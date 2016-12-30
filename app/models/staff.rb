@@ -58,7 +58,7 @@ class Staff < ActiveRecord::Base
     
   # Remembers a user in the database for use in persistent sessions.
   def remember
-    self.remember_token =Staff.new_token
+    self.remember_token = Staff.new_token
     update_attribute(:remember_digest, Staff.digest(remember_token))
   end
   

@@ -1,89 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <meta name='description' 
-    content='<%= yield_meta_tag(:description, 'Default description') %>' />
-  <meta name='keywords'
-    content='<%= yield_meta_tag(:keywords, 'defaults,ruby,rails') %>' />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
-</head>
-<body>
-
-
-
-
-<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-	<div id="page">
-		<div class="header">
-		  <a href="http://www.wvbr.com"><img class="toplogo" src="/assets/logoblack.jpg" width="250px" height="100px" /></a>
-		  <div id="listenbutton"><a title="Click Here To Play" href="http://www.streamlicensing.com/play/player.php?sid=4728&stream_id=8885"><img src="http://www.streamlicensing.com/play/buttons/15.png" width="300" height="100" style="border:none;"/></a></div>
-          <a id="tunein" href="http://tunein.com/radio/WVBR-FM-935-s23473/"  target="_blank"><img src="/assets/tunein.png"/></a>
-          <div class="social">
-            <a href="https://www.facebook.com/WVBRFM/" target="_blank"><img src="/assets/fb.png" width="30px" height="30px" /></a>
-            <a href="https://open.spotify.com/user/wvbr" target="_blank"><img src="/assets/icon-spotify.png" width="30px" height="30px" /></a>
-            <a href="https://twitter.com/wvbr" target="_blank"><img src="/assets/twitter-icon.png" width="30px" height="30px" /></a>
-          </div>
-		
-		</div>
-		<div id="menu" class="header"> <%= render 'layouts/header' %> </div>
-		<% if logged_in? %>
-        <%= render 'layouts/admin_bar' %>
-    <% end %>
+  
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name='description' 
+      content='<%= yield_meta_tag(:description, 'Default description') %>' />
+    <meta name='keywords'
+      content='<%= yield_meta_tag(:keywords, 'defaults,ruby,rails') %>' />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+        </script>
+      <![endif]-->
+  </head>
+  
+  <body>
     
-		<div class="wideblock" id="image">
-		</div>
-		
-		
-		
-<%= yield %>
-		<div class="wideblock" id="footr">
-		  <div class="legal">
-          <p>
-            About WVBR
-           <br> WVBR is an independent, non-profit commercial radio station broadcasting from Ithaca, New York to the Counties of Tompkins, Tioga, Cortland, Cayuga, Seneca, Schuyler, and Chemung.
-            <br>© Cornell Media Guild, Inc.
-            <br>All Rights Reserved.
-          </p>
-        </div>
-
-		  <h2>WVBR 93.5 FM ITHACA</h2>
-		  <%= link_to("Home", root_path) %><br>
-		  <%= link_to("About", about_path) %><br>
-		  <%= link_to("Contact", contact_path) %><br>
-		  <%= link_to("Advertise", advertise_path) %><br>
-		  <%= link_to("Schedule", schedule_path) %><br>
-		  <%= link_to("Admin Login", login_path) %><br>
-		</div>
-
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-<script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"><\/script>')</script>
-<script src="https://static.radiocdn.com/jquery.shoutcast.easy.min.js?host=smoke.wavestreamer.com&port=7820&stream=1"></script>
-
-</body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-72749319-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+   
+    <div id="page">
+      <%= render 'layouts/header' %> 
+     	<% if logged_in? %>
+     	  <%= render 'layouts/admin_bar' %>
+      <% end %>
+      
+     	<div class="wideblock" id="image">
+     	  <!-- Here is the image of the records -->
+     	</div>
+     		
+     	<%= yield %>
+     	
+      <%= render 'layouts/footer' %> 
+    </div>
+    
+    <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"><\/script>')</script>
+    <script src="https://static.radiocdn.com/jquery.shoutcast.easy.min.js?host=smoke.wavestreamer.com&port=7820&stream=1"></script>
+    
+  </body>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-72749319-1', 'auto');
+    ga('send', 'pageview');
+   
+  </script>
 </html>
