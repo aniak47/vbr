@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'store/index'
+
+  get 'store/order'
+
   resources :messages, only: [:new, :create, :index]
 
   root             'static_pages#home'
