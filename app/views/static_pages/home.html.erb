@@ -48,6 +48,7 @@
 	
 	</div>
 	</div>
+	<%if false%>
 	<% 
 	page = Net::HTTP.get(URI('http://ithacanet.org/closingsdetail.html'))
 	a = page.index('<pre>')
@@ -58,6 +59,7 @@
 		<p><%=snowdata%></p>
 		<h4 id="hide">Hide</h4>
 	</div>
+	<%end%>
 	<div class="wideblock" id="second">
 		<div class="cbox">
 			<div class="f-left blist">
