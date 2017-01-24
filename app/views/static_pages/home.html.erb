@@ -56,7 +56,7 @@
 	%>
 	<div id="closings" class="wideblock">
 		<h3 class="dropable"><b>Click Here for School Closings and Weather Information</b></h3>
-		<p><%=snowdata%></p>
+		<p><%= simple_format(snowdata)%></p>
 		<h4 id="hide">Hide</h4>
 	</div>
 	<%end%>
