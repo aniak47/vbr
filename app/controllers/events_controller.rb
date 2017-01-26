@@ -63,7 +63,7 @@ class EventsController < ApplicationController
   end
   
   def concerts
-    @events = Event.concert.future.paginate(page: params[:page])
+    @events = Event.concert.future.limit(20)
     @events_by_date = Event.concert.group_by(&:date)
     @date = params[:date]? Date.parse(params[:date]) : Date.today
   end

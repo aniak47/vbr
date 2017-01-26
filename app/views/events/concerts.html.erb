@@ -20,15 +20,15 @@
             </ul>
         <% end %>
     <% end %>
-</div>git 
+</div>
 
-<div class="col-md-12 wapper">
-    <%= will_paginate %>
+<div class="col-md-12 wapper" id="reader">
+
         <% @events.each do |event| %>
               <p><b><%= link_to event.name, event %></b> |
               <%= event.date.strftime('%A %B %d') %> at <%= event.time.strftime('%-I:%M %p') %> - <%= event.location %></p>
           <% end %>
-    <%= will_paginate %>
+
 
 </div>
 
