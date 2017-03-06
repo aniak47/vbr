@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
 
-  get 'store/index'
+  resources :items, only: [:new, :create, :show, :destroy, :edit, :update]
 
+  get 'store' => 'store#index'
   get 'store/order'
+  get 'store/manage'
+  
+  
 
   resources :messages, only: [:new, :create, :index]
 

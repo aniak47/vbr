@@ -1,0 +1,35 @@
+<div class="wapper">
+<section class="blogpost_form">
+      <h1>Create New Item</h1>
+      <hr>
+  <%= form_for(@item, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <input type="hidden" name="show" value=<%=@id%> >
+    
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+    
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control' %>
+    
+    <%= f.label :button %>
+    <%= f.text_field :button, class: 'form-control' %>
+    
+
+    <b>Add a picture:</b>
+    <span class="picture">
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    
+      <% end %>
+  
+  </section>
+  
+
+</div>

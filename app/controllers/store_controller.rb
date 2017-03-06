@@ -6,13 +6,13 @@ class StoreController < ApplicationController
     #url = URI('https://api.scalablepress.com/v2/categories')
     #array = Net::HTTP.get(url)
     #@json = JSON.parse(array)
+    @items = Item.all
     
-    
-    uri = URI.parse('https://api.scalablepress.com/v2/design/5870001e3f015b8579f8945c')
-    # @products = Net::HTTP.new(produrl)
-    req = Net::HTTP::Get.new(uri)
-    req.basic_auth '', 'test_9mKVUq18F2aktJ0Sihdpkw'
-    @json = JSON.parse(req)
+    def manage
+      @items = Item.all
+      
+    end
+
     
   end
 
