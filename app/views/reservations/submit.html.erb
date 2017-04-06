@@ -1,0 +1,38 @@
+<div class="wapper">
+    <h1>Request a reservation</h1>
+    <p>
+      Fill out the form bellow to reserve WVBR's Studio A. Payment can be made by cash, check or Paypal and is due before the start of the reserved session. 
+      
+    </p>
+    <hr>
+    <hr>
+  <section class="blogpost_form">
+        
+    <%= form_for(@event) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      
+        <%= f.label :name, 'Your name' %>
+        <%= f.text_field :name, class: 'form-control' %>
+  
+        <%= f.label :blurb, 'Your email' %>
+        <%= f.text_field :blurb, class: 'form-control' %>
+        
+        <%= f.hidden_field :catergory, :value => "Ureservation" %>
+
+
+        <%= f.label :location, 'What will you be using the space for? Please include information such as number of people/instruments.' %>
+        <%= f.text_area :location, class: 'form-control' %>
+        
+        <%= f.label :date %> 
+        <%= f.date_field :date, class: 'form-control' %>
+        
+        <%= f.label :time, 'Start Time'%>
+        <%= f.time_field :time, class: 'form-control' %>
+        
+        <%= f.label :endtime, 'End Time'%>
+        <%= f.time_field :endtime, class: 'form-control' %>
+  
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+  </section>
+</div>

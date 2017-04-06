@@ -59,6 +59,12 @@ Rails.application.routes.draw do
   get 'sports'  => 'articles#sports'
   get 'station_news'  => 'articles#station_news'
   
+  get 'reservations/submit'
+  get 'reservations/approve'
+  get 'reservations/calendar'
+  get 'reservations/info'
+  get 'reservations/approve_reservation'
+  
   resources :images,          only: [:create, :index, :destroy, :update]
   
   resources :top_tens

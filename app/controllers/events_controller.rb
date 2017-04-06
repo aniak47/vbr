@@ -22,8 +22,16 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash[:success] = "Your event has been submitted"
-      redirect_to events_url
+      if @event.catergory === "Concert"
+        flash[:success] = "Your event has been submitted"
+        redirect_to events_url
+      elsif @event.catergory === "Ureservation"
+        flash[:success] = "Your reservation request has been submitted"
+        redirect_to "/reservations/calendar"
+      else
+        flash[:success] = "Your event has been submitted"
+        redirect_to events_url
+      end
     else
       if current_staff
         render 'new'
@@ -71,6 +79,6 @@ class EventsController < ApplicationController
   private
     
     def event_params
-      params.require(:event).permit(:name, :blurb, :date, :time, :location, :catergory)
+      params.require(:event).permit(:name, :blurb, :date, :time, :location, :catergory, :endtime)
     end
 end
