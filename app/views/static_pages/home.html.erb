@@ -1,129 +1,89 @@
-	<% meta_tag :description, "WVBR FM a non-profit organization and community radio station broadcasting out of Ithaca NY." %>
-	
-	
-	<div class="wideblock" id="first">
+<% meta_tag :description, "WVBR FM a non-profit organization and community radio station broadcasting out of Ithaca NY." %>
+
+<div class="wideblock" id="first">
 	<div class="cbox">
-	<div class="p30">
-	<h2><b>Ithaca's Real Rock Radio</b></h2> 
-	<hr>
-	<h4><%= link_to("See This Week's Schedule", schedule_path) %></h4>
-	<div class="lplate"><h6>Listener Line: 607-273-2121</h6></div>
-	<br>
-	<a href="/donate"><div class="cbutton"><p>Donate</p></div></a>
-	<a href="/contact"><div class="cbutton"><p>Join Us</p></div></a>
-	<a href="/advertise"><div class="cbutton"><p>Advertise</p></div></a>
-	<hr>
-
-	<h6>WVBR FM a non-profit organization and community radio station. <%= link_to("Click here to learn more about us", about_path) %></h6>
-
-
-	</div>
-	<div class="p40">
+		<div class="p30">
+			<h2><b>Ithaca's Real Rock Radio</b></h2> 
+			<hr>
+			<h4><%= link_to("See This Week's Schedule", schedule_path) %></h4>
+			<div class="lplate"><h6>Listener Line: 607-273-2121</h6></div>
+			<br>
+			<a href="/donate"><div class="cbutton"><p>Donate</p></div></a>
+			<a href="/contact"><div class="cbutton"><p>Join Us</p></div></a>
+			<a href="/advertise"><div class="cbutton"><p>Advertise</p></div></a>
+			<hr>
+			<h6>WVBR FM a non-profit organization and community radio station. <%= link_to("Click here to learn more about us", about_path) %></h6>
+		</div>
+		<div class="p40">
 		    <div class="caro">
-<div id="carousel" class="carousel slide carousel-fade">
-    
-  <% n = @images.size %>
-  <ol class="carousel-indicators" >
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <% n.times do %>
-    <li data-target="#carousel" data-slide-to="<%= n %>"></li>
-    <% end %>
-  </ol>
-
-  <div class="carousel-inner">
-    <div class="active item"><img src="/assets/caro-ontheair.jpg"/></div>
-    <% @images.each do |image| %>
-        <div class="item"><%= image_tag image.picture.url  %> <div class="topleft"><%= image.title %></div></div>
-    <% end %>
-  </div>
-
-  <a class="carousel-control left" href="#carousel" data-slide="prev"> ‹ </a>
-  <a class="carousel-control right" href="#carousel" data-slide="next"> › </a>
-  
-</div>
-</div>
-
-	</div>
-	
-	
-	</div>
-	</div>
-	<%if true%>
-	<% 
-	page = Net::HTTP.get(URI('http://ithacanet.org/closingsdetail.html'))
-	a = page.index('<pre>')
-	snowdata = page[(a+5...-6)]
-	%>
-	<div id="closings" class="wideblock">
-		<h3 class="dropable"><b>Click Here for School Closings and Weather Information</b></h3>
-		<p><%= simple_format(snowdata)%></p>
-		<h4 id="hide">Hide</h4>
-	</div>
-	<%end%>
-	<div class="wideblock" id="second">
-		<div class="cbox">
-			
-			<div class="f-left blist">
-			<div id="csp">
-				<h3>Thanks to our proud sponsor...</h3>
-				<a target="blank" href="https://cspmanagement.com/"><img src="/assets/CSP.jpg" width="400"></a>
+				<div id="carousel" class="carousel slide carousel-fade">
+  				<% n = @images.size %>
+					<ol class="carousel-indicators" >
+				    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+				    <% n.times do %>
+					<li data-target="#carousel" data-slide-to="<%= n %>"></li>
+					<% end %>
+					</ol>
+					<div class="carousel-inner">
+					<div class="active item"><img src="/assets/caro-ontheair.jpg"/></div>
+					<% @images.each do |image| %>
+					    <div class="item"><%= image_tag image.picture.url  %> <div class="topleft"><%= image.title %></div></div>
+					<% end %>
+					</div>
+					<a class="carousel-control left" href="#carousel" data-slide="prev"> ‹ </a>
+					<a class="carousel-control right" href="#carousel" data-slide="next"> › </a>
+					  
+				</div>
 			</div>
-			<h2><b>DJ Blogposts | </b> <%= link_to 'more...', '/blogposts'%></h2>
-			
-			<% @blogs.each do |b| %>
-                <div class="oa">
-                	<% if b.picture? %>
-                	<div class="image-container" style="background-image: url(<%= b.picture%>)"></div>
-                	<% else %>
-                	<div class="image-container"></div>
-                	<% end %>
-                    <h4><%= link_to b.title, b  %></h4>
-                    <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
-                    <p><%= truncate(b.content, length: 150)  %></p>
+		</div>
+	</div>
+</div>
+
+
+<div class="wideblock" id="second">
+	<div class="cbox">
+		
+		<div class="f-left blist">
+		<div id="csp">
+			<h3>Thanks to our proud sponsor...</h3>
+			<a target="blank" href="https://cspmanagement.com/"><img src="/assets/CSP.jpg" width="400"></a>
+		</div>
+		<h2><b>DJ Blogposts | </b> <%= link_to 'more...', '/blogposts'%></h2>
+		
+		<% @blogs.each do |b| %>
+            <div class="oa">
+            	<% if b.picture? %>
+            	<div class="image-container" style="background-image: url(<%= b.picture%>)"></div>
+            	<% else %>
+            	<div class="image-container"></div>
+            	<% end %>
+                <h4><%= link_to b.title, b  %></h4>
+                <h5><%= link_to b.staff.name, b.staff  %>  - <%= time_ago_in_words(b.created_at) %> ago.</h5>
+                <p><%= truncate(b.content, length: 150)  %></p>
+            </div>
+        <% end %>
+		
+		<div class="bframe" id="podcasts">
+    		<h2><b> Podcasts  | </b> <%= link_to 'more...', '/podcasts'%></h2><hr>
+            <% @podcasts.each do |pod| %>
+                <div style="background-image: url(<%= pod.image.picture if pod.image %>)"> 
+                    <h6><%= link_to pod.title, pod  %></h6>
                 </div>
             <% end %>
+		</div>
+		
+		
+		</div>
+		<div class="f-right">
+			<a target="blank" href="http://www.kitchentheatre.org/"><img class="ad" src="/assets/ktclogo.jpg" width="300"></a>
 			
-			<div class="bframe" id="podcasts">
-        		<h2><b> Podcasts  | </b> <%= link_to 'more...', '/podcasts'%></h2><hr>
-                <% @podcasts.each do |pod| %>
-                    <div style="background-image: url(<%= pod.image.picture if pod.image %>)"> 
-                        <h6><%= link_to pod.title, pod  %></h6>
-                    </div>
-                <% end %>
-    		</div>
+		<div class="clog" id="events">
+			<h3>Concert Log</h3>
+			<h5> <b>Brought to you by the Rhine House!</b> <br> Super duper cool tavern on the West Side of town. We've got drinks that are priced to move! We love fun and so should you! Don't be scared.
+			<a href="https://twitter.com/rhineithaca" target="blank">@RhineIthaca</a>
+			</h5>
 			
-			
-			</div>
-			<div class="f-right">
-				<a target="blank" href="http://www.kitchentheatre.org/"><img class="ad" src="/assets/ktclogo.jpg" width="300"></a>
-				
-			<div class="clog" id="events">
-				<h3>Concert Log</h3>
-				<h5> <b>Brought to you by the Rhine House!</b> <br> Super duper cool tavern on the West Side of town. We've got drinks that are priced to move! We love fun and so should you! Don't be scared.
-				<a href="https://twitter.com/rhineithaca" target="blank">@RhineIthaca</a>
-				</h5>
-				
-				<% @events.each do |event| %>
-		              <div>
-		                  <div>
-		                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
-		                  </div>
-		                <h6><%= link_to event.name, event  %></h6>  
-		                <p><%= event.location %></p>
-		              </div>
-		          <% end %>
-				
-				
-			</div>
-			<a target="blank" href="http://www.hangartheatre.org/"><img class="ad" src="/assets/hangar.jpg" width="300"></a>
-			<div class="flight">
-				<h2> Going out of town?</h2>
-				<a target='_blank' href="http://track.flexlinks.com/a.ashx?foid=1082161.2009999&fot=9999&foc=1" rel="nofollow">Up to 80% off of flights on FlightHub!</a><img src='http://track.flexlinks.com/i.ashx?foid=1082161.2009999&fot=9999&foc=1' border='0' />
-			</div>
-			<img class="ebr" src="/assets/ebr.png" width="300"/>
-			<div class="clog" id="events"><h3>Community Events</h3>
-			
-			<% @cevents.each do |event| %>
+			<% @events.each do |event| %>
 	              <div>
 	                  <div>
 	                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
@@ -133,13 +93,33 @@
 	              </div>
 	          <% end %>
 			
-			</div>
 			
-			</div>
+		</div>
+		<a target="blank" href="http://www.hangartheatre.org/"><img class="ad" src="/assets/hangar.jpg" width="300"></a>
+		<div class="flight">
+			<h2> Going out of town?</h2>
+			<a target='_blank' href="http://track.flexlinks.com/a.ashx?foid=1082161.2009999&fot=9999&foc=1" rel="nofollow">Up to 80% off of flights on FlightHub!</a><img src='http://track.flexlinks.com/i.ashx?foid=1082161.2009999&fot=9999&foc=1' border='0' />
+		</div>
+		<img class="ebr" src="/assets/ebr.png" width="300"/>
+		<div class="clog" id="events"><h3>Community Events</h3>
+		
+		<% @cevents.each do |event| %>
+              <div>
+                  <div>
+                      <h1><%= event.date.to_formatted_s(:short)  %></h1>
+                  </div>
+                <h6><%= link_to event.name, event  %></h6>  
+                <p><%= event.location %></p>
+              </div>
+          <% end %>
+		
+		</div>
+		
 		</div>
 	</div>
+</div>
 	
-	
+
 <script>
 	$(document).ready(function(){
 		$('#carousel').carousel();
@@ -155,5 +135,4 @@
        		}); 
 		});
 	});
-		
 </script>
