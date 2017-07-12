@@ -1,58 +1,54 @@
 
-      <div class="admin_bar">
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   hq_path %></li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  PROFILE <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  
-                  <li><%= link_to "Edit Profile",   edit_staff_path(current_staff) %></li>
-                  <li><%= link_to "View Profile", current_staff %></li>
-                  <% if current_staff.shows.any? %>
-                    <% current_staff.shows.each do |show| %>
-                      <li><%= link_to show.name, show %></li>
-                    <% end %>
-                  <% end %>
-                </ul>
-            </li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  POST <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  
-                  <li><%= link_to "Blog",   new_blogpost_path %></li>
-                  <li><%= link_to "Article", new_article_path %></li>
-                  <li><%= link_to "Podcast", new_podcast_path %></li>
-                  <li><%= link_to "Top10", new_top_ten_path %></li>
-                  <li><%= link_to "Event",   new_event_path %></li>
-                  
-                </ul>
-            </li>
-            
-            <% if logged_in? && current_staff.admin? %>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  NEW <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  
-                  <li><%= link_to "Show",   new_show_path %></li>
-                  <li><%= link_to "Staff",   new_staff_path %></li>
-                  
-                </ul>
-            </li>
+<nav class="admin_bar navbar">
+  <ul class="nav navbar-nav">
+    <li><%= link_to "Home",   hq_path %></li>
+    
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          PROFILE <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          
+          <li><%= link_to "Edit Profile",   edit_staff_path(current_staff) %></li>
+          <li><%= link_to "View Profile", current_staff %></li>
+          <% if current_staff.shows.any? %>
+            <% current_staff.shows.each do |show| %>
+              <li><%= link_to show.name, show %></li>
             <% end %>
-            
-            <li>  <%= link_to "Log out", logout_path, method: "delete" %> </li>
-              
-          </ul>
-        </nav>
-        
-
-      </div>
+          <% end %>
+        </ul>
+    </li>
+    
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          POST <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          
+          <li><%= link_to "Blog",   new_blogpost_path %></li>
+          <li><%= link_to "Article", new_article_path %></li>
+          <li><%= link_to "Podcast", new_podcast_path %></li>
+          <li><%= link_to "Top10", new_top_ten_path %></li>
+          <li><%= link_to "Event",   new_event_path %></li>
+          
+        </ul>
+    </li>
+    
+    <% if logged_in? && current_staff.admin? %>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          NEW <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          
+          <li><%= link_to "Show",   new_show_path %></li>
+          <li><%= link_to "Staff",   new_staff_path %></li>
+          
+        </ul>
+    </li>
+    <% end %>
+    
+    <li>  <%= link_to "Log out", logout_path, method: "delete" %> </li>
+      
+  </ul>
+</nav>
