@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact'   => 'static_pages#contact'
   get 'schedule'   => 'static_pages#schedule'
@@ -29,9 +28,7 @@ Rails.application.routes.draw do
   get 'lineup'  => 'static_pages#lineup'
   get 'donate'  => 'static_pages#donate'
   get 'advertise'  => 'static_pages#advertise'
-  get 'social'  => 'static_pages#social'
   get 'weather'  => 'static_pages#weather'
-  get 'rockthewaters'    => 'static_pages#rockthewaters'
   get 'beine'    => 'static_pages#beine'
   
   resources :staffs
