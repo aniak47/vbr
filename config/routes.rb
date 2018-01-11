@@ -73,6 +73,4 @@ Rails.application.routes.draw do
   get '*path', to: 'static_pages#home'
   get 'bfg', to: static("/shows/3")
   
-  get 'closings', to: 'static_pages#closings'
-  
 end
