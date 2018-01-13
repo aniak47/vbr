@@ -70,7 +70,10 @@ Rails.application.routes.draw do
   
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
-  get '*path', to: 'static_pages#home'
+  get 'closings', to: 'static_pages#closings'
+  
   get 'bfg', to: static("/shows/3")
+  
+  get '*path', to: 'static_pages#home'
   
 end
