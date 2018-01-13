@@ -1,16 +1,6 @@
-<script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
-<script type="text/javascript">
-
-$.ajax({
-  type:     "GET",
-  url:      "http://ithacanet.org/closingsdetail.html",
-  dataType: "text",
-  success: function(data){
-    console.log(data);
-  }
-});
-
-</script>
+<?php
+  echo readfile("http://ithacanet.org/closingsdetail.html");
+?>
 
 <div class="panel"><h1> Lorem Ipsum Dolorem Sit</h1></div>
   
