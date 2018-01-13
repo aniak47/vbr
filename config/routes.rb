@@ -51,10 +51,15 @@ Rails.application.routes.draw do
   get 'mancar'   => 'back_end_pages#manage_car'
   get 'manage_staff'   => 'back_end_pages#manage_staff'
   
+  get 'closings', to: 'static_pages#closings'
+  
+  get 'bfg', to: static("/shows/3")
+  
   resources :articles,          only: [:new, :show, :create, :destroy, :edit, :update]
   get 'news'  => 'articles#news'
   get 'sports'  => 'articles#sports'
   get 'station_news'  => 'articles#station_news'
+  
   
   get 'reservations/submit'
   get 'reservations/approve'
@@ -69,10 +74,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit, :update]
   
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  
-  get 'closings', to: 'static_pages#closings'
-  
-  get 'bfg', to: static("/shows/3")
   
   get '*path', to: 'static_pages#home'
   
