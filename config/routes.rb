@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'advertise'  => 'static_pages#advertise'
   get 'weather'  => 'static_pages#weather'
   get 'beine'    => 'static_pages#beine'
+  get 'closings' => 'static_pages#closings'
   
   resources :staffs
   
@@ -51,9 +52,7 @@ Rails.application.routes.draw do
   get 'mancar'   => 'back_end_pages#manage_car'
   get 'manage_staff'   => 'back_end_pages#manage_staff'
   
-  get 'closings', to: 'static_pages#closings'
-  
-  get 'bfg', to: static("/shows/3")
+  get '/bfg', to: redirect('/shows/3')
   
   resources :articles,          only: [:new, :show, :create, :destroy, :edit, :update]
   get 'news'  => 'articles#news'
