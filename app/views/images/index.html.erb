@@ -1,0 +1,4 @@
+ <% @images.each do |image| %>
+<div><%= image_tag image.picture.url, height: 100  %></div>
+<h1><%= image.catergory  %></h1>
+<% end %>

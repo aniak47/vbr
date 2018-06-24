@@ -1,0 +1,37 @@
+<div class="panel">
+    <h1> WVBR Concert Log</h1>
+    <h3>Sponsored by the Rhine House</h3>
+</div>
+
+<div class="wapper">
+<div class="col-md-12">
+
+    <h2  id="month">  <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B, %Y") %>
+    <%= link_to ">", date: @date.next_month %> </h2>
+    
+    <%= calender @date do |date| %>
+        <%= date.day %>
+        <% if @events_by_date[date] %>
+            <ul>
+                <% @events_by_date[date].each do |event| %>
+                    <li> <%= link_to event.name, event %> </li>
+                <% end %>
+            </ul>
+        <% end %>
+    <% end %>
+</div>
+
+<div class="col-md-12 wapper" id="reader">
+
+        <% @events.each do |event| %>
+              <p><b><%= link_to event.name, event %></b> |
+              <%= event.date.strftime('%A %B %d') %> at <%= event.time.strftime('%-I:%M %p') %> - <%= event.location %></p>
+          <% end %>
+
+
+</div>
+
+
+
+</div>

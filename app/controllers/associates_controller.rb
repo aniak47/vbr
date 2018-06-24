@@ -1,0 +1,2 @@
+class AssociatesController < ApplicationController
+end

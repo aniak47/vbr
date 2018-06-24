@@ -1,0 +1,12 @@
+<h1>WVBR FM</h1>
+
+<p>Hi there,</p>
+
+<p>
+An account was created for <%= @staff.email %>
+</p>
+
+</p>Link to activate:  
+<%= edit_account_activation_url(@staff.activation_token, email: @staff.email) %></p>
+
+<p>Please click on the link start using your account!</p>

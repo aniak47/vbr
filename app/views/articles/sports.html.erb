@@ -1,0 +1,22 @@
+  <div class="panel"><h1> Sports </h1></div>
+
+  <div class="wapper">
+        <div class="sec-head panel panel-default">
+            <div class="panel-body">
+                <h1>Sports</h1>
+            </div>
+        </div>
+    <div class="col-sm-8">
+
+
+        <div class="wapper">
+             <% @articles.each do |article| %>
+               <%= render @articles %>
+            <% end %>
+        </div>
+          
+
+    </div>
+    <div class="col-sm-4">
+      <p>This column is for adds and links to featured items</p>
+  </div>

@@ -1,0 +1,11 @@
+
+    <div class="ashow" style="background-image: url(<%= show.images.first.picture.url if show.images.first.picture? %>)"> 
+                        
+    <div>
+    <h2><%= link_to show.name, show  %></h2>
+     <hr>
+    <p><%= truncate(show.description, length: 250)  %></p>
+    </div>
+    </div>
+   
+

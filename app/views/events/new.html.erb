@@ -1,0 +1,34 @@
+<div class="wapper">
+    <h1>New Event</h1>
+    <hr>
+    <hr>
+  <section class="blogpost_form">
+        
+    <%= form_for(@event) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+  
+        <%= f.label :blurb %>
+        <%= f.text_area :blurb, class: 'form-control' %>
+  
+        <%= f.label :catergory %>
+        <%= f.select :catergory, options_for_select([["Promo"], ["Concert"], ["Other"]]), class: 'form-control' %>
+        
+        <%= f.label :location %>
+        <%= f.text_field :location, class: 'form-control' %>
+        
+        <%= f.label :date %> (Please format as MM/DD?YYYY)
+        <%= f.date_field :date, class: 'form-control' %>
+        
+        <%= f.label :time, 'Start time' %>
+        <%= f.time_field :time, class: 'form-control' %>
+        
+        <%= f.label :endtime, 'End Time' %>
+        <%= f.time_field :endtime, class: 'form-control' %>
+  
+        <%= f.submit "Create Event", class: "btn btn-primary" %>
+      <% end %>
+  </section>
+</div>

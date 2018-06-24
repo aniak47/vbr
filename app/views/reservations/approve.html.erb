@@ -1,0 +1,31 @@
+<div class="wapper">
+    <div class="cbox">
+        <h1> Reservation Management </h1>
+        <hr>
+        <h2>Pending</h2>
+        <% @events.each do |event| %>
+            <p><b><%= event.name %></b><br>
+            Contact: <%= event.blurb %><br>
+            Description: <%= event.location %><br>
+            <%= event.date.strftime('%A %B %d') %> ----
+            <%= event.time.strftime('%H:%M') %> - <%= event.endtime.strftime('%H:%M') if event.endtime %>
+            </p>
+            <button><%= link_to "Approve", controller: "reservations", action: "approve_reservation", id: event %></button>
+            <button><%= link_to "Delete", event, method: :delete, data: { confirm: "You sure?" } %></button>
+        <% end %>
+        <h2>Approved</h2>
+        <% @approved.each do |event| %>
+            <p><b><%= event.name %></b><br>
+            Contact: <%= event.blurb %><br>
+            Description: <%= event.location %><br>
+            <%= event.date.strftime('%A %B %d') %> ----
+            <%= event.time.strftime('%H:%M') %> - <%= event.endtime.strftime('%H:%M') if event.endtime %>
+            </p>
+            <button><%= link_to "Delete", event, method: :delete, data: { confirm: "You sure?" } %></button>
+            <button><%= link_to "Edit", edit_event_path(event) %></button>
+        <% end %>
+          
+    </div>
+</div>
+
+

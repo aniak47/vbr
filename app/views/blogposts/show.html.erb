@@ -1,0 +1,24 @@
+<div class="wapper">
+    <div class="col-sm-8">
+        <div class="wapper bblog">
+            <h3><%= @blogpost.title %></h3>
+                <p><%= link_to @blogpost.staff.name, @blogpost.staff %> 
+                | Posted <%= time_ago_in_words(@blogpost.created_at) %> ago.
+                <% if current_staff?(@blogpost.staff) %>
+                     <%= link_to "edit", edit_blogpost_path(@blogpost) %>
+                      | <%= link_to "delete", @blogpost, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+                <% end %>
+                <hr>
+                </p>
+        
+        <h5><%= @blogpost.subtitle %></h5>
+        <p><%= simple_format(@blogpost.content) %></p>
+        <div class="f-right"> <%= image_tag(@blogpost.picture.url) if @blogpost.picture? %> </div>
+        </div>
+        
+    </div>
+    <div class="col-sm-4">
+      <%= render 'shared/aside' %>
+    </div>
+</div>

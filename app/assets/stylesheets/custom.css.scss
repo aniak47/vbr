@@ -1,0 +1,795 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal layout*/
+
+body {
+  font-family: 'Oxygen', sans-serif;
+}
+
+/* universal and useful */
+section {
+  overflow: auto;
+}
+.f-right{
+  float: right;
+  margin:20px;
+}
+.f-left{
+float: left;
+}
+.oa{
+overflow: auto;
+}
+.center {
+  text-align: center;
+}
+
+/* text styles */
+
+h1{
+  color: white;
+  margin: 0 0 12px 0;
+}
+h2{
+  
+}
+h3{
+  
+}
+h4{
+  a{
+    color: #2C3539;
+  }
+}
+h5{
+  margin: 0;
+  font-size: 11px;
+}
+h6{
+  font-size: 16px;
+  color: white;
+  margin: 0 0 10px 0;
+}
+a{
+  color: maroon;
+  text-decoration: initial;
+  font-weight: bold;
+}
+a:hover{
+  text-decoration: none;
+}
+
+
+
+.admin_bar{
+  background-color: dimgray;
+  width: 100%;
+}
+
+
+
+
+/*Page Layout*/
+
+.center h1 {
+  margin-bottom: 10px;
+}
+.panel{
+  border-bottom: white 3px solid;
+  background-color:  seashell;
+  color: gray;
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  opacity: .95;
+  padding: 10px;
+  p{
+    fornt-size: 20px;
+    color: gray;
+  }
+  h1{
+    padding-left: 50px;
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    margin: 20px;
+  }
+}
+
+/*Component Blocks*/
+
+.aframe{
+  position: relative;
+  overflow-y: auto;
+  background-color:  seashell;
+  border-top: red;
+  padding: 0;
+  div{
+    margin: 0px;
+    padding: 0;
+    height: auto;
+  }
+  h3{
+    padding: 20px;
+    margin: 0px;
+    color: red;
+    font-size: 20px;
+    font-family: Impact, Charcoal, sans-serif;
+  }
+  a{
+    color: black;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  }
+  h6{
+    text-align: center;
+  }
+  h1{
+    text-align: center;
+  }
+}
+
+.bframe{
+  margin-bottom: 30px;
+  overflow: auto;
+  width: 100%;
+  h3{
+    color: maroon;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0px;
+    background-color: seashell;
+    padding: 20px;
+  }
+    h6{
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+    a{
+    color: black;
+    }
+  }
+  h5{
+    font-size: 11px;
+    margin: 0;
+    a{
+      color: #4d0000;  
+    }
+  }
+  p{
+    margin: 0;
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+input {
+  height: auto !important;
+  margin-top: 10px;
+}
+.users {
+  margin: 0;
+}
+textarea {
+  resize: vertical;
+}
+
+
+
+/* blogposts */
+
+.blogposts {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+
+  li {
+
+    padding: 10px 0;
+    border-top: 1px solid #c2c2d6;
+    clear: left;
+    overflow: auto;
+    h3{
+      margin: 10px 0 0 0;
+    }
+    p {
+      margin: 0 0 0 60px;
+    }
+    img {
+      padding: 5px;
+      float: right;
+    }
+    .timestamp {
+      color: $gray-light;
+      margin-left: 0px;
+      font-weight: bold;
+
+    }
+  }
+  
+  span.picture {
+    margin-top: 10px;
+    input {
+      border: 0;
+    }
+  }
+}
+
+
+/* calender */
+#month{
+  text-align: center;
+  font-size: 40px;
+  a{
+    color: black;
+  }
+}
+.calendar{
+  width:100%;
+  td th{
+    font-size: 10px;
+  }
+  td {
+    height: 80px;
+  }
+  th{
+    width: 14.285%;
+    text-align:center;
+  }
+  .notmonth{
+    color: #CCC;
+    text-align: top;
+    
+  }
+  .today{
+    background-color: #D7F2FF;
+  }
+  ul{
+    list-style-type: none;
+    margin: -20px 0 0 -20px;
+    font-size: 12px;
+  }
+  .date-entry{
+    background-color: silver;
+    border: black 1px solid;
+    border-radius: 5px;
+    padding-left: 5px;
+  }
+}
+
+.article{
+  border-top: 1px solid #602020;
+  overflow: auto;
+  img{
+    width: 100px;
+    float: right;
+    margin: 5px;
+  }
+}
+.article-show{
+  font-size: 15px;
+  .captioned{
+    border: 1px solid #29293d;
+    padding: 5px;
+    font-size: 12px;
+    display: table;
+    border-bottom: 0;
+    img{
+      width:300px;
+    }
+  }
+}
+
+
+.caption{
+  display: table-caption;
+  caption-side: bottom;
+  border: 1px black solid;
+  border-top: 0;
+  padding: 5px;
+}
+
+.newspic{
+  float: left;
+  margin-right: 20px;
+  
+}
+/*Reservations */
+.price-card{
+  th{
+    padding-right: 10px;
+  }
+}
+
+
+/*Used for blogposts*/
+.boxlist{
+  div{
+    border-bottom: gray 1px solid;
+    margin: 10px;
+    overflow: auto;
+    padding: 10px;
+    h5{
+      margin: 0;
+      a{
+        color: maroon;
+      }
+    }
+    h3{
+      margin: 0;
+      a{
+        color: black;
+      }
+    }
+    h6{
+      margin: 0;
+      color: black;
+    }
+    img{
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+.showshow{
+  color: #1a1a1a;
+  h1{
+    font-size: 50px;
+    margin: 0;
+    color: 	#211212;
+  }
+  img{
+    margin: auto;
+  }
+  hr{
+    color:	#211212;
+        border-top: 1px solid;
+  }
+  h4{
+    margin: 0;
+  }
+  a{
+    color: 	maroon;
+  }
+  h2{
+    color: 	#211212;
+    margin: 0;
+  }
+  h3{
+    margin: 0;
+  }
+}
+
+
+.center{
+  margin: auto;
+}
+
+#hr1{
+  border: 0;
+}
+.bblog{
+  overflow: auto;
+  h3{
+    margin: 0;
+    font-size: 50px;
+  }
+  h5{
+    font-weight: bold;
+  }
+  img{
+    margin: auto;
+    float: left;
+    margin: 5px;
+    width: 600px;
+  }
+  
+}
+
+
+.all{
+  overflow: auto;
+}
+.user{
+  display: inline-block;
+  margin: 5px;
+  width: 200px;
+}
+.cf{
+  min-width: 1150px;
+  margin: auto;
+  position: relative;
+  padding: 0px;
+}
+.ib{
+  display: inline-block;
+}
+.f1{
+  margin-left: 40px;
+  width: 55%;
+  a{
+    color: black;
+  }
+}
+.amz{
+  width: 100%;
+  padding: 25px;
+  overflow: auto;
+  background-color: #1b1818;
+  color: gray;
+  margin-bottom: 20px;
+  img{
+    margin: 3px;
+  }
+}
+.dj-col{
+  margin: 20px;
+}
+.image-form{
+  list-style-type: none;
+  
+  input{
+    margin: 0px;
+  }
+  li{
+    border: gray 1px solid;
+    margin: 2px;
+    padding: 5px;
+  }
+  img{
+    float: right;
+  }
+}
+input[type="checkbox"]{
+  width: 20px;
+}
+
+
+.cbox{
+  width: 1000px;
+  margin: auto;
+}
+#image{
+  height: 200px;
+  background-image:url('records.jpg');
+  background-size: cover;
+}
+
+.blist{
+  width: 60%;
+  padding: 20px;
+}
+.cbutton{
+  width: 90px;
+  height: 90px;
+  background-color: #6495ED;
+  border-radius: 1em;
+  display: inline-block;
+  margin: 3px;
+}
+.cbutton p{
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 35px;
+}
+.cbutton:hover{
+  background-color: slategray;
+}
+#stnews{
+  margin-top: 20px;
+  width: 550px;
+  height: 350px;
+  background-image:url('records.jpg');
+  background-size:cover;
+  margin: auto;
+}
+.image-container {
+  float: left;
+  background-image:url('records.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  width:150px;
+  height:150px;
+  margin: 10px;
+}  
+#second{
+overflow: auto;
+background-color: seashell;
+}
+
+.ad{
+width: 300px;
+margin: 20px;
+}
+.flight{
+width: 300px;
+margin: 20px auto;
+padding: 20px;
+background-color: slategray;
+border-radius: .5em;
+  h2{
+    margin-top: 0px;
+  }
+}
+
+
+
+
+#reader{
+  p{
+    font-size: 19px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NEW SITE
+
+/* Page */
+body{
+  background-color: #182125;
+  position: relative;
+  margin: 0;
+  overflow: auto;
+}
+#page{
+  width: 100%;
+  overflow: auto;
+}
+#body-wrapper{
+  padding: 10px;
+  overflow: auto;
+}
+/* Header */
+#first-header{
+  min-height: 150px;
+  background-color: white;
+  padding: 10px;
+  overflow: auto;
+}
+#second-header{
+  background-color: whitesmoke;
+  border-top: solid 1px GAINSBORO;
+}
+.navbar{
+  border-radius: 0;
+  margin: 0;
+}
+.navbar-nav{
+  margin: 0;
+}
+.head-element{
+  display: inline-block;
+  
+}
+.header-right{
+  margin-top: 5px;
+  float: right;
+  text-align: center;
+  color: white;
+  width: 300px;
+  clear: right;
+}
+.icon{
+  width: 90%;
+  margin: 5%;
+}
+.social-button{
+  background-size: cover;
+  background-color: darkred;
+  display: inline-block;
+  width: 19%;
+  height: 65px;
+  font-size: 40px;
+  box-shadow: inset 0px -100px 100px -65px #CD5C5C;
+  border-radius: 3px;
+}
+#listen-button{
+  background-color:  darkred;
+  padding: 10px;
+  width: 300px;
+  font-size: 30px;
+  box-shadow: inset 0px -100px 100px -65px #CD5C5C;
+}
+
+.head-logo{
+  float :left;
+  width: 340px;
+  height: 150px;
+}
+/*Footer*/
+#footer-wrapper{
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
+/*Universal*/
+.fades:hover{
+  opacity: .7;
+}
+.body-element{
+  margin: 10px auto;
+  width: 80%;
+}
+.page-title{
+  text-align: center;
+  font-size: 40px;
+}
+
+/*general*/
+.wapper{
+  background-color: whitesmoke;
+  padding: 2%;
+  overflow: auto;
+  h1{
+    color: black;
+  }
+  h6{
+    color: black;
+  }
+  hr{
+    border-top: 1px solid grey;
+  }
+}
+.cal-block{
+  width: 49%;
+  margin: .5%;
+  height: 501px;
+  background-color: whitesmoke;
+  float: left;
+}
+.img-box{
+  height: 20vw;
+  width: 33.33%;
+  float: left;
+  background-image: url(https://melissaandpaulmakemusic.files.wordpress.com/2011/09/records.jpg);
+  background-size: cover;
+  margin: 0;
+  position: relative;
+  border: solid 0px;
+  margin-bottom: 10px;
+}
+.img-box:hover{
+  opacity: .5;
+}
+.box-title{
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  background-color: black;
+  opacity: .8;
+  text-align: center;
+  width: 100%;
+  a{
+    color: white;
+  }
+}
+
+
+
+/*Specialty Shows*/
+
+.ashow{
+    margin-bottom: 30px;
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    padding: 20px;
+    p{
+      color: white;
+    }
+    
+  h2{
+    margin: 0;
+    a{
+      color: 	maroon;
+    }
+  }
+  div:hover{
+    opacity: 1;
+  }
+  div{
+    height: 130px;
+    opacity: .7;
+    background: black;
+    margin-top: 230px;
+    padding: 10px;
+  }
+  hr{
+    margin: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fonts */
+
+h3{
+  text-align: center;
+}
+
+
+/*Media Queries*/
+@media (max-width: 900px) {
+  .top-piece{
+    float: none;
+    margin: 10px auto;
+    display: block;
+  }
+  .body-element{
+  width: 90%;
+}
+  .img-box{
+    width: 50%;
+  }
+  .cal-block{
+    width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  #listen-button{
+    width: 80%;
+    
+  }
+  .body-element{
+    width: 95%; 
+  }
+  .top-piece{
+    width: 80%;
+  }
+  .head-logo{
+    height: 30vw;
+  }
+  .social-button{
+    width: 18%;
+    height: 10vw;
+  }
+  .img-box{
+    width: 100%;
+    height: 30vw;
+  }
+  
+}
+
+// left main content
+.page-2{
+  width: 60%;
+  float: left;
+}
+.page-1{
+  float: right;
+  width: 38%;
+}

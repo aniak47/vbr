@@ -1,0 +1,8 @@
+<div class="user">
+  <% if staff.photo.present? %>
+      <%= image_tag(staff.photo.url(:thumb), width:50) %>
+    <% else %>
+      <img src="/assets/default.jpg" width="50"/>
+    <% end %>
+  <%= link_to staff.name, staff %>
+</div>

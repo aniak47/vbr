@@ -1,0 +1,41 @@
+
+
+<section class="blogpost_form">
+<div class="wapper">
+  <h1>Create new shift</h1> 
+    
+    <%= form_for(@shift) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    
+    
+    <p> Select DJs for this shift</p>
+    <% staff = Staff.all.map { |s| [s.name, s.id] } %>
+    <% staff << ["Select DJ", 0] %>
+    <% 3.times do %>
+      <%= select_tag(name="choice[]", options_for_select(staff, 0)) %>
+    <% end %>
+    
+       
+      <%= f.label :blurb %>
+      <%= f.text_area :blurb, rows: 3, class: 'form-control' %>
+      
+      <%= f.label :color %>
+      <%= f.text_field :color, class: 'form-control' %>
+
+      <%= f.label :day %>
+      <%= f.text_field :day, class: 'form-control' %>
+      
+      <%= f.label :start %>
+      <%= f.time_field :start, class: 'form-control' %>
+      
+      <%= f.label :end %>
+      <%= f.time_field :end, class: 'form-control' %>
+
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+</div>
+</section>

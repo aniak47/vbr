@@ -1,0 +1,35 @@
+<div class="wapper">
+    <h1> Podcast Form</h1><hr>
+    <%= form_for(@podcast, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    
+    <b>Show:</b>
+    <% shows = Show.all.map { |s| [s.name, s.id] } %>
+    <%= f.select :show_id, options_for_select(shows, @podcast.show_id) %>
+    
+    <%= f.label :catergory %>
+    <%= f.select :catergory, options_for_select([["other"]], @podcast.catergory), class: 'form-control' %>
+    
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+    
+    <span class="picture">
+        <b> Audio File:</b>
+        <%= f.file_field :audio %>
+    </span>
+    
+          <b>Image:</b>
+          
+        <%= f.fields_for :image do |builder| %>
+            <span class="picture">
+                <%= builder.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+            </span>
+        <% end %>
+        
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+
+<% end %>
+</div>

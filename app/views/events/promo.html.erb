@@ -1,0 +1,27 @@
+ <div class="panel"><h1> Rock and Roll Patrol</h1></div>
+
+  <div class="wapper">
+
+    <div class="col-sm-8">
+
+        <div class="wapper">
+        <h2>Upcoming Events</h2>
+        <% @promos.each do |event| %>
+            <div>
+              <h3><%= link_to event.name, event %></h3>
+              <p><%= event.date.strftime('%a %d %b %Y') %> | <%= event.time.strftime('%r') %> 
+                                    | <%= event.location %> </p>
+              <p><%= event.blurb %></p>
+            </div>
+          <% end %>
+        <h2>Past Events and news</h2>
+        <% @articles.each do |article| %>
+               <%= render @articles %>
+        <% end %>
+    </div>
+    </div>
+    <div class="col-sm-4">
+      <%= render 'shared/aside' %>
+  </div>
+
+</div>

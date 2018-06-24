@@ -1,0 +1,127 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*Home Page Elements*/
+
+/* carousel */
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+.carousel{
+  .item{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    img{
+      width: 100%;
+      padding: 0;
+      margin: auto;
+    }
+  }
+}
+
+
+
+/*Closings*/
+#closings{
+  height: 50px;
+  background-color: maroon;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+  padding: 5px;
+  h3{
+    margin: 0;
+    padding: 5px;
+  }
+  p{
+    color: white;
+    padding: 20px;
+  }
+  h4{
+    background-color: gray;
+    width: 100px;
+    margin: auto;
+    border-radius: 5px;
+  }
+}
+
+
+
+
+/*NEW home elements*/
+#home-1{
+  height: 40vw;
+  overflow: hidden;
+}
+
+.event{
+  width: 95%;
+  margin: 5px auto;
+  height: 100px;
+  background-color: #182125;
+  border: solid 1px;
+  p{
+    margin: 5px 0 5px 100px;
+    color: white;
+    font-size: 15px;
+  }
+  a{
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+  }
+}
+.date{
+  position: absolute;
+  margin: 5px;
+  height: 90px;
+  width: 90px;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border: solid 1px black;
+  h2{
+    margin-top: 10px;
+  }
+}
+.w-ad{
+  background-color: white;
+  background-image: url(csp-ad.png);
+  background-size: contain;
+  height: 16vw;
+}
+#hangar-ad{
+  background-color: white;
+  img{
+    display: block;
+    margin: auto;
+  }
+  h3{
+    margin: 3px auto;
+    font-weight: bold;
+    color: black;
+  }
+}

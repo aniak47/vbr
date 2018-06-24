@@ -1,0 +1,22 @@
+<div class="panel"><h1> DJ Blogs </h1></div>
+
+  <div class="wapper">
+
+        
+    <div class="col-sm-8">
+
+        <div>
+        <%= will_paginate %>
+        <div class="boxlist">
+          <%= render @blogposts %>
+        </ul>
+        <%= will_paginate %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <%= render 'shared/aside' %>
+    </div>
+  </div>
+
+

@@ -1,0 +1,12 @@
+WVBR FM
+
+Hi there,
+
+
+An account was created for <%= @staff.email %>
+
+
+Link to activate:  
+<%= edit_account_activation_url(@staff.activation_token, email: @staff.email) %>
+
+Please click on the link start using your account!

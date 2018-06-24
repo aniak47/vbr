@@ -1,0 +1,32 @@
+<% provide(:title, 'All staff') %>
+  <div class="wapper">
+    <div class="col-sm-8">
+        
+        <div class="row">
+            <div class="dj-col wapper">
+                <h3>Weekday Joks</h3><hr>
+                <ul class="users">
+                 <%= render partial: "staff", collection: @week %>
+                </ul>
+            </div>
+            <div class="dj-col wapper">
+                <h3>Specialty Hosts</h3><hr>
+                <div class="users">
+                    <%= render partial: "staff", collection: @special %>
+                </div>
+                
+            </div>
+             <div class="dj-col wapper">
+                <h3>Other Staff</h3><hr>
+                <div class="users">
+                    <%= render partial: "staff", collection: @other %>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+      <%= render 'shared/aside' %>
+    </div>
+  </div>
+

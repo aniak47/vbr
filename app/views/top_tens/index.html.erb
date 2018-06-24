@@ -1,0 +1,15 @@
+<div class="wapper">
+    <h1>Top 10 at 10</h1>
+    <p> 
+    On weekdays, when the clock strikes ten, our joks will bring you the top 10 songs of a category of their pick.
+    </p>
+    
+    <hr>
+
+        <% @tops.each do |top| %>
+            <h4>> <%= link_to top.title, top %> </h4>
+        <% end %>
+
+        
+
+</div>

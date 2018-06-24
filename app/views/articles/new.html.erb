@@ -1,0 +1,40 @@
+
+<div class="wapper">
+  <div class="col-md-8 col-md-offset-3 wapper">
+    <h1>New Article</h1>
+    <hr>
+    <hr>
+       <%= form_for(@article, :html => {:multipart => true}) do |f| %>
+       <%= render 'shared/error_messages', object: f.object %>
+       
+       <%= f.label :catergory %> - This will affect where the article shows up
+       <%= f.select :catergory, options_for_select([["promo"], ["news"], ["sports"], ["station"]]), class: 'form-control' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label :subtitle %> (Not Required)
+      <%= f.text_field :subtitle, class: 'form-control' %>
+
+      <%= f.label :content %>
+      <%= f.text_area :content, rows: 20, placeholder: "Better make it interesting..." , class: 'form-control' %>
+      
+          <b>Images:</b>
+      <ul class="image-form">
+        <%= f.fields_for :images do |builder| %>
+          <%= render "images/image_fields", :f => builder %>
+        <% end %>
+        
+      </ul>
+      
+        <b>Video:</b>
+      <span class="picture">
+        <%= f.file_field :video %>
+      </span>
+      
+
+      <%= f.submit "Post Article", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+default: &default
+      adapter: postgresql
+      encoding: unicode
+      pool: 5
+      username: ubuntu
+      password: szkola34
+      host:     <%= ENV['IP'] %>
+
+development:
+  <<: *default
+  database: vbr_development
+
+test:
+  <<: *default
+  database: vbr_test
+
+production:
+  <<: *default
+  database: vbr_production

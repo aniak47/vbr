@@ -1,0 +1,39 @@
+<div class="wapper">
+<section class="blogpost_form">
+      <h1>Post a Blog</h1>
+      <hr>
+  <%= form_for(@blogpost, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <input type="hidden" name="show" value=<%=@id%> >
+    
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle, class: 'form-control' %>
+    
+    <div class="field">
+      <%= f.text_area :content, rows: 15, placeholder: "Compose new post..." %>
+    </div>
+    
+    <b>Add a picture:</b>
+    <span class="picture">
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    
+      <% end %>
+  
+  </section>
+  
+  <script type="text/javascript">
+  $('#blogpost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
+</div>

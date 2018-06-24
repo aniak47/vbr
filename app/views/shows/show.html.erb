@@ -1,0 +1,83 @@
+  <div class="wapper">
+    <div class="col-sm-8">
+
+        <div class="wapper showshow">
+          <h1> <%= @show.name %> </h1>
+          
+            <% if @show.catergory === "specialty" %>
+              <h4><%= @show.day %> | <%= @show.start.strftime("%I:%M%p") %> - <%= @show.end.strftime("%I:%M%p") %></h4>
+              <p>
+              <% sh =  @show.staffs.map{|s| s.name }%>
+              <%= sh.to_sentence %>
+              </p>
+            <% end %>
+        
+                <% if logged_in? && (current_staff.admin?) %>
+                    <p><%= link_to "edit", edit_show_path(@show) %>
+                    | <%= link_to "delete", @show, method: :delete,
+                    data: { confirm: "You sure?" } %>
+                    | <%= link_to "post a blog", new_blogpost_path(@show) %></p>
+                <% end %><hr>
+
+        <% if @show.images.exists? %>
+            <% @show.images.each do |image| %>
+                <div class="center"><%= image_tag(image.picture.url, width: 600) %></div>
+            <% end %>
+        <% end %>
+        <hr>
+        <p><%= simple_format(@show.description) %> </p>
+        <br><br>
+        
+        <% if @show.blogposts.any? %>
+        <h2>Posts from us</h2>
+        
+        <% @show.blogposts.each do |blogpost| %><hr>
+        <h3><%= link_to blogpost.title, blogpost %></h3>
+        
+        <span class="timestamp">
+            <%= link_to blogpost.staff.name, blogpost.staff %>
+            | Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+            <% if logged_in? && current_staff?(blogpost.staff) %>
+              <%= link_to "delete", blogpost, method: :delete,
+                                               data: { confirm: "You sure?" } %>
+            <% end %>
+        </span>
+        <p><%= blogpost.subtitle %></p>
+        <% end %> 
+        <% end %> 
+        
+        <br>
+        
+        <% if  @show.podcasts.any? %>
+        <h2>Podcasts</h2><hr>
+          <% @show.podcasts.each do |podcast| %>
+            <div>
+              <h2><%= link_to podcast.title, podcast %></h2>
+              <span class="timestamp">
+                Posted <%= time_ago_in_words(podcast.created_at) %> ago.
+                <% if current_staff?(podcast.staff) %>
+                  <%= link_to "delete", podcast, method: :delete, data: { confirm: "You sure?" } %>
+                <% end %>
+                  </span>
+                  <p>Genre: <%= podcast.catergory %></p>
+                  
+                  <audio controls>
+                  <source src=<%= podcast.audio.url %> type="audio/mp3">
+                  Your browser does not support the audio element.
+                  </audio>
+
+            </div>
+         <% end %>
+        <% end %>
+        
+        </div>
+        
+        </div>
+    <div class="col-sm-4">
+      <%= render 'shared/aside' %>
+  </div>
+</div>
+
+
+
+

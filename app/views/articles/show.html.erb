@@ -1,0 +1,36 @@
+  <div class="wapper">
+    <div class="col-sm-8 article-show">
+        
+        <div class="wapper">
+         <h2><%= @article.title %></h2>
+            <p><%= link_to @article.staff.name, @article.staff %> </h3>
+            | Posted <%= time_ago_in_words(@article.created_at) %> ago.
+            <% if current_staff?(@article.staff) %>
+                 | <%= link_to "edit", edit_article_path(@article) %>
+                  | <%= link_to "delete", @article, method: :delete,
+                                   data: { confirm: "You sure?" } %>
+            <% end %>
+            </p>
+            <p> <b> <%= @article.subtitle %> </b> </p>
+            <hr>
+            <% if @article.images.any? %>
+                <% @article.images.each do |image| %>
+                <div>
+                    <div  class = "f-right captioned"> <%= image_tag(image.picture.url) %>
+                    <div class="caption"> <b><%= image.title %></b>  <%= image.description %> </div>
+                    </div>
+                </div>
+                <% end %>
+            <% end %>
+        <p> <%= simple_format(@article.content) %> </p>
+        <% if @article.video? %>
+        <div><%= video_tag(@article.video.url, width:500, controls: true) %></div>
+        <% end %>
+        </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <<%= render 'shared/aside' %>
+    </div>
+    
+</div>

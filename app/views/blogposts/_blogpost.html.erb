@@ -1,0 +1,18 @@
+
+<div id="blogpost-<%= blogpost.id %>">
+  
+  <%= image_tag(blogpost.picture.url(:thumb), height:100) if blogpost.picture? %>
+  <h3><%= link_to blogpost.title, blogpost %></h3>
+  
+  <span class="timestamp">
+    <h5><%= link_to blogpost.staff.name, blogpost.staff %>
+    | Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+    <% if logged_in? && current_staff?(blogpost.staff) %>
+      <%= link_to "delete", blogpost, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %></h5>
+  </span>
+  <h6><%= blogpost.subtitle %></h6>
+  <p><%= truncate(blogpost.content, length: 200)  %></p>
+  
+</div>

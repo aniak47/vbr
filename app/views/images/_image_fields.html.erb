@@ -1,0 +1,19 @@
+<li>
+    
+    <%= f.label :title %> (optional - Will display in caption)
+    <%= f.text_field :title, class: 'form-control' %>
+     
+    <%= f.label :description %> (optional - Will display in caption)
+    <%= f.text_field :description, class: 'form-control' %>
+    
+    <% if f.object.picture.present? %>
+        <%= image_tag f.object.picture.url(:thumb) %>
+        <%= f.label :_destroy, "Remove Image" %>
+        <%= f.check_box '_destroy' %>
+
+    <% end %>
+            
+    <span class="picture">
+                <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+</li>
