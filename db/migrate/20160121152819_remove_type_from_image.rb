@@ -1,4 +1,4 @@
-class RemoveTypeFromImage < ActiveRecord::Migration
+class RemoveTypeFromImage < ActiveRecord::Migration[4.2.2]
   def change
     remove_column :images, :type, :string
     remove_column :articles, :type, :string

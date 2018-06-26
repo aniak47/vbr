@@ -1,4 +1,4 @@
-class CreateBlogposts < ActiveRecord::Migration
+class CreateBlogposts < ActiveRecord::Migration[4.2.2]
   def change
     create_table :blogposts do |t|
       t.text :content

@@ -1,4 +1,4 @@
-class CreateTopTens < ActiveRecord::Migration
+class CreateTopTens < ActiveRecord::Migration[4.2.2]
   def change
     create_table :top_tens do |t|
       t.string :title

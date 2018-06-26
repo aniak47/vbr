@@ -1,4 +1,4 @@
-class AddActivationToUsers < ActiveRecord::Migration
+class AddActivationToUsers < ActiveRecord::Migration[4.2.2]
   def change
     add_column :staffs, :activation_digest, :string
     add_column :staffs, :activated, :boolean, default: false

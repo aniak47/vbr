@@ -1,4 +1,4 @@
-class AddInfoToStaffs < ActiveRecord::Migration
+class AddInfoToStaffs < ActiveRecord::Migration[4.2.2]
   def change
     add_column :staffs, :active, :boolean
     add_column :staffs, :hometown, :string
