@@ -1,4 +1,4 @@
-class AddIndexToStaffsEmail < ActiveRecord::Migration[4.2.2]
+class AddIndexToStaffsEmail < ActiveRecord::Migration
   def change
     add_index :staffs, :email, unique: true
   end

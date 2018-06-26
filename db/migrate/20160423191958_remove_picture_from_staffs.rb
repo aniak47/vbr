@@ -1,4 +1,4 @@
-class RemovePictureFromStaffs < ActiveRecord::Migration[4.2.2]
+class RemovePictureFromStaffs < ActiveRecord::Migration
   def change
     remove_column :staffs, :avatar_url
   end

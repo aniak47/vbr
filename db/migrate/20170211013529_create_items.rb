@@ -1,4 +1,4 @@
-class CreateItems < ActiveRecord::Migration[4.2.2]
+class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
       t.string :name, index: true

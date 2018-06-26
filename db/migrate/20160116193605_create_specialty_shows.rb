@@ -1,4 +1,4 @@
-class CreateSpecialtyShows < ActiveRecord::Migration[4.2.2]
+class CreateSpecialtyShows < ActiveRecord::Migration
   def change
     create_table :specialty_shows do |t|
       t.string :name

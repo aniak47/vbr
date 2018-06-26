@@ -1,4 +1,4 @@
-class AddPictureToBlogposts < ActiveRecord::Migration[4.2.2]
+class AddPictureToBlogposts < ActiveRecord::Migration
   def change
     add_column :blogposts, :picture, :string
   end

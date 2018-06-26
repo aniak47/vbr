@@ -1,4 +1,4 @@
-class AddDetailsToShows < ActiveRecord::Migration[4.2.2]
+class AddDetailsToShows < ActiveRecord::Migration
   def change
     add_index :articles, [:catergory, :created_at]
     add_reference :blogposts, :blogable, polymorphic: true, index: true

@@ -1,4 +1,4 @@
-class AddAvatarToStaffs < ActiveRecord::Migration[4.2.2]
+class AddAvatarToStaffs < ActiveRecord::Migration
   def change
     add_column :staffs, :avatar_url, :string
   end

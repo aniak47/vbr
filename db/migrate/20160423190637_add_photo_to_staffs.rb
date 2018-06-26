@@ -1,4 +1,4 @@
-class AddPhotoToStaffs < ActiveRecord::Migration[4.2.2]
+class AddPhotoToStaffs < ActiveRecord::Migration
   def change
     add_column :staffs, :photo, :string
   end

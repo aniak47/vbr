@@ -1,4 +1,4 @@
-class CreateJoinTableShowStaff < ActiveRecord::Migration[4.2.2]
+class CreateJoinTableShowStaff < ActiveRecord::Migration
   def change
     create_table :shows_staffs, id: false do |t|
       t.belongs_to :show, index: true

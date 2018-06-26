@@ -1,4 +1,4 @@
-class AddColorToShifts < ActiveRecord::Migration[4.2.2]
+class AddColorToShifts < ActiveRecord::Migration
   def change
     add_column :shifts, :color, :string
   end
