@@ -10,7 +10,7 @@ gem 'fog'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.20'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'bootstrap-sass'
