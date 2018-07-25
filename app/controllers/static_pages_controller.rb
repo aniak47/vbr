@@ -33,4 +33,7 @@ class StaticPagesController < ApplicationController
   def beine
   end
   
+  def closings
+  end
+  
 end
