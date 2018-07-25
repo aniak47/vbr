@@ -7,7 +7,7 @@
   <span class="timestamp">
     <h5><%= link_to blogpost.staff.name, blogpost.staff %>
     | Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
-    <% if logged_in? && current_staff?(blogpost.staff) %>
+    <% if logged_in? && (current_staff?(blogpost.staff) || current_staff.admin?) %>
       <%= link_to "delete", blogpost, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %></h5>

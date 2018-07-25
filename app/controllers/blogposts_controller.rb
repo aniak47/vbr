@@ -57,7 +57,11 @@ class BlogpostsController < ApplicationController
     end
     
     def correct_staff
-      @blogpost = current_staff.blogposts.find_by(id: params[:id])
+      if current_staff.admin?
+        @blogpost = Blogpost.find(params[:id])
+      else
+        @blogpost = current_staff.blogposts.find_by(id: params[:id])
       redirect_to root_url if @blogpost.nil?
+      end
     end
 end
