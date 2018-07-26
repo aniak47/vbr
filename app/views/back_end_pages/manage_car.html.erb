@@ -1,9 +1,16 @@
-<h4><%= link_to "add to carousel",   carousel_path %></h4>
-
-<% @images.each do |image| %>
-<%= image_tag image.picture.url  %>
-<p><%= image.title  %></p>
-<p><%= image.description  %></p>
-<p><%= link_to "delete", image, method: :delete,
-                            data: { confirm: "You sure?" } %></p>
-<% end %> 
+<div class="col-sm-8">
+	<div class="wapper">
+		<h1>Manage Home Page Carousel</h1>
+        <h4><%= link_to "Add to carousel",   carousel_path %></h4>
+        <hr>
+        <% @images.each do |image| %>
+        <%= image_tag(image.picture.url, width: "50%")  %>
+        <p><%= image.title  %></p>
+        <p>
+            <%= image.description  %> 
+            <%= link_to "Remove from carousel", image, method: :delete, data: { confirm: "You sure?" } %>
+        </p>
+        <hr>
+        <% end %> 
+    </div>
+</div>

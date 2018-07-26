@@ -1,20 +1,22 @@
-<%= form_for(@image, html: { multipart: true }) do |f| %>
-<%= render 'shared/error_messages', object: f.object %>
-  
-  <%= f.hidden_field :catergory, :value => 'carousel' %>
-  
-  <%= f.label :title %>
-  <%= f.text_field :title, class: 'form-control' %>
-  
-  <div class="field">
-    <%= f.text_area :description, placeholder: "Add description for image..." %>
-  </div>
-  
-  <%= f.label :expire, "Set date to remove image from carousel (optional)" %>
-  <%= f.date_field :expire, class: 'form-control' %>
-  
-  <%= f.submit "Post", class: "btn btn-primary" %>
-  <span class="picture">
-    <%= f.file_field :picture %>
-  </span>
-<% end %>
+<div class="wapper">
+  <%= form_for(@image, html: { multipart: true }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.hidden_field :catergory, :value => 'carousel' %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    
+    <div class="field">
+      <%= f.text_area :description, placeholder: "Add description for image..." %>
+    </div>
+    
+    <%= f.label :expire, "Set date to remove image from carousel (optional)" %>
+    <%= f.date_field :expire, class: 'form-control' %>
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    <span class="picture">
+      <%= f.file_field :picture %>
+    </span>
+  <% end %>
+</div>
