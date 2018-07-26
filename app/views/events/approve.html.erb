@@ -4,8 +4,10 @@
         <h1> Event approval </h1>
         <hr>
         <% @events.each do |event| %>
-              <p><b><%= link_to event.name, edit_event_path( event)  %></b> |
-              <%= event.date.strftime('%A %B %d') %> </p>
+            <p><b><%= link_to event.name, edit_event_path( event)  %></b> |
+                <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %> |
+                <%= event.date.strftime('%A %B %d') %> 
+            </p>
           <% end %>
     </div>
 </div>
