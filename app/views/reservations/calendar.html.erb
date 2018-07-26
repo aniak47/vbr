@@ -1,10 +1,6 @@
-<div class="panel">
-    <h1> Studio A Reservation Calendar</h1>
-</div>
-
 <div class="wapper">
     <div class="col-md-12">
-    
+    <h1 class="page-title"> Studio A Reservation Calenda  </h1><hr>
         <h2  id="month">  <%= link_to "<", date: @date.prev_month %>
         <%= @date.strftime("%B, %Y") %>
         <%= link_to ">", date: @date.next_month %> </h2>

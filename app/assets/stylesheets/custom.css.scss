@@ -2,7 +2,6 @@
 @import "bootstrap";
 
 /* universal layout*/
-
 body {
   font-family: 'Oxygen', sans-serif;
 }
@@ -26,7 +25,6 @@ overflow: auto;
 }
 
 /* text styles */
-
 h1{
   color: white;
   margin: 0 0 12px 0;
@@ -74,27 +72,6 @@ a:hover{
 
 .center h1 {
   margin-bottom: 10px;
-}
-.panel{
-  border-bottom: white 3px solid;
-  background-color:  seashell;
-  color: gray;
-  margin-top: 0;
-  border: 0;
-  border-radius: 0;
-  opacity: .95;
-  padding: 10px;
-  p{
-    fornt-size: 20px;
-    color: gray;
-  }
-  h1{
-    padding-left: 50px;
-    font-size: 40px;
-    color: black;
-    font-weight: bold;
-    margin: 20px;
-  }
 }
 
 /*Component Blocks*/
@@ -708,18 +685,6 @@ body{
     margin: 5px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

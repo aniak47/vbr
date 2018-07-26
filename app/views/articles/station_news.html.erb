@@ -1,17 +1,12 @@
-  <div class="panel"><h1> Station News</h1></div>
-
 <div class="wapper">
-
     <div class="col-sm-8">
-
-
+        <h1 class="page-title"> Station News </h1>
+        <hr>
         <div class="boxlist">
              <% @articles.each do |article| %>
                <%= render @articles %>
             <% end %>
         </div>
-          
-
     </div>
     <div class="col-sm-4">
       <%= render 'shared/aside' %>
