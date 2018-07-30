@@ -1,6 +1,4 @@
-// Place all the styles related to the Shifts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Styles related to daily on-air schedule (shift)
 
 .schedule{
   width: 990px;
@@ -10,10 +8,8 @@
     margin-left: 30px;
   }
   td tr{
-    
     font-size: 10px;
     padding: 0;
-    
   }
   td {
     height: 60px;
@@ -39,7 +35,6 @@
   overflow: hidden;
   }
 }
-
 .times{
   position: absolute;
   height: 1461px;
@@ -48,5 +43,15 @@
   h6{
     margin-bottom: 43px;
     color: black;
+  }
+}
+.schedule-frame{
+  position: relative;
+  overflow-y: auto;
+  background-color:  seashell;
+  padding: 0;
+  h1{
+    text-align: center;
+    margin: 20px;
   }
 }

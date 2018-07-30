@@ -5,6 +5,10 @@
 body {
   font-family: 'Oxygen', sans-serif;
 }
+.admin_bar{
+  background-color: dimgray;
+  width: 100%;
+}
 
 /* universal and useful */
 section {
@@ -22,18 +26,13 @@ overflow: auto;
 }
 .center {
   text-align: center;
+  margin: auto;
 }
 
 /* text styles */
 h1{
   color: white;
   margin: 0 0 12px 0;
-}
-h2{
-  
-}
-h3{
-  
 }
 h4{
   a{
@@ -56,86 +55,12 @@ a{
 }
 a:hover{
   text-decoration: none;
+  color: #660000;
 }
-
-
-
-.admin_bar{
-  background-color: dimgray;
-  width: 100%;
-}
-
-
-
 
 /*Page Layout*/
-
 .center h1 {
   margin-bottom: 10px;
-}
-
-/*Component Blocks*/
-
-.aframe{
-  position: relative;
-  overflow-y: auto;
-  background-color:  seashell;
-  border-top: red;
-  padding: 0;
-  div{
-    margin: 0px;
-    padding: 0;
-    height: auto;
-  }
-  h3{
-    padding: 20px;
-    margin: 0px;
-    color: red;
-    font-size: 20px;
-    font-family: Impact, Charcoal, sans-serif;
-  }
-  a{
-    color: black;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  }
-  h6{
-    text-align: center;
-  }
-  h1{
-    text-align: center;
-  }
-}
-
-.bframe{
-  margin-bottom: 30px;
-  overflow: auto;
-  width: 100%;
-  h3{
-    color: maroon;
-    font-weight: bold;
-    font-size: 40px;
-    margin: 0px;
-    background-color: seashell;
-    padding: 20px;
-  }
-    h6{
-    margin: 0;
-    font-weight: bold;
-    font-size: 15px;
-    a{
-    color: black;
-    }
-  }
-  h5{
-    font-size: 11px;
-    margin: 0;
-    a{
-      color: #4d0000;  
-    }
-  }
-  p{
-    margin: 0;
-  }
 }
 
 /* forms */
@@ -155,7 +80,6 @@ input {
 textarea {
   resize: vertical;
 }
-
 
 /* calender */
 #month{
@@ -230,11 +154,6 @@ textarea {
   padding: 5px;
 }
 
-.newspic{
-  float: left;
-  margin-right: 20px;
-  
-}
 /*Reservations */
 .price-card{
   th{
@@ -271,10 +190,6 @@ textarea {
       margin-right: 10px;
     }
   }
-}
-
-.center{
-  margin: auto;
 }
 
 // Used for blogsposts/show
@@ -350,38 +265,11 @@ input[type="checkbox"]{
   background-size: cover;
 }
 
-#second{
-overflow: auto;
-background-color: seashell;
-}
-
-.ad{
-width: 300px;
-margin: 20px;
-}
-
-
-
-
 #reader{
   p{
     font-size: 19px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // NEW SITE
@@ -492,41 +380,6 @@ body{
     border-top: 1px solid grey;
   }
 }
-.cal-block{
-  width: 49%;
-  margin: .5%;
-  height: 100%;
-  background-color: white;
-  float: left;
-}
-.img-box{
-  height: 20vw;
-  width: 33.33%;
-  float: left;
-  background-image: url(https://melissaandpaulmakemusic.files.wordpress.com/2011/09/records.jpg);
-  background-size: cover;
-  margin: 0;
-  position: relative;
-  border: solid 0px;
-  margin-bottom: 10px;
-}
-.img-box:hover{
-  opacity: .5;
-}
-.box-title{
-  position: absolute;
-  bottom: 0px;
-  height: 50px;
-  background-color: black;
-  opacity: .8;
-  text-align: center;
-  width: 100%;
-  a{
-    color: white;
-  }
-}
-
-
 
 /*Specialty Shows*/
 .ashow{

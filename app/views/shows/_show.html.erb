@@ -4,7 +4,7 @@
     <div>
     <h2><%= link_to show.name, show  %></h2>
      <hr>
-    <p><%= truncate(show.description, length: 250)  %></p>
+    <p><%= simple_format(truncate(show.description, length: 250))  %></p>
     </div>
     </div>
    
