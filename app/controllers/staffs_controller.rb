@@ -1,7 +1,7 @@
 class StaffsController < ApplicationController
-  before_action :logged_in_staff, only: [:create, :new, :edit, :update, :destroy]
+  before_action :logged_in_staff, only: [:make_admin, :create, :new, :edit, :update, :destroy]
   before_action :correct_staff,   only: [:edit, :update]
-  before_action :admin_staff, only: [:create, :new, :destroy]
+  before_action :admin_staff, only: [:make_admin, :create, :new, :destroy]
   
 
   def show
@@ -45,12 +45,24 @@ class StaffsController < ApplicationController
     redirect_to staffs_url
   end
   
+  def make_admin
+    @staff = Staff.find(params[:id])
+    if @staff.update_attribute(:admin, true)
+      flash[:success] = "Admin Status Granted"
+    end
+    redirect_to '/manage_staff'
+  end
+  
 
   
   private
     def staff_params
       params.require(:staff).permit(:name, :email, :password, :password_confirmation, :active, :hometown, :fav_music,
                                             :duties, :intrests, :photo, :joktype)
+    end
+    
+    def approve_params
+      params.require(:staff).permit(:admin)
     end
     
     # Before filters

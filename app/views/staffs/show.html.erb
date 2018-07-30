@@ -22,10 +22,10 @@
               
               <% if @staff.blogposts.any? %>
                 <h3>Blogposts (<%= @staff.blogposts.count %>)</h3>
-                <ol class="blogposts">
+                <div class="boxlist">
                   <%= render @blogposts %>
-                </ol>
-                <%= will_paginate @blogposts %>
+                <%= will_paginate @blogposts%>
+                </div>
               <% end %>
             </div>
             <div class="col-sm-6">
@@ -35,11 +35,11 @@
                 <% end %>
                 <% if @staff.intrests.present? %>
                 <h4><b>Interests:</b></h4>
-                <h5><%= @staff.intrests %></h5>
+                <p><%= @staff.intrests %></p>
                 <% end %>
                 <% if @staff.fav_music.present? %>
                 <h4><b>Favorite Music:</b></h4>
-                <h5><%= @staff.fav_music %></h5>
+                <p><%= @staff.fav_music %></p>
                 <% end %>
   
               </div>

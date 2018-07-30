@@ -76,4 +76,11 @@ Rails.application.routes.draw do
   
   get '*path', to: 'static_pages#home'
   
+  resources :staffs do
+    member do
+        patch :make_admin
+        put :make_admin
+      end
+  end
+  
 end

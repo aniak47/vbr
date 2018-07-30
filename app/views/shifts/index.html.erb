@@ -1,10 +1,9 @@
 <div class="wapper">
-<h1>Shifts#index</h1>
-<p>Find me in app/views/shifts/index.html.erb</p>
+<h1>All Shifts</h1>
+<hr>
 
-<ul class="blogposts">
+<div class="boxlist">
     <% @shifts.each do |show| %>
-      <li>
         <h2><%= show.title %></h2>
         <h6><%= show.day %></h6>
         <% show.staffs.each do |staff| %>
@@ -15,7 +14,8 @@
         | <%= link_to "delete", show, method: :delete,
                     data: { confirm: "You sure?" } %>
         <% end %>
-      </li>
+        <hr>
+
     <% end %>
-</ul>
+</div>
 </div>

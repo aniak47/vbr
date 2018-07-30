@@ -1,7 +1,7 @@
 
 <div id="blogpost-<%= blogpost.id %>">
   
-  <%= image_tag(blogpost.picture.url(:thumb), height:100) if blogpost.picture? %>
+  <%= (link_to image_tag(blogpost.picture.url(:thumb), height:100),  blogpost) if blogpost.picture? %>
   <h3><%= link_to blogpost.title, blogpost %></h3>
   
   <span class="timestamp">

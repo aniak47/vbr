@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     @images = Image.carousel
     @blogs = Blogpost.limit(3)
     @podcasts = Podcast.limit(3)
-    @events = Event.concert.future.limit(4)
+    @events = Event.concert.future.limit(6)
   end
 
   def about
