@@ -8,12 +8,9 @@
 			about songs heard at a specific time. </b></p>
 			<hr>
 			
-			
-			
-			
 			<%
 			lines = Array.new
-			f = open('http://cornellradio.org/935-song-history.txt')
+			f = open('http://scripts.wvbr.com/935-song-history.txt')
 			lines = []
 			f.each_line do |line|
 				lines << line
@@ -21,9 +18,12 @@
 			len = lines.length
 			(1..len).each do |n|
 			%>
-			<p><%= lines[len-n] %></p>
-			<%end%>
-			
+			<p><%= lines[len-n].force_encoding('UTF-8') %></p>
+			<%
+			end
+			f.close() 
+			%>
+		
 		</div>
     
 	</div>
