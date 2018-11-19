@@ -32,7 +32,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    #@article = Article.find(params[:id])
+    @article = Article.find.find(:all, :order  => "published_at DESC")
   end
 
   def news
